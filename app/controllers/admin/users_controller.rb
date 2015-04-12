@@ -1,11 +1,10 @@
 class Admin::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
-  before_filter :admin_only
+  before_filter :admin_only, only: [:create, :destroy]
 
   def login
     user = User.find_by(username: params[:username])
     if user = user.authenticate(params[:password])
-      session[:current_user_id] = user.token
       render json: user, status: :accepted
     else
       head :unauthorized

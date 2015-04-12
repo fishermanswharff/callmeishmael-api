@@ -52,6 +52,7 @@ RSpec.describe User, type: :model do
 
   it 'has a uuid generated from the postgres adapter' do
     expect(@admin_user.id).to_not be_nil
+    expect(@admin_user.id).to match(/([\w\d\-]){36}/)
   end
 
 
