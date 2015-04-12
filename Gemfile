@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.2.0'
+ruby '2.2.1'
 gem 'rails', '4.2.0'
 gem 'rails-api'
 gem 'spring', :group => :development
@@ -8,6 +8,9 @@ gem 'newrelic_rpm'
 gem 'rack-cors'
 gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'nokogiri'
+gem 'bcrypt'
+gem 'rack-ssl-enforcer'
+
 group :development, :test do
   gem 'capybara'
   gem 'rubocop'
@@ -21,10 +24,12 @@ group :development, :test do
   gem 'faker'
   gem 'codeclimate-test-reporter', require: nil
 end
+
 group :development do
   gem 'guard'
   gem 'guard-rails'
 end
+
 group :production do
   gem 'unicorn'
   gem 'rails_12factor'
