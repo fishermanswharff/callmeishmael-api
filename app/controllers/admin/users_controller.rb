@@ -49,7 +49,7 @@ class Admin::UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :username, :phonenumber, :role, :email, :password, :password_confirmation)
+    params.require(:user).permit(:firstname, :lastname, :username, :phonenumber, :role, :email, :password, :password_confirmation, :active, :main_store_contact, :main_business_contact, :confirmed)
   end
 
   def set_user

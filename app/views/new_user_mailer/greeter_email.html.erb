@@ -6,7 +6,7 @@
   <body>
     <h1>Ahoy,</h1>
     <p>Welcome to Call me Ishmael, <%= @user.firstname %>. Please follow the link below to get started. You will be asked to select a password and then you will be on your way to administer your new phone.</p>
-    <p><%= @url %></p>
+    <p><%= link_to 'Set your password here', @url %></p>
     <p>Thanks, <br>Ishmael</p>
   </body>
 </html>

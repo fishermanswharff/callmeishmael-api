@@ -16,36 +16,13 @@ users = User.create!([
     phonenumber: 6173889520,
     password_digest: "$2a$10$g0nkXPBOkJWCaCquG49Z8O3wutYc/wWY1sEkHy8qDQqwBM5mLzcHC",
     token: "53193128a1ce4fcc8a57b4c95268c3ba",
-    confirmed: true,
-  },
-  {
-    firstname: "Chris",
-    lastname: "Spence",
-    username: "chrisspence",
-    role: 'admin',
-    email: "chris@thinqmail.com",
-    phonenumber: 5085071285,
-    password_digest: "$2a$10$nOGhPDyCgixq3PxBZj3.4OT2AzSvDAGNfuoccUHV/W9rL6dWY4bcm",
-    token: "6b6d0ee3fbb44ddd945411d9c4100c36",
-    confirmed: true,
-  },
-  {
-    firstname: "Shawn",
-    lastname: "Kotoske",
-    username: "shawnkotoske",
-    role: 'admin',
-    email: "shawn@thinqmail.com",
-    phonenumber: 5748509840,
-    password_digest: "$2a$10$CWNNDKCHM1QW75aUlAZT5uDF9DNW.XV6QD2TiIIzTDjhqqYZt8pbO",
-    token: "dc4b66780bc749ca8572d1d2d175f60f",
-    confirmed: true,
   },
   {
     firstname: "joe",
     lastname: "user",
     username: "joeuser",
     role: 'venue_admin',
-    email: "fishermanswharff@mac.com",
+    email: "jasonwharff@gmail.com",
     phonenumber: 6173889520,
     password_digest: "$2a$10$0WiosQNv78CTlgWugln50uopUvmwS.saaLbtWWjTgVy9qwnabVVTa",
     token: "b4f9f9e3db0d46a3a568b1cc48fc529a",
@@ -56,9 +33,34 @@ users = User.create!([
 # curl -d "user[firstname]=Shawn&user[lastname]=Kotoske&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=shawnkotoske&user[email]=shawn@thinqmail.com&user[role]=admin&user[phonenumber]=5748509840" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
 # curl -d "user[firstname]=Chris&user[lastname]=Spence&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=chrisspence&user[email]=chris@thinqmail.com&user[role]=admin&user[phonenumber]=5085071285" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
 # curl -d "user[firstname]=joe&user[lastname]=user&user[password]=secret&user[password_confirmation]=secret&user[username]=joeuser&user[email]=fishermanswharff@mac.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=ricky&user[lastname]=bobby&user[password]=secret&user[password_confirmation]=secret&user[username]=rickybobby&user[email]=fishermanswharff@mac.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# curl -d "user[firstname]=ricky&user[lastname]=bobby&user[password]=secret&user[password_confirmation]=secret&user[username]=rickybobby&user[email]=jasonwharff@gmail.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
 
 =begin
+
+{
+  firstname: "Chris",
+  lastname: "Spence",
+  username: "chrisspence",
+  role: 'admin',
+  email: "chris@thinqmail.com",
+  phonenumber: 5085071285,
+  password_digest: "$2a$10$nOGhPDyCgixq3PxBZj3.4OT2AzSvDAGNfuoccUHV/W9rL6dWY4bcm",
+  token: "6b6d0ee3fbb44ddd945411d9c4100c36",
+  confirmed: true,
+},
+{
+  firstname: "Shawn",
+  lastname: "Kotoske",
+  username: "shawnkotoske",
+  role: 'admin',
+  email: "shawn@thinqmail.com",
+  phonenumber: 5748509840,
+  password_digest: "$2a$10$CWNNDKCHM1QW75aUlAZT5uDF9DNW.XV6QD2TiIIzTDjhqqYZt8pbO",
+  token: "dc4b66780bc749ca8572d1d2d175f60f",
+  confirmed: true,
+},
+
+
 Jason
 ——————————————————————————————————————————
 id: "298ed1c1-82c4-45fe-97a1-913a193e6acb",
