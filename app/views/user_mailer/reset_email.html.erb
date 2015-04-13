@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Dear, <%= @user.firstname %></h1>
+    <p>Thank you for contacting callmeishmael.com to reset your password.</p>
+    <p>Your username is <%= @user.username %></p>
+    <p><%= link_to 'Follow this link to reset your password.', @url %></p>
+    <p>The link will expire in twenty-four hours. You can request a new reset link at any time. If you didn’t request this change, please disregard this email and no change will occur to your account. Only the recipient of this email may take the next step in the password reset process.</p>
+    <p>Thanks, <br>Ishmael</p>
+  </body>
+</html>

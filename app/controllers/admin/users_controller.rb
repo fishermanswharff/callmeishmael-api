@@ -15,6 +15,15 @@ class Admin::UsersController < ApplicationController
     head :ok
   end
 
+  def resetpassword
+    if params['email']
+      @user = User.find_by(email: params['email'])
+      UserMailer.reset_email(@user).deliver_now
+    else
+      head :unauthorized
+    end
+  end
+
   def index
     @users = User.all
     render json: @users, status: 200
@@ -27,7 +36,7 @@ class Admin::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      NewUserMailer.greeter_email(@user).deliver_now
+      UserMailer.greeter_email(@user).deliver_now
       render json: @user, status: :created, location: admin_user_url(@user)
     else
       render json: @user.errors, status: :unprocessable_entity
