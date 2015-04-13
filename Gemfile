@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.2.1'
 gem 'rails', '4.2.0'
 gem 'rails-api'
-gem 'spring', :group => :development
 gem 'pg'
 gem 'newrelic_rpm'
 gem 'rack-cors'
@@ -12,6 +11,7 @@ gem 'bcrypt'
 gem 'rack-ssl-enforcer'
 
 group :development, :test do
+  gem 'spring'
   gem 'capybara'
   gem 'rubocop'
   gem 'bullet'

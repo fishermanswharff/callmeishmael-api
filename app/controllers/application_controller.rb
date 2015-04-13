@@ -10,7 +10,6 @@ class ApplicationController < ActionController::API
 
   def admin_only
     authenticate
-    binding.byebug
     unless @current_user.admin?
       self.headers['WWW-Authenticate'] = 'Token realm="Application"'
       render json: {

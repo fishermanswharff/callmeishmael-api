@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, except: [:new, :edit]
   end
+  post '/login', to: 'admin/users#login'
+  get '/logout', to: 'admin/users#logout'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

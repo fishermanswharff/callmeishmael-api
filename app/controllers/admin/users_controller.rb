@@ -3,7 +3,7 @@ class Admin::UsersController < ApplicationController
   before_filter :admin_only, only: [:create, :destroy]
 
   def login
-    user = User.find_by(username: params[:username])
+    user = User.find_by(email: params[:email])
     if user = user.authenticate(params[:password])
       render json: user, status: :accepted
     else
@@ -12,7 +12,6 @@ class Admin::UsersController < ApplicationController
   end
 
   def logout
-    @current_user = session[:current_user_id] = nil
     head :ok
   end
 
