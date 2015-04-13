@@ -22,6 +22,7 @@ class CreateUsers < ActiveRecord::Migration
       t.boolean :active, default: true
       t.boolean :main_store_contact, default: false
       t.boolean :main_business_contact, default: false
+      t.boolean :confirmed, default: false
       t.timestamps null: false
     end
   end

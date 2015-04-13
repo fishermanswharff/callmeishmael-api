@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20150412195704) do
     t.boolean  "active",                           default: true
     t.boolean  "main_store_contact",               default: false
     t.boolean  "main_business_contact",            default: false
+    t.boolean  "confirmed",                        default: false
     t.datetime "created_at",                                       null: false
     t.datetime "updated_at",                                       null: false
   end
