@@ -15,47 +15,47 @@ describe 'User API Endpoint' do
     })
   end
 
-  # describe '#login' do
-  #   before(:each) do
-  #     post '/login',{ email: "foo@bar.com", password: "secret" }
-  #   end
+  describe '#login' do
+    before(:each) do
+      post '/login',{ email: "foo@bar.com", password: "secret" }
+    end
 
-  #   it 'has valid authentication with token' do
-  #     expect(response.status).to eq 202
-  #   end
+    it 'has valid authentication with token' do
+      expect(response.status).to eq 202
+    end
 
-  #   it 'responds with valid JSON' do
-  #     expect(response.content_type).to eq Mime::JSON
-  #   end
+    it 'responds with valid JSON' do
+      expect(response.content_type).to eq Mime::JSON
+    end
 
-  #   it 'refuses invalid authentication' do
-  #     post '/login',{ email: "foo@bar.com", password: "bar" }
-  #     expect(response.status).to eq 401
-  #   end
+    it 'refuses invalid authentication' do
+      post '/login',{ email: "foo@bar.com", password: "bar" }
+      expect(response.status).to eq 401
+    end
 
-  #   it 'expects a token in the response' do
-  #     user = json(response.body)
-  #     expect(user).to_not be_nil
-  #   end
+    it 'expects a token in the response' do
+      user = json(response.body)
+      expect(user).to_not be_nil
+    end
 
-  #   it 'responds 401 if unauthorized' do
-  #     post '/login', { email: "foo@bar.com", password: "fakesecret"}
-  #     expect(response.status).to eq 401
-  #   end
-  # end
+    it 'responds 401 if unauthorized' do
+      post '/login', { email: "foo@bar.com", password: "fakesecret"}
+      expect(response.status).to eq 401
+    end
+  end
 
-  # describe '#logout' do
-  #   before(:each) do
-  #     post '/login',{ email: "foo@bar.com", password: "secret" }
-  #     get '/logout'
-  #   end
-  #   it 'logs the user out' do
-  #     expect(response.status).to eq 200
-  #   end
-  #   it 'returns only a response header' do
-  #     expect(response.body).to eq " "
-  #   end
-  # end
+  describe '#logout' do
+    before(:each) do
+      post '/login',{ email: "foo@bar.com", password: "secret" }
+      get '/logout'
+    end
+    it 'logs the user out' do
+      expect(response.status).to eq 200
+    end
+    it 'returns only a response header' do
+      expect(response.body).to eq " "
+    end
+  end
 
   describe '#index' do
     it 'retrieves all of the users' do
