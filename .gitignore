@@ -9,6 +9,7 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+/docs
 
 ## Specific to RubyMotion:
 .dat*
@@ -51,3 +52,7 @@ tags
 
 # env vars
 config/env.yml
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
