@@ -84,13 +84,13 @@ ActiveRecord::Schema.define(version: 20150425134424) do
   end
 
   create_table "venues", force: :cascade do |t|
-    t.text     "unique_identifier",                null: false
+    t.text     "unique_identifier"
     t.text     "name",                             null: false
     t.boolean  "status",            default: true
     t.integer  "number_phones"
     t.integer  "post_roll_listens"
     t.integer  "total_stories"
-    t.integer  "user_id"
+    t.uuid     "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
