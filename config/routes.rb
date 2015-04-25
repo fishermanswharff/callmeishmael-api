@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :users, except: [:new, :edit]
   end
+  resources :venues do
+    resources :phones, except: [:new, :edit]
+  end
+  resources :stories
+  resources :buttons
+
   post '/login', to: 'admin/users#login'
   get '/logout', to: 'admin/users#logout'
   get '/resetpassword', to: 'admin/users#resetpassword'
