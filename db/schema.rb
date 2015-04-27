@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20150425134424) do
   add_index "buttons", ["story_id"], name: "index_buttons_on_story_id", using: :btree
 
   create_table "phones", force: :cascade do |t|
-    t.text     "unique_identifier",             null: false
+    t.text     "unique_identifier"
     t.text     "token",                         null: false
     t.integer  "status",            default: 1, null: false
     t.text     "wifiSSID"
