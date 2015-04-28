@@ -6,5 +6,6 @@ class Venue < ActiveRecord::Base
   private
   def set_unique_id
     self.unique_identifier = "#{self.id}-1000"
+    self.save!
   end
 end

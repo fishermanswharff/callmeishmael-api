@@ -12,8 +12,8 @@ describe Phone, type: :model do
       user: @venue_admin
     })
     @phones = Phone.create([
-      { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret',venue: @venue},
-      { wifiSSID: '79:30:b1:bc:c4:78', wifiPassword: 'password',venue: @venue},
+      { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: @venue},
+      { wifiSSID: '79:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venue},
     ])
   end
 

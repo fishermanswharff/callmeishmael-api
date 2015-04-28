@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20150425134424) do
   create_table "phones", force: :cascade do |t|
     t.text     "unique_identifier"
     t.text     "token",                         null: false
-    t.integer  "status",            default: 1, null: false
+    t.integer  "status",            default: 0, null: false
     t.text     "wifiSSID"
     t.text     "wifiPassword"
     t.datetime "created_at"

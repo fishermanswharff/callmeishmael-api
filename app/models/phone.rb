@@ -1,6 +1,6 @@
 class Phone < ActiveRecord::Base
   before_create :set_token
-  after_save :set_unique_id
+  after_create :set_unique_id
   belongs_to :venue, counter_cache: :number_phones
   has_many :buttons
   has_many :stories, through: :buttons
@@ -18,5 +18,6 @@ class Phone < ActiveRecord::Base
 
   def set_unique_id
     self.unique_identifier = "#{self.venue.id}-#{self.id}"
+    self.save!
   end
 end
