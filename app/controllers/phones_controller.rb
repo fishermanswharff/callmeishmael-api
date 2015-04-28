@@ -9,6 +9,7 @@ class PhonesController < ApplicationController
   end
 
   def show
+    render json: @phone, status: :ok
   end
 
   def create

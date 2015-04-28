@@ -42,4 +42,42 @@ describe 'Phone API endpoint' do
       expect(phones[0][:unique_identifier]).not_to eq nil
     end
   end
+
+  describe '#show' do
+    before(:each) do
+      get "/venues/#{@venues[1].id}/phones/#{@phones[4].id}"
+    end
+
+    it 'responds successfully' do
+      expect(response.status).to eq 200
+    end
+    it 'returns json of the phone' do
+      phone = json(response.body)
+      expect(phone[:unique_identifier]).not_to eq nil
+      expect(phone[:unique_identifier]).to eq "#{@venues[1].id}-#{@phones[4].id}"
+      expect(phone[:venue][:id]).to eq @venues[1].id
+    end
+  end
+
+  describe '#create' do
+    
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
