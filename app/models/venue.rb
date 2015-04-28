@@ -3,7 +3,6 @@ class Venue < ActiveRecord::Base
   belongs_to :user, dependent: :destroy
   has_many :phones
 
-  private
   def set_unique_id
     self.unique_identifier = "#{self.id}-1000"
     self.save!
