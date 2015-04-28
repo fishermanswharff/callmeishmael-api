@@ -69,6 +69,15 @@ describe 'Phone API endpoint' do
         }.to_json,
         { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@venue_admin.token}"}
       end
+
+      it 'responds unauthorized' do
+        expect(response.status).to eq 403
+      end
+
+      it 'responds with an error message' do
+        r = json(response.body)
+        expect(r[:error]).to eq 'You are not an admin'
+      end
     end
 
     context 'with authorized request' do
