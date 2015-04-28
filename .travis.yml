@@ -1,6 +1,12 @@
 language: ruby
 rvm:
 - 2.2.1
+env:
+  matrix:
+  - DB=postgresql
+  global:
+  - PASSWORD_CONFIRMATION_URL: 'http://localhost:9000/#/confirm'
+  - PASSWORD_RESET_URL: 'http://localhost:9000/#/passwordreset'
 script:
 - CODECLIMATE_REPO_TOKEN=fd51d880ee9a35f0efbca53ad39caf7f75aa31280046c52285a59c6b8771fd6a bundle exec rake
 - bundle exec rspec spec
