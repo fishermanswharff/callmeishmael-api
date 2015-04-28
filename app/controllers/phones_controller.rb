@@ -13,6 +13,15 @@ class PhonesController < ApplicationController
   end
 
   def create
+    venue = Venue.find(params[:venue_id])
+    phone = Phone.create(phone_params)
+    if phone.save
+      phone.venue = venue
+      phone.set_unique_id
+      render json: phone, status: :created, location: venue_phone_url(venue, phone)
+    else
+      render json: phone.errors, status: :unprocessable_entity
+    end
   end
 
   def update

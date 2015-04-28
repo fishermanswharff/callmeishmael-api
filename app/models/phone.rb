@@ -6,6 +6,13 @@ class Phone < ActiveRecord::Base
   has_many :stories, through: :buttons
   enum status: [:active, :inactive, :retired, :fixable]
 
+  def set_unique_id
+    if self.venue
+      self.unique_identifier = "#{self.venue.id}-#{self.id}"
+      self.save!
+    end
+  end
+
   private
   def set_token
     return if token.present?
@@ -14,10 +21,5 @@ class Phone < ActiveRecord::Base
 
   def generate_token
     SecureRandom.uuid.gsub(/\-/, '')
-  end
-
-  def set_unique_id
-    self.unique_identifier = "#{self.venue.id}-#{self.id}"
-    self.save!
   end
 end

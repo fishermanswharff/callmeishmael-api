@@ -60,7 +60,38 @@ describe 'Phone API endpoint' do
   end
 
   describe '#create' do
-    
+
+    context 'with unauthorized requests' do
+      before(:each) do
+        post "/venues/#{@venues[2].id}/phones",
+        { phone:
+          { wifiSSID: '70:20:a1:ac:b3:69', wifiPassword: '123456' }
+        }.to_json,
+        { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@venue_admin.token}"}
+      end
+    end
+
+    context 'with authorized request' do
+      before(:each) do
+        post "/venues/#{@venues[2].id}/phones",
+        { phone:
+          { wifiSSID: '70:20:a1:ac:b3:69', wifiPassword: '123456' }
+        }.to_json,
+        { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@admin.token}"}
+      end
+
+      it 'responds successfully' do
+        expect(response.status).to eq 201
+      end
+      it 'responds with json object of the phone' do
+        phone = json(response.body)
+        expect(phone[:unique_identifier]).to eq "#{@venues[2].id}-#{phone[:id]}"
+      end
+      it 'returns the location' do
+        phone = json(response.body)
+        expect(response.headers['Location']).to eq "http://www.example.com/venues/#{@venues[2].id}/phones/#{phone[:id]}"
+      end
+    end
   end
 end
 
