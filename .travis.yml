@@ -5,10 +5,13 @@ env:
   matrix:
   - DB=postgresql
   global:
-  - PASSWORD_CONFIRMATION_URL: 'http://localhost:9000/#/confirm'
-  - PASSWORD_RESET_URL: 'http://localhost:9000/#/passwordreset'
+  - PASSWORD_CONFIRMATION_URL: http://localhost:9000/#/confirm
+  - PASSWORD_RESET_URL: http://localhost:9000/#/passwordreset
+  - secure: j0h1yFbecv6+V8sPKINPYuIArxJCjC5Zn1JX1fkS32+xVso5QPOo+nQ4IJwOHLFGwJvqzPZbA97bs6GXA7ZfB4wRxf7qBtVWazAyCRy8/2Z9HhmFzbBdnkh8acjm/m8omFNQdC31yFQv2OmsoIvjIAyhHdSMTKtMaZRjFwHjhHY=
+  - secure: e2chULnSDPnULwDkU9QvpM4a+1UWnVd6rs0MYXLx+2g8u4RUwdFsNtGJc1yM6zKBxW2AsjZEAtUQzX68wYpXtfg3tElysI2u6erteycWqKiANDaYgw4dGysJEC8+c4DXILHivZ/bNGcsq7VLi74HSLUP2mWRe22lelc2Tix+CG0=
 script:
-- CODECLIMATE_REPO_TOKEN=fd51d880ee9a35f0efbca53ad39caf7f75aa31280046c52285a59c6b8771fd6a bundle exec rake
+- CODECLIMATE_REPO_TOKEN=fd51d880ee9a35f0efbca53ad39caf7f75aa31280046c52285a59c6b8771fd6a
+  bundle exec rake
 - bundle exec rspec spec
 before_script:
 - cp config/database.yml.travis config/database.yml
@@ -16,3 +19,5 @@ before_script:
 - bin/rake db:migrate RAILS_ENV=test
 addons:
   postgresql: '9.3'
+  hosts:
+  - travis.dev
