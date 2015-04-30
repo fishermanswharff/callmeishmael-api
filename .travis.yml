@@ -15,7 +15,7 @@ script:
 - bundle exec rspec spec
 before_install:
 - openssl aes-256-cbc -K $encrypted_e0bf36bc7205_key -iv $encrypted_e0bf36bc7205_iv
-  -in callmeishmael_aws.pem.enc -out ~\/.ssh/callmeishmael_aws.pem -d
+  -in callmeishmael_aws.pem.enc -out callmeishmael_aws.pem -d
 before_script:
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test' -U postgres
@@ -32,7 +32,7 @@ deploy:
   run:
   - rake db:migrate db:seed
 after_success:
-  - chmod 600 callmeishmael_aws.pem
-  - ssh-add callmeishmael_aws.pem
-  - git remote add deploy git@github.com:fishermanswharff/callmeishmael-api.git
-  - git push deploy
+- chmod 600 callmeishmael_aws.pem
+- ssh-add callmeishmael_aws.pem
+- git remote add deploy git@github.com:fishermanswharff/callmeishmael-api.git
+- git push deploy
