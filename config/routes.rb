@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   end
   with_options except: [:new, :edit] do
     resources :venues do
-      resources :phones
+      resources :phones do
+        match '/ping' => 'phones#ping', via: [:get, :post]
+      end
     end
     resources :stories
     resources :buttons, only: [:create, :update]

@@ -30,6 +30,9 @@ class PhonesController < ApplicationController
   def destroy
   end
 
+  def ping
+  end
+
   private
 
   def phone_params

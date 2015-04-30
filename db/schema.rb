@@ -45,9 +45,10 @@ ActiveRecord::Schema.define(version: 20150425134424) do
   add_index "phones", ["venue_id"], name: "index_phones_on_venue_id", using: :btree
 
   create_table "stories", force: :cascade do |t|
-    t.text     "unique_identifier",                                     null: false
+    t.text     "unique_identifier"
     t.text     "title",                                                 null: false
-    t.integer  "type",                                      default: 1, null: false
+    t.text     "url",                                                   null: false
+    t.integer  "story_type",                                default: 1, null: false
     t.text     "author_last"
     t.text     "author_first"
     t.integer  "placements"
@@ -57,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150425134424) do
     t.datetime "updated_at"
   end
 
-  add_index "stories", ["type"], name: "index_stories_on_type", using: :btree
+  add_index "stories", ["story_type"], name: "index_stories_on_story_type", using: :btree
   add_index "stories", ["unique_identifier"], name: "index_stories_on_unique_identifier", using: :btree
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: :cascade do |t|
