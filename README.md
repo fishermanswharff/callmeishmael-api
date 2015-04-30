@@ -40,6 +40,8 @@
        resetpassword GET      /resetpassword(.:format)                          admin/users#resetpassword
                      GET      /                                                 redirect(301, https://github.com/fishermanswharff/callmeishmael-api)
 
+
+
 [ci-image]: https://magnum.travis-ci.com/fishermanswharff/callmeishmael-api.svg?token=ywtwaukB2udjyiFG1GbL&branch=master
 [ci-url]: https://magnum.travis-ci.com/fishermanswharff/callmeishmael-api
 
