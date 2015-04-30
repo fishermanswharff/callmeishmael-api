@@ -35,5 +35,6 @@ after_success:
 - chmod 600 callmeishmael_aws.pem
 - ssh-add callmeishmael_aws.pem
 - ssh -i callmeishmael_aws.pem ubuntu@54.69.177.30
+- yes
 - cd www/callmeishmael-api
-- git pull origin master
+- git pull
