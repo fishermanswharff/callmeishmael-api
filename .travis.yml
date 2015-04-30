@@ -21,3 +21,8 @@ addons:
   postgresql: '9.3'
   hosts:
   - travis.dev
+deploy:
+  provider: heroku
+  app: callmeishmael-api
+  api_key:
+    secure: hkw1yiEtjqYZqDmXaTye4kd3kWNcpq0Xd/8Gc/gyH0rOKSLTtduyf1L4EYeRgtL23TxvRSVcQPdC1CQFA72lvdi+KhHx9n8eIIGJ3vR5jGLAP1Rquo+n1b7D2SACHTSuCZoFii0S2N8yr0jvDHQQksBXp/W12hdSsecMD/RrZZw=
