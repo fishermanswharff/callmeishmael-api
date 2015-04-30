@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get '/logout', to: 'admin/users#logout'
   get '/resetpassword', to: 'admin/users#resetpassword'
 
+  get '/' => redirect('https://github.com/fishermanswharff/GatorApi')
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
