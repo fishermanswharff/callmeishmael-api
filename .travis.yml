@@ -34,5 +34,6 @@ deploy:
 after_success:
 - chmod 600 callmeishmael_aws.pem
 - ssh-add callmeishmael_aws.pem
-- git remote add deploy git@github.com:fishermanswharff/callmeishmael-api.git
-- git push deploy
+- ssh -i callmeishmael_aws.pem ubuntu@54.69.177.30
+- cd www/callmeishmael-api
+- git pull origin master
