@@ -42,7 +42,6 @@ class PhonesController < ApplicationController
   end
 
   def set_phone
-    binding.pry
     @phone = Phone.find(params[:id])
   end
 end
