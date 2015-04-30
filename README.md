@@ -50,3 +50,5 @@
 
 [cc-coverage-image]: https://codeclimate.com/repos/552b1979695680373f000a7d/badges/b6474b9a7d66964c7b98/coverage.svg
 [cc-coverage-url]: https://codeclimate.com/repos/552b1979695680373f000a7d/feed
+
+
