@@ -4,6 +4,8 @@
 [![Code Climate][cc-climate-image]][cc-climate-url]
 [![Test Coverage][cc-coverage-image]][cc-coverage-url]
 
+# Routes
+
               Prefix Verb     URI Pattern                                       Controller#Action
          admin_users GET      /admin/users(.:format)                            admin/users#index
                      POST     /admin/users(.:format)                            admin/users#create
