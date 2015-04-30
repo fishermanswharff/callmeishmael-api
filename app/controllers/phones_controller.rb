@@ -31,6 +31,8 @@ class PhonesController < ApplicationController
   end
 
   def ping
+    @phone = Phone.find(params[:phone_id])
+    render json: { response: 'ACK', phone: @phone }, status: :ok
   end
 
   private
@@ -40,6 +42,7 @@ class PhonesController < ApplicationController
   end
 
   def set_phone
+    binding.pry
     @phone = Phone.find(params[:id])
   end
 end
