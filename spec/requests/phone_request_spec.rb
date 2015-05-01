@@ -99,6 +99,59 @@ describe 'Phone API endpoint' do
       end
     end
   end
+
+  describe '#update' do
+
+    context 'by a venue_admin' do
+      before(:each) do
+        patch "/venues/#{@venues[2].id}/phones/#{@phones[5].id}",
+        { phone:
+          { wifiSSID: '00:00:a1:aa:bb:99', wifiPassword: 'tqI$2015' }
+        }.to_json,
+        { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@venue_admin.token}"}
+      end
+
+      it 'responds successfully' do
+        expect(response.status).to eq 200
+      end
+
+      it 'returns the object with successfully updated attributes' do
+        phone = json(response.body)
+        expect(phone[:wifiSSID]).to eq '00:00:a1:aa:bb:99'
+        expect(phone[:wifiPassword]).to eq 'tqI$2015'
+      end
+    end
+
+    context 'by an Ishmael admin works too' do
+      before(:each) do
+        patch "/venues/#{@venues[2].id}/phones/#{@phones[5].id}",
+        { phone:
+          { wifiSSID: '00:00:a1:aa:bb:99', wifiPassword: '$Up3rß3kR3t!' }
+        }.to_json,
+        { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@admin.token}"}
+      end
+      it 'responds successfully' do
+        expect(response.status).to eq 200
+      end
+    end
+  end
+
+  describe '#destroy' do
+    before(:each) do
+      delete "/venues/#{@venues[2].id}/phones/#{@phones[5].id}"
+    end
+
+    it 'responds successfully' do
+      expect(response.status).to eq 204
+    end
+
+    it 'deletes the post and responds not found' do
+      get "/venues/#{@venues[2].id}/phones/#{@phones[5].id}"
+      r = json(response.body)
+      expect(r[:error]).to eq 'Record Not Found'
+      expect(response.status).to eq 404
+    end
+  end
 end
 
 

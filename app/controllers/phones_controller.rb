@@ -25,9 +25,16 @@ class PhonesController < ApplicationController
   end
 
   def update
+    if @phone.update(phone_params)
+      render json: @phone, status: 200, location: venue_phone_url(Venue.find(params[:venue_id]), @phone)
+    else
+      render json: @phone.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @phone.destroy
+    head :no_content
   end
 
   def ping
