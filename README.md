@@ -10,19 +10,23 @@
 
 ## Installation
 
+
+
 - install dependencies:
   - [Postgres 9.3.5](https://github.com/PostgresApp/PostgresApp/releases/tag/9.3.6.0)
-  - Rails 4.2
-  - Ruby 2.2.1
-- `git checkout <ssh url>`
-- `cd path/you/just/created`
-- `bundle`
-- `rake db:create db:migrate db:seed`
-- `rails s`
+  - [Rails 4.2](https://github.com/rails/rails)
+  - [Ruby 2.2.1 using RVM](https://rvm.io/) *I use rvm to manage ruby gems*
+  - [Make sure you have Git installed.](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+- `$ git checkout <ssh url>`
+- `$ cd path/you/just/created`
+- `$ bundle`
+- `$ rake db:create db:migrate db:seed`
+- `$ rails s`
 - Open up a new shell
-- `rails c`
-- `phone = Phone.where(venue: Venue.find_by(name:'The Strand')).first`
-- `JSON.parse(phone.stories.each_with_object({}) { |i, o| o[i.buttons[0].assignment] = i.title }.sort.to_h.to_json)`
+- `$ cd path/you/just/created`
+- `$ rails c`
+- `pry(main)> phone = Phone.where(venue: Venue.find_by(name:'The Strand')).first`
+- `pry(main)> JSON.parse(phone.stories.each_with_object({}) { |i, o| o[i.buttons[0].assignment] = i.title }.sort.to_h.to_json)`
 - Should give you:
 
 ```ruby
