@@ -6,7 +6,14 @@
 
 # Installation
 
-
+- `git checkout <ssh url>`
+- `cd path/you/just/created`
+- `bundle`
+- `rake db:create db:migrate db:seed`
+- `rails s`
+- Open up a new shell
+- `rails c`
+- `
 
 # Routes
 
