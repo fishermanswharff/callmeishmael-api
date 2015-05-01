@@ -13,7 +13,7 @@
 - `rails s`
 - Open up a new shell
 - `rails c`
-- `
+- `phone = Phone.where(venue: Venue.find_by(name:'The Strand')).first`
 
 # Routes
 
