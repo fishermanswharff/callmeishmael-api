@@ -1,11 +1,19 @@
 # Call Me Ishmael API
 
+:telephone_receiver: :closed_book: :orange_book: :notebook_with_decorative_cover: :notebook: :books: :mega: :zap: :speak_no_evil: :speech_balloon: :thought_balloon:
+
+## Code Status
+
 [![Build Status][ci-image]][ci-url]
 [![Code Climate][cc-climate-image]][cc-climate-url]
 [![Test Coverage][cc-coverage-image]][cc-coverage-url]
 
-# Installation
+## Installation
 
+- install dependencies:
+  - [Postgres 9.3.5](https://github.com/PostgresApp/PostgresApp/releases/tag/9.3.6.0)
+  - Rails 4.2
+  - Ruby 2.2.1
 - `git checkout <ssh url>`
 - `cd path/you/just/created`
 - `bundle`
@@ -14,8 +22,27 @@
 - Open up a new shell
 - `rails c`
 - `phone = Phone.where(venue: Venue.find_by(name:'The Strand')).first`
+- `JSON.parse(phone.stories.each_with_object({}) { |i, o| o[i.buttons[0].assignment] = i.title }.sort.to_h.to_json)`
+- Should give you:
 
-# Routes
+```ruby
+{
+  "#"=>"Crime And Punishment",
+  "*"=>"Gone Girl",
+  "0"=>"Peter Pan",
+  "1"=>"The Infernal Devices",
+  "2"=>"Trigger",
+  "3"=>"Battle Royale",
+  "4"=>"Looking For Alaska",
+  "5"=>"The Fault In Our Stars",
+  "6"=>"Bossy Pants",
+  "7"=>"A Dogs Purpose",
+  "8"=>"City of Bones (Mortal Instruments)",
+  "9"=>"Radical"
+}
+```
+
+## Routes
 
               Prefix Verb     URI Pattern                                       Controller#Action
          admin_users GET      /admin/users(.:format)                            admin/users#index
