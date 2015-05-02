@@ -29,9 +29,3 @@ class Phone < ActiveRecord::Base
     SecureRandom.uuid.gsub(/\-/, '')
   end
 end
-
-# Category.includes(articles: [{ comments: :guest }, :tags]).find(1)
-
-# This will find the category with id 1 and eager load all of the
-# associated articles, the associated articles' tags and comments,
-# and every comment's guest association.
