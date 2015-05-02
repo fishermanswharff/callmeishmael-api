@@ -7,9 +7,9 @@ RSpec.describe 'Stories API Endpoint' do
     @another_venue_admin = User.create({firstname: 'baz', lastname: 'fah', phonenumber: 5555555555, username: 'bazfah', role: 'venue_admin', email: 'baz@fah.com', password: 'secret'})
     @admin = User.create({firstname: 'Logan', lastname: 'Smalley', phonenumber: 5555555555, username: 'logan', role: 'admin', email: 'logan@ted.com', password: 'secret'})
     Venue.create!([
-      { name: 'The Strand', user: User.find_by_email('fishermanswharff@mac.com') },
-      { name: 'Reading Rainbow', user: User.find_by_email('fishermanswharff@mac.com') },
-      { name: 'Sesame Street', user: User.find_by_email('fishermanswharff@mac.com') },
+      { name: 'The Strand', user: User.find_by_email('foo@bar.com') },
+      { name: 'Reading Rainbow', user: User.find_by_email('foo@bar.com') },
+      { name: 'Sesame Street', user: User.find_by_email('foo@bar.com') },
     ])
     @stories = Story.create!([
       { title: 'The Infernal Devices', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Clare' },
