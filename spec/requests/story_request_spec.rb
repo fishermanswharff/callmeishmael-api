@@ -3,6 +3,11 @@ require 'rails_helper'
 RSpec.describe 'Stories API Endpoint' do
 
   before(:all) do
+    Venue.create!([
+      { name: 'The Strand', user: User.find_by_email('fishermanswharff@mac.com') },
+      { name: 'Reading Rainbow', user: User.find_by_email('fishermanswharff@mac.com') },
+      { name: 'Sesame Street', user: User.find_by_email('fishermanswharff@mac.com') },
+    ])
     Story.create!([
       { title: 'The Infernal Devices', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Clare' },
       { title: 'Trigger', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Vaught' },
@@ -28,6 +33,34 @@ RSpec.describe 'Stories API Endpoint' do
       { title: 'Crime And Punishment', url: 'http://callmeishmael.com', story_type: 0, author_last: 'Fyodor', author_first: 'Dostoyevsky' },
       { title: 'Peter Pan', url: 'http://callmeishmael.com', story_type: 0, author_last: 'Barrie', author_first: 'J. M.' },
     ])
+    phones = Phone.create!([
+      { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: Venue.find_by_name('The Strand') },
+      { wifiSSID: '71:30:b1:bc:c4:78', wifiPassword: 'password', venue: Venue.find_by_name('The Strand') },
+      { wifiSSID: '72:33:a2:ad:c2:69', wifiPassword: 'password', venue: Venue.find_by_name('Reading Rainbow') },
+      { wifiSSID: '72:33:a2:ad:c2:69', wifiPassword: 'password', venue: Venue.find_by_name('Reading Rainbow') },
+      { wifiSSID: '32:21:d2:bd:a1:85', wifiPassword: 'password', venue: Venue.find_by_name('Sesame Street') },
+    ])
+    buttons = Button.create!([
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: phones[0] },
+      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: phones[0] },
+      { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: phones[0] },
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: phones[1] },
+      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: phones[1] },
+      { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: phones[1] },
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: phones[2] },
+      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: phones[2] },
+      { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: phones[2] },
+      { assignment: '1', story: Story.find_by_title('The Infernal Devices'), phone: phones[0] },
+      { assignment: '2', story: Story.find_by_title('Trigger'), phone: phones[0] },
+      { assignment: '3', story: Story.find_by_title('Battle Royale'), phone: phones[0] },
+      { assignment: '4', story: Story.find_by_title('Looking For Alaska'), phone: phones[0] },
+      { assignment: '5', story: Story.find_by_title('The Fault In Our Stars'), phone: phones[0] },
+      { assignment: '6', story: Story.find_by_title('Bossy Pants'), phone: phones[0] },
+      { assignment: '7', story: Story.find_by_title('A Dogs Purpose'), phone: phones[0] },
+      { assignment: '8', story: Story.find_by_title('City of Bones (Mortal Instruments)'), phone: phones[0] },
+      { assignment: '9', story: Story.find_by_title('Radical'), phone: phones[0] }
+    ])
+
   end
 
   describe '#index' do
