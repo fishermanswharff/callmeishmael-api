@@ -13,6 +13,10 @@ class Phone < ActiveRecord::Base
     end
   end
 
+  def get_urls
+    self.stories.sort.map { |story| story.url }
+  end
+
   private
   def set_token
     return if token.present?

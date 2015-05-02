@@ -39,12 +39,12 @@ class PhonesController < ApplicationController
   end
 
   def ping
-    render json: { response: 'ACK', phone: @phone  }
-, status: :ok
+    render json: { response: 'ACK', phone: @phone  }, status: :ok
   end
 
   def files
-    render json: @phone, status: :ok
+    files = @phone.get_urls
+    render json: {files: files}, status: :ok
   end
 
   private
@@ -60,4 +60,12 @@ class PhonesController < ApplicationController
   def get_phone_by_phoneid
     @phone = Phone.find(params[:phone_id])
   end
+
 end
+
+
+
+
+
+
+

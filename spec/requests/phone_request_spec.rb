@@ -26,11 +26,11 @@ describe 'Phone API endpoint' do
       { wifiSSID: '71:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venues[2]},
     ])
     @stories = Story.create!([
-      { title: 'The Infernal Devices', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Clare' },
-      { title: 'Trigger', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Vaught' },
-      { title: 'Battle Royale', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Takami' },
-      { title: 'Looking For Alaska', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Green', author_first: 'John' },
-      { title: 'The Fault In Our Stars', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Green', author_first: 'John' },
+      { title: 'The Infernal Devices', url: 'http://www.oocities.org/gchafe/redwing.wav', story_type: 'venue', author_last: 'Clare' },
+      { title: 'Trigger', url: 'http://ravensview.blogs.com/ravens/RwOkalee.wav', story_type: 'venue', author_last: 'Vaught' },
+      { title: 'Battle Royale', url: 'http://www.thebirdguide.com/gif_dir/tricolored.wav', story_type: 'venue', author_last: 'Takami' },
+      { title: 'Looking For Alaska', url: 'http://vivanatura.org/sounds/Melodious%20blackbird%20(Dives%20dives).wav', story_type: 'venue', author_last: 'Green', author_first: 'John' },
+      { title: 'The Fault In Our Stars', url: 'http://www.birdgard.net/indexnl/rwblkbrd.wav', story_type: 'venue', author_last: 'Green', author_first: 'John' },
       { title: 'Bossy Pants', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Fey' },
       { title: 'A Dogs Purpose', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Cameron', author_first: 'Bruce' },
       { title: 'City of Bones (Mortal Instruments)', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Clare', author_first: '' },
