@@ -7,12 +7,13 @@ Rails.application.routes.draw do
     resources :venues do
       resources :phones do
         match '/ping' => 'phones#ping', via: [:get, :post]
+        match '/files' => 'phones#files', via: [:get, :post]
       end
     end
     resources :stories
-    resources :buttons, only: [:create, :update]
   end
 
+  resources :buttons, only: [:create, :update]
   post '/login', to: 'admin/users#login'
   get '/logout', to: 'admin/users#logout'
   get '/resetpassword', to: 'admin/users#resetpassword'
