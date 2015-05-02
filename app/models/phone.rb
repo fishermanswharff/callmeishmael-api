@@ -14,7 +14,11 @@ class Phone < ActiveRecord::Base
   end
 
   def get_urls
-    self.stories.sort.map { |story| story.url }
+    binding.pry
+    # self.stories.each_with_object({}) { |i, o|
+    #   button = i.buttons.map { |b| b if b.phone_id == self.id }.first
+    #   o[i.button.assignment] = i.title
+    # }.sort.to_h.to_json
   end
 
   private
@@ -27,3 +31,9 @@ class Phone < ActiveRecord::Base
     SecureRandom.uuid.gsub(/\-/, '')
   end
 end
+
+# Category.includes(articles: [{ comments: :guest }, :tags]).find(1)
+
+# This will find the category with id 1 and eager load all of the
+# associated articles, the associated articles' tags and comments,
+# and every comment's guest association.
