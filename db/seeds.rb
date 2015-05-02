@@ -139,7 +139,7 @@ puts "Seeded #{stories.length} stories: "
 stories.each { |s| p "#{s.title} by #{s.author_last}, story_type: #{s.story_type}" }
 puts "\n\n"
 
-puts 'Seeing buttons…'
+puts 'Seeding buttons…'
 buttons = Button.create!([
   { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: phones[0] },
   { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: phones[0] },
