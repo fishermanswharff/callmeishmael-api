@@ -44,7 +44,7 @@ class PhonesController < ApplicationController
 
   def files
     files = @phone.get_urls
-    render json: {files: files}, status: :ok
+    render json: { files: files }, status: :ok
   end
 
   private
