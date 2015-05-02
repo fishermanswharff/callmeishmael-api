@@ -1,8 +1,10 @@
 class StoriesController < ApplicationController
 
-  before_create :admin_only, only: [:create]
+  before_filter :admin_only, only: [:create]
 
   def index
+    stories = Story.all
+    render json: stories, status: :ok
   end
 
   def show
