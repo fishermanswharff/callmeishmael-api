@@ -14,7 +14,6 @@ describe 'Phone API endpoint' do
       { name: '21 Shepard', user: @venue_admin },
       { name: 'Strand Bookstore', user: @venue_admin },
     ])
-
     @phones = Phone.create([
       { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: @venues[0]},
       { wifiSSID: '79:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venues[0]},
@@ -25,6 +24,51 @@ describe 'Phone API endpoint' do
       { wifiSSID: '73:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venues[2]},
       { wifiSSID: '72:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venues[2]},
       { wifiSSID: '71:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venues[2]},
+    ])
+    @stories = Story.create!([
+      { title: 'The Infernal Devices', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Clare' },
+      { title: 'Trigger', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Vaught' },
+      { title: 'Battle Royale', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Takami' },
+      { title: 'Looking For Alaska', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Green', author_first: 'John' },
+      { title: 'The Fault In Our Stars', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Green', author_first: 'John' },
+      { title: 'Bossy Pants', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Fey' },
+      { title: 'A Dogs Purpose', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Cameron', author_first: 'Bruce' },
+      { title: 'City of Bones (Mortal Instruments)', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Clare', author_first: '' },
+      { title: 'Radical', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Platt', author_first: 'David' },
+      { title: 'A Prayer for Owen Meany', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Irving', author_first: 'John' },
+      { title: 'Speak', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Anderson', author_first: 'Laurie' },
+      { title: 'If I Stay', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Forman', author_first: 'Gayle' },
+      { title: 'The Perks of Being A Wallflower', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Chbosky', author_first: 'Stephen' },
+      { title: 'The Great Gatsby', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Fitzgerald', author_first: 'F Scott' },
+      { title: 'Eleanor & Park', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Rowell', author_first: 'Rainbow' },
+      { title: 'The Spectacular Now', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Tim', author_first: 'Tharp' },
+      { title: 'Feed', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Grant', author_first: 'Mira' },
+      { title: 'The Alchemist', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Coelho', author_first: 'Paulo' },
+      { title: 'Moby Dick', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Melville', author_first: 'Herman' },
+      { title: 'Where’d You Go Bernadette', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Semple', author_first: 'Maria' },
+      { title: 'Gone Girl', url: 'http://callmeishmael.com', story_type: 'fixed', author_last: 'Flynn', author_first: 'Gillian' },
+      { title: 'Crime And Punishment', url: 'http://callmeishmael.com', story_type: 'fixed', author_last: 'Fyodor', author_first: 'Dostoyevsky' },
+      { title: 'Peter Pan', url: 'http://callmeishmael.com', story_type: 'fixed', author_last: 'Barrie', author_first: 'J. M.' },
+    ])
+    @buttons = Button.create!([
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[0] },
+      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[0] },
+      { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[0] },
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[1] },
+      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[1] },
+      { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[1] },
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[2] },
+      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[2] },
+      { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[2] },
+      { assignment: '1', story: Story.find_by_title('The Infernal Devices'), phone: @phones[0] },
+      { assignment: '2', story: Story.find_by_title('Trigger'), phone: @phones[0] },
+      { assignment: '3', story: Story.find_by_title('Battle Royale'), phone: @phones[0] },
+      { assignment: '4', story: Story.find_by_title('Looking For Alaska'), phone: @phones[0] },
+      { assignment: '5', story: Story.find_by_title('The Fault In Our Stars'), phone: @phones[0] },
+      { assignment: '6', story: Story.find_by_title('Bossy Pants'), phone: @phones[0] },
+      { assignment: '7', story: Story.find_by_title('A Dogs Purpose'), phone: @phones[0] },
+      { assignment: '8', story: Story.find_by_title('City of Bones (Mortal Instruments)'), phone: @phones[0] },
+      { assignment: '9', story: Story.find_by_title('Radical'), phone: @phones[0] }
     ])
   end
 
@@ -150,6 +194,19 @@ describe 'Phone API endpoint' do
       r = json(response.body)
       expect(r[:error]).to eq 'Record Not Found'
       expect(response.status).to eq 404
+    end
+  end
+
+  describe '#ping' do
+
+  end
+
+  describe '#files' do
+    it 'responds successfully' do
+      get "/venues/#{@venues[0].id}/phones/#{@phones[0].id}/files"
+      expect(response.status).to eq 200
+
+      p json(response.body)
     end
   end
 end

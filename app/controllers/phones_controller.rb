@@ -1,6 +1,7 @@
 class PhonesController < ApplicationController
 
-  before_action :set_phone, only: [:show, :update, :destroy]
+  before_action :get_phone_by_id, only: [:show, :update, :destroy]
+  before_action :get_phone_by_phoneid, only: [:ping, :files]
   before_filter :admin_only, only: [:create]
 
   def index
@@ -38,8 +39,12 @@ class PhonesController < ApplicationController
   end
 
   def ping
-    @phone = Phone.find(params[:phone_id])
-    render json: { response: 'ACK', phone: @phone }, status: :ok
+    render json: { response: 'ACK', phone: @phone  }
+, status: :ok
+  end
+
+  def files
+    render json: @phone, status: :ok
   end
 
   private
@@ -48,7 +53,11 @@ class PhonesController < ApplicationController
     params.require(:phone).permit(:wifiSSID, :wifiPassword, :venue_id)
   end
 
-  def set_phone
+  def get_phone_by_id
     @phone = Phone.find(params[:id])
+  end
+
+  def get_phone_by_phoneid
+    @phone = Phone.find(params[:phone_id])
   end
 end

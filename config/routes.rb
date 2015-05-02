@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :venues do
       resources :phones do
         match '/ping' => 'phones#ping', via: [:get, :post]
-        match '/files' => 'phones#files', via: [:get, :post]
+        match '/files' => 'phones#files', via: [:get]
       end
     end
     resources :stories
