@@ -31,24 +31,24 @@ describe 'Phone API endpoint' do
       { title: 'Battle Royale', url: 'http://www.thebirdguide.com/gif_dir/tricolored.wav', story_type: 'venue', author_last: 'Takami' },
       { title: 'Looking For Alaska', url: 'http://vivanatura.org/sounds/Melodious%20blackbird%20(Dives%20dives).wav', story_type: 'venue', author_last: 'Green', author_first: 'John' },
       { title: 'The Fault In Our Stars', url: 'http://www.birdgard.net/indexnl/rwblkbrd.wav', story_type: 'venue', author_last: 'Green', author_first: 'John' },
-      { title: 'Bossy Pants', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Fey' },
-      { title: 'A Dogs Purpose', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Cameron', author_first: 'Bruce' },
-      { title: 'City of Bones (Mortal Instruments)', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Clare', author_first: '' },
-      { title: 'Radical', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Platt', author_first: 'David' },
-      { title: 'A Prayer for Owen Meany', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Irving', author_first: 'John' },
-      { title: 'Speak', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Anderson', author_first: 'Laurie' },
-      { title: 'If I Stay', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Forman', author_first: 'Gayle' },
-      { title: 'The Perks of Being A Wallflower', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Chbosky', author_first: 'Stephen' },
-      { title: 'The Great Gatsby', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Fitzgerald', author_first: 'F Scott' },
-      { title: 'Eleanor & Park', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Rowell', author_first: 'Rainbow' },
-      { title: 'The Spectacular Now', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Tim', author_first: 'Tharp' },
-      { title: 'Feed', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Grant', author_first: 'Mira' },
-      { title: 'The Alchemist', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Coelho', author_first: 'Paulo' },
-      { title: 'Moby Dick', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Melville', author_first: 'Herman' },
-      { title: 'Where’d You Go Bernadette', url: 'http://callmeishmael.com', story_type: 'venue', author_last: 'Semple', author_first: 'Maria' },
-      { title: 'Gone Girl', url: 'http://callmeishmael.com', story_type: 'fixed', author_last: 'Flynn', author_first: 'Gillian' },
-      { title: 'Crime And Punishment', url: 'http://callmeishmael.com', story_type: 'fixed', author_last: 'Fyodor', author_first: 'Dostoyevsky' },
-      { title: 'Peter Pan', url: 'http://callmeishmael.com', story_type: 'fixed', author_last: 'Barrie', author_first: 'J. M.' },
+      { title: 'Bossy Pants', url: 'http://callmeishmael.com/tinafey.mp3', story_type: 'venue', author_last: 'Fey' },
+      { title: 'A Dogs Purpose', url: 'http://callmeishmael.com/dogspurpose.mp3', story_type: 'venue', author_last: 'Cameron', author_first: 'Bruce' },
+      { title: 'City of Bones (Mortal Instruments)', url: 'http://callmeishmael.com/cityofbones.mp3', story_type: 'venue', author_last: 'Clare', author_first: '' },
+      { title: 'Radical', url: 'http://callmeishmael.com/radical.mp3', story_type: 'venue', author_last: 'Platt', author_first: 'David' },
+      { title: 'A Prayer for Owen Meany', url: 'http://callmeishmael.com/prayerforowen.mp3', story_type: 'venue', author_last: 'Irving', author_first: 'John' },
+      { title: 'Speak', url: 'http://callmeishmael.com/speak.mp3', story_type: 'venue', author_last: 'Anderson', author_first: 'Laurie' },
+      { title: 'If I Stay', url: 'http://callmeishmael.com/ifistay.mp3', story_type: 'venue', author_last: 'Forman', author_first: 'Gayle' },
+      { title: 'The Perks of Being A Wallflower', url: 'http://callmeishmael.com/wallflower.mp3', story_type: 'venue', author_last: 'Chbosky', author_first: 'Stephen' },
+      { title: 'The Great Gatsby', url: 'http://callmeishmael.com/greatgatsby.mp3', story_type: 'venue', author_last: 'Fitzgerald', author_first: 'F Scott' },
+      { title: 'Eleanor & Park', url: 'http://callmeishmael.com/eleanorandpark.mp3', story_type: 'venue', author_last: 'Rowell', author_first: 'Rainbow' },
+      { title: 'The Spectacular Now', url: 'http://callmeishmael.com/thespectacularnow.mp3', story_type: 'venue', author_last: 'Tim', author_first: 'Tharp' },
+      { title: 'Feed', url: 'http://callmeishmael.com/feed.mp3', story_type: 'venue', author_last: 'Grant', author_first: 'Mira' },
+      { title: 'The Alchemist', url: 'http://callmeishmael.com/thealchemist.mp3', story_type: 'venue', author_last: 'Coelho', author_first: 'Paulo' },
+      { title: 'Moby Dick', url: 'http://callmeishmael.com/mobydick.mp3', story_type: 'venue', author_last: 'Melville', author_first: 'Herman' },
+      { title: 'Where’d You Go Bernadette', url: 'http://callmeishmael.com/wheredyougobernadette.mp3', story_type: 'venue', author_last: 'Semple', author_first: 'Maria' },
+      { title: 'Gone Girl', url: 'http://callmeishmael.com/gonegirl.mp3', story_type: 'fixed', author_last: 'Flynn', author_first: 'Gillian' },
+      { title: 'Crime And Punishment', url: 'http://callmeishmael.com/crimeandpunishment.mp3', story_type: 'fixed', author_last: 'Fyodor', author_first: 'Dostoyevsky' },
+      { title: 'Peter Pan', url: 'http://callmeishmael.com/peterpan.mp3', story_type: 'fixed', author_last: 'Barrie', author_first: 'J. M.' },
     ])
     @buttons = Button.create!([
       { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[0] },
@@ -66,18 +66,27 @@ describe 'Phone API endpoint' do
       { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[1] },
       { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[1] },
       { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[1] },
-      { assignment: '2', story: Story.find_by_title('The Infernal Devices'), phone: @phones[1] },
-      { assignment: '3', story: Story.find_by_title('Trigger'), phone: @phones[1] },
-      { assignment: '4', story: Story.find_by_title('Battle Royale'), phone: @phones[1] },
-      { assignment: '5', story: Story.find_by_title('Looking For Alaska'), phone: @phones[1] },
-      { assignment: '6', story: Story.find_by_title('The Fault In Our Stars'), phone: @phones[1] },
+      { assignment: '6', story: Story.find_by_title('Speak'), phone: @phones[1] },
+      { assignment: '5', story: Story.find_by_title('If I Stay'), phone: @phones[1] },
+      { assignment: '2', story: Story.find_by_title('The Spectacular Now'), phone: @phones[1] },
+      { assignment: '1', story: Story.find_by_title('Feed'), phone: @phones[1] },
+      { assignment: '9', story: Story.find_by_title('Where’d You Go Bernadette'), phone: @phones[1] },
+      { assignment: '3', story: Story.find_by_title('The Perks of Being A Wallflower'), phone: @phones[1] },
+      { assignment: '4', story: Story.find_by_title('A Prayer for Owen Meany'), phone: @phones[1] },
+      { assignment: '8', story: Story.find_by_title('Eleanor & Park'), phone: @phones[1] },
       { assignment: '7', story: Story.find_by_title('Bossy Pants'), phone: @phones[1] },
-      { assignment: '8', story: Story.find_by_title('A Dogs Purpose'), phone: @phones[1] },
-      { assignment: '9', story: Story.find_by_title('City of Bones (Mortal Instruments)'), phone: @phones[1] },
-      { assignment: '1', story: Story.find_by_title('Radical'), phone: @phones[1] },
       { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[2] },
       { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[2] },
       { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[2] },
+      { assignment: '3', story: Story.find_by_title('Speak'), phone: @phones[2] },
+      { assignment: '1', story: Story.find_by_title('If I Stay'), phone: @phones[2] },
+      { assignment: '5', story: Story.find_by_title('The Spectacular Now'), phone: @phones[2] },
+      { assignment: '8', story: Story.find_by_title('Feed'), phone: @phones[2] },
+      { assignment: '6', story: Story.find_by_title('Where’d You Go Bernadette'), phone: @phones[2] },
+      { assignment: '2', story: Story.find_by_title('The Perks of Being A Wallflower'), phone: @phones[2] },
+      { assignment: '4', story: Story.find_by_title('A Prayer for Owen Meany'), phone: @phones[2] },
+      { assignment: '7', story: Story.find_by_title('Eleanor & Park'), phone: @phones[2] },
+      { assignment: '9', story: Story.find_by_title('Bossy Pants'), phone: @phones[2] },
     ])
   end
 
@@ -211,11 +220,13 @@ describe 'Phone API endpoint' do
   end
 
   describe '#files' do
+    before(:each) do
+      get "/venues/#{@venues[0].id}/phones/#{@phones[2].id}/files"
+    end
     it 'responds successfully' do
-      get "/venues/#{@venues[0].id}/phones/#{@phones[0].id}/files"
       expect(response.status).to eq 200
-
-      p json(response.body)
+      stories = json(response.body)
+      p stories
     end
   end
 end

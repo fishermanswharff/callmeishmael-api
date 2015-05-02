@@ -14,11 +14,8 @@ class Phone < ActiveRecord::Base
   end
 
   def get_urls
-    binding.pry
-    # self.stories.each_with_object({}) { |i, o|
-    #   button = i.buttons.map { |b| b if b.phone_id == self.id }.first
-    #   o[i.button.assignment] = i.title
-    # }.sort.to_h.to_json
+    stories = Story.find_by_sql("SELECT stories.url, buttons.assignment FROM stories INNER JOIN buttons ON (buttons.story_id = stories.id) WHERE buttons.phone_id = #{self.id} ORDER BY buttons.assignment;")
+    stories.map { |s| s.url }.to_json
   end
 
   private
