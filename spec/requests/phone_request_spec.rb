@@ -52,7 +52,6 @@ describe 'Phone API endpoint' do
     ])
     @buttons = Button.create!([
       { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[0] },
-      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[0] },
       { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[0] },
       { assignment: '1', story: Story.find_by_title('The Infernal Devices'), phone: @phones[0] },
       { assignment: '2', story: Story.find_by_title('Trigger'), phone: @phones[0] },
@@ -63,8 +62,8 @@ describe 'Phone API endpoint' do
       { assignment: '7', story: Story.find_by_title('A Dogs Purpose'), phone: @phones[0] },
       { assignment: '8', story: Story.find_by_title('City of Bones (Mortal Instruments)'), phone: @phones[0] },
       { assignment: '9', story: Story.find_by_title('Radical'), phone: @phones[0] },
-      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[1] },
       { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[1] },
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[1] },
       { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[1] },
       { assignment: '6', story: Story.find_by_title('Speak'), phone: @phones[1] },
       { assignment: '5', story: Story.find_by_title('If I Stay'), phone: @phones[1] },
@@ -75,8 +74,8 @@ describe 'Phone API endpoint' do
       { assignment: '4', story: Story.find_by_title('A Prayer for Owen Meany'), phone: @phones[1] },
       { assignment: '8', story: Story.find_by_title('Eleanor & Park'), phone: @phones[1] },
       { assignment: '7', story: Story.find_by_title('Bossy Pants'), phone: @phones[1] },
-      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[2] },
       { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[2] },
+      { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: @phones[2] },
       { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: @phones[2] },
       { assignment: '3', story: Story.find_by_title('Speak'), phone: @phones[2] },
       { assignment: '1', story: Story.find_by_title('If I Stay'), phone: @phones[2] },
@@ -87,6 +86,7 @@ describe 'Phone API endpoint' do
       { assignment: '4', story: Story.find_by_title('A Prayer for Owen Meany'), phone: @phones[2] },
       { assignment: '7', story: Story.find_by_title('Eleanor & Park'), phone: @phones[2] },
       { assignment: '9', story: Story.find_by_title('Bossy Pants'), phone: @phones[2] },
+      { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: @phones[0] },
     ])
   end
 
@@ -220,10 +220,9 @@ describe 'Phone API endpoint' do
   end
 
   describe '#files' do
-    before(:each) do
-      get "/venues/#{@venues[0].id}/phones/#{@phones[2].id}/files"
-    end
     it 'responds successfully' do
+      get "/venues/#{@venues[0].id}/phones/#{@phones[2].id}/files"
+
       expect(response.status).to eq 200
       stories = json(response.body)
       expect(stories[0]).to eq 'http://callmeishmael.com/crimeandpunishment.mp3'
@@ -239,5 +238,28 @@ describe 'Phone API endpoint' do
       expect(stories[10]).to eq 'http://callmeishmael.com/feed.mp3'
       expect(stories[11]).to eq 'http://callmeishmael.com/tinafey.mp3'
     end
+    it 'responds successfully' do
+      get "/venues/#{@venues[0].id}/phones/#{@phones[1].id}/files"
+      expect(response.status).to eq 200
+      stories = json(response.body)
+      expect(stories[0]).to eq 'http://callmeishmael.com/crimeandpunishment.mp3'
+      expect(stories[1]).to eq 'http://callmeishmael.com/gonegirl.mp3'
+      expect(stories[2]).to eq 'http://callmeishmael.com/peterpan.mp3'
+      expect(stories[3]).to eq 'http://callmeishmael.com/feed.mp3'
+      expect(stories[4]).to eq 'http://callmeishmael.com/thespectacularnow.mp3'
+    end
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
