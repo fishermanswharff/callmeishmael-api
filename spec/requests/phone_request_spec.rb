@@ -225,7 +225,6 @@ describe 'Phone API endpoint' do
 
       expect(response.status).to eq 200
       stories = json(response.body)
-      p stories
       expect(stories[0]).to eq 'http://callmeishmael.com/crimeandpunishment.mp3'
       expect(stories[1]).to eq 'http://callmeishmael.com/gonegirl.mp3'
       expect(stories[2]).to eq 'http://callmeishmael.com/peterpan.mp3'
