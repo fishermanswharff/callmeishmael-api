@@ -16,7 +16,7 @@ class Phone < ActiveRecord::Base
   def get_urls
     # ordered by assignment: #,*,0,1,2,…
     stories = Story.find_by_sql("SELECT stories.url, buttons.assignment FROM stories INNER JOIN buttons ON (buttons.story_id = stories.id) WHERE buttons.phone_id = #{self.id} ORDER BY buttons.assignment;")
-    JSON.parse(stories.to_json).map { |s| s["url"] }.to_json
+    stories.to_json
   end
 
   private
