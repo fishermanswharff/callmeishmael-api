@@ -19,29 +19,26 @@
 - `$ cd path/you/just/created`
 - `$ bundle`
 - `$ rake db:create db:migrate db:seed`
-- `$ rails s`
-- Open up a new shell
-- `$ cd path/you/just/created`
-- `$ rails c`
-- `pry(main)> phone = Phone.where(venue: Venue.find_by(name:'The Strand')).first`
-- `pry(main)> JSON.parse(phone.stories.each_with_object({}) { |i, o| o[i.buttons[0].assignment] = i.title }.sort.to_h.to_json)`
-- Should give you:
+- `$ rails s -p 3333`
+- `curl http://localhost:3333/venues/1/phones/1/files` should result in this json array:
 
 ```ruby
-{
-  "#"=>"Crime And Punishment",
-  "*"=>"Gone Girl",
-  "0"=>"Peter Pan",
-  "1"=>"The Infernal Devices",
-  "2"=>"Trigger",
-  "3"=>"Battle Royale",
-  "4"=>"Looking For Alaska",
-  "5"=>"The Fault In Our Stars",
-  "6"=>"Bossy Pants",
-  "7"=>"A Dogs Purpose",
-  "8"=>"City of Bones (Mortal Instruments)",
-  "9"=>"Radical"
-}
+
+[
+  "http://callmeishmael.com/crimeandpunishment.mp3",
+  "http://callmeishmael.com/gonegirl.mp3",
+  "http://callmeishmael.com/peterpan.mp3",
+  "http://www.oocities.org/gchafe/redwing.wav",
+  "http://ravensview.blogs.com/ravens/RwOkalee.wav",
+  "http://www.thebirdguide.com/gif_dir/tricolored.wav",
+  "http://vivanatura.org/sounds/Melodious%20blackbird%20(Dives%20dives).wav",
+  "http://www.birdgard.net/indexnl/rwblkbrd.wav",
+  "http://callmeishmael.com/tinafey.mp3",
+  "http://callmeishmael.com/dogspurpose.mp3",
+  "http://callmeishmael.com/cityofbones.mp3",
+  "http://callmeishmael.com/radical.mp3"
+]
+
 ```
 
 ## Routes
