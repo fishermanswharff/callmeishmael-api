@@ -226,29 +226,28 @@ describe 'Phone API endpoint' do
       expect(response.status).to eq 200
       stories = json(response.body)
       p stories
-      # expect(stories[0]).to eq 'http://callmeishmael.com/crimeandpunishment.mp3'
-      # expect(stories[1]).to eq 'http://callmeishmael.com/gonegirl.mp3'
-      # expect(stories[2]).to eq 'http://callmeishmael.com/peterpan.mp3'
-      # expect(stories[3]).to eq 'http://callmeishmael.com/ifistay.mp3'
-      # expect(stories[4]).to eq 'http://callmeishmael.com/wallflower.mp3'
-      # expect(stories[5]).to eq 'http://callmeishmael.com/speak.mp3'
-      # expect(stories[6]).to eq 'http://callmeishmael.com/prayerforowen.mp3'
-      # expect(stories[7]).to eq 'http://callmeishmael.com/thespectacularnow.mp3'
-      # expect(stories[8]).to eq 'http://callmeishmael.com/wheredyougobernadette.mp3'
-      # expect(stories[9]).to eq 'http://callmeishmael.com/eleanorandpark.mp3'
-      # expect(stories[10]).to eq 'http://callmeishmael.com/feed.mp3'
-      # expect(stories[11]).to eq 'http://callmeishmael.com/tinafey.mp3'
+      expect(stories[0]).to eq 'http://callmeishmael.com/crimeandpunishment.mp3'
+      expect(stories[1]).to eq 'http://callmeishmael.com/gonegirl.mp3'
+      expect(stories[2]).to eq 'http://callmeishmael.com/peterpan.mp3'
+      expect(stories[3]).to eq 'http://callmeishmael.com/ifistay.mp3'
+      expect(stories[4]).to eq 'http://callmeishmael.com/wallflower.mp3'
+      expect(stories[5]).to eq 'http://callmeishmael.com/speak.mp3'
+      expect(stories[6]).to eq 'http://callmeishmael.com/prayerforowen.mp3'
+      expect(stories[7]).to eq 'http://callmeishmael.com/thespectacularnow.mp3'
+      expect(stories[8]).to eq 'http://callmeishmael.com/wheredyougobernadette.mp3'
+      expect(stories[9]).to eq 'http://callmeishmael.com/eleanorandpark.mp3'
+      expect(stories[10]).to eq 'http://callmeishmael.com/feed.mp3'
+      expect(stories[11]).to eq 'http://callmeishmael.com/tinafey.mp3'
     end
     it 'responds successfully' do
       get "/venues/#{@venues[0].id}/phones/#{@phones[1].id}/files"
       expect(response.status).to eq 200
       stories = json(response.body)
-      p stories
-      # expect(stories[0]).to eq 'http://callmeishmael.com/crimeandpunishment.mp3'
-      # expect(stories[1]).to eq 'http://callmeishmael.com/gonegirl.mp3'
-      # expect(stories[2]).to eq 'http://callmeishmael.com/peterpan.mp3'
-      # expect(stories[3]).to eq 'http://callmeishmael.com/feed.mp3'
-      # expect(stories[4]).to eq 'http://callmeishmael.com/thespectacularnow.mp3'
+      expect(stories[0]).to eq 'http://callmeishmael.com/crimeandpunishment.mp3'
+      expect(stories[1]).to eq 'http://callmeishmael.com/gonegirl.mp3'
+      expect(stories[2]).to eq 'http://callmeishmael.com/peterpan.mp3'
+      expect(stories[3]).to eq 'http://callmeishmael.com/feed.mp3'
+      expect(stories[4]).to eq 'http://callmeishmael.com/thespectacularnow.mp3'
     end
   end
 end
