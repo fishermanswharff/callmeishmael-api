@@ -13,4 +13,8 @@ class VenueSerializer < ActiveModel::Serializer
   def status
     object.status ? 'active' : 'paused'
   end
+
+  def total_stories
+    object.phones.map { |phone| phone.stories.count }.reduce(:+)
+  end
 end
