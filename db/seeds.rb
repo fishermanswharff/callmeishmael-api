@@ -92,6 +92,7 @@ venues = Venue.create!([
   { name: 'The Strand', user: User.find_by_email('fishermanswharff@mac.com') },
   { name: 'Reading Rainbow', user: User.find_by_email('fishermanswharff@mac.com') },
   { name: 'Sesame Street', user: User.find_by_email('fishermanswharff@mac.com') },
+  { name: '21 Shepard St.', user: User.find_by_email('fishermanswharff@mac.com'), status: 'paused' },
 ])
 puts "Seeded #{venues.length} venues:"
 venues.each { |v| p v.name }
