@@ -5,8 +5,13 @@ class PhonesController < ApplicationController
   before_filter :admin_only, only: [:create]
 
   def index
-    venue = Venue.find(params[:venue_id])
-    render json: venue.phones, status: :ok
+    if params[:venue_id]
+      venue = Venue.find(params[:venue_id])
+      render json: venue.phones, status: :ok
+    else
+      phones = Phone.all
+      render json: phones, status: :ok
+    end
   end
 
   def show

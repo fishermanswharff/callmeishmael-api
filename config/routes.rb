@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :stories
   end
 
+  resources :phones, only: :index
   resources :buttons, only: [:create, :update]
   post '/login', to: 'admin/users#login'
   get '/logout', to: 'admin/users#logout'
