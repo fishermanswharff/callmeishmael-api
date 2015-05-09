@@ -4,12 +4,6 @@ ActiveRecord::Base.connection.tables.each do |table|
   ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
 end
 
-User.destroy_all
-Venue.destroy_all
-Phone.destroy_all
-Story.destroy_all
-Button.destroy_all
-
 puts 'Creating users…'
 users = User.create!([
   {
@@ -112,29 +106,18 @@ puts "\n\n"
 
 puts 'Seeding stories…'
 stories = Story.create!([
-  { title: 'The Infernal Devices', url: 'http://www.oocities.org/gchafe/redwing.wav', story_type: 'venue', author_last: 'Clare' },
-  { title: 'Trigger', url: 'http://ravensview.blogs.com/ravens/RwOkalee.wav', story_type: 'venue', author_last: 'Vaught' },
-  { title: 'Battle Royale', url: 'http://www.thebirdguide.com/gif_dir/tricolored.wav', story_type: 'venue', author_last: 'Takami' },
-  { title: 'Looking For Alaska', url: 'http://vivanatura.org/sounds/Melodious%20blackbird%20(Dives%20dives).wav', story_type: 'venue', author_last: 'Green', author_first: 'John' },
-  { title: 'The Fault In Our Stars', url: 'http://www.birdgard.net/indexnl/rwblkbrd.wav', story_type: 'venue', author_last: 'Green', author_first: 'John' },
-  { title: 'Bossy Pants', url: 'http://callmeishmael.com/tinafey.mp3', story_type: 'venue', author_last: 'Fey' },
-  { title: 'A Dogs Purpose', url: 'http://callmeishmael.com/dogspurpose.mp3', story_type: 'venue', author_last: 'Cameron', author_first: 'Bruce' },
-  { title: 'City of Bones (Mortal Instruments)', url: 'http://callmeishmael.com/cityofbones.mp3', story_type: 'venue', author_last: 'Clare', author_first: '' },
-  { title: 'Radical', url: 'http://callmeishmael.com/radical.mp3', story_type: 'venue', author_last: 'Platt', author_first: 'David' },
-  { title: 'A Prayer for Owen Meany', url: 'http://callmeishmael.com/prayerforowen.mp3', story_type: 'venue', author_last: 'Irving', author_first: 'John' },
-  { title: 'Speak', url: 'http://callmeishmael.com/speak.mp3', story_type: 'venue', author_last: 'Anderson', author_first: 'Laurie' },
-  { title: 'If I Stay', url: 'http://callmeishmael.com/ifistay.mp3', story_type: 'venue', author_last: 'Forman', author_first: 'Gayle' },
-  { title: 'The Perks of Being A Wallflower', url: 'http://callmeishmael.com/wallflower.mp3', story_type: 'venue', author_last: 'Chbosky', author_first: 'Stephen' },
-  { title: 'The Great Gatsby', url: 'http://callmeishmael.com/greatgatsby.mp3', story_type: 'venue', author_last: 'Fitzgerald', author_first: 'F Scott' },
-  { title: 'Eleanor & Park', url: 'http://callmeishmael.com/eleanorandpark.mp3', story_type: 'venue', author_last: 'Rowell', author_first: 'Rainbow' },
-  { title: 'The Spectacular Now', url: 'http://callmeishmael.com/thespectacularnow.mp3', story_type: 'venue', author_last: 'Tim', author_first: 'Tharp' },
-  { title: 'Feed', url: 'http://callmeishmael.com/feed.mp3', story_type: 'venue', author_last: 'Grant', author_first: 'Mira' },
-  { title: 'The Alchemist', url: 'http://callmeishmael.com/thealchemist.mp3', story_type: 'venue', author_last: 'Coelho', author_first: 'Paulo' },
-  { title: 'Moby Dick', url: 'http://callmeishmael.com/mobydick.mp3', story_type: 'venue', author_last: 'Melville', author_first: 'Herman' },
-  { title: 'Where’d You Go Bernadette', url: 'http://callmeishmael.com/wheredyougobernadette.mp3', story_type: 'venue', author_last: 'Semple', author_first: 'Maria' },
-  { title: 'Gone Girl', url: 'http://callmeishmael.com/gonegirl.mp3', story_type: 'fixed', author_last: 'Flynn', author_first: 'Gillian' },
-  { title: 'Crime And Punishment', url: 'http://callmeishmael.com/crimeandpunishment.mp3', story_type: 'fixed', author_last: 'Fyodor', author_first: 'Dostoyevsky' },
-  { title: 'Peter Pan', url: 'http://callmeishmael.com/peterpan.mp3', story_type: 'fixed', author_last: 'Barrie', author_first: 'J. M.' },
+  { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz.mp3', story_type: 'venue', author_last: 'Horowitz' },
+  { title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer.mp3', story_type: 'venue', author_last: 'Safran Foer' },
+  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/71-Pajama-Time-by-Sandra-Boynton.mp3', story_type: 'venue', author_last: 'Boynton' },
+  { title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary.mp3', story_type: 'venue', author_last: 'Webster' },
+  { title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss.mp3', story_type: 'venue', author_last: 'Seuss' },
+  { title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen.mp3', story_type: 'venue', author_last: 'Austen' },
+  { title: 'Anna Karenina', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy.mp3', story_type: 'venue', author_last: 'Tolstoy', author_first: 'Leo' },
+  { title: 'The Fault In Our Stars', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green.mp3', story_type: 'venue', author_last: 'Green', author_first: 'John' },
+  { title: 'Harry Potter', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling.mp3', story_type: 'venue', author_last: 'Rowling' },
+  { title: 'The Oldest Living Things in the World', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman.mp3', story_type: 'venue', author_last: 'Sussman', author_first: 'Rachel' },
+  { title: 'A Short History of Nearly Everything', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson.mp3', story_type: 'venue', author_last: 'Bryson' },
+  { title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/64-Not-Even-Wrong-by-Paul-Collins.mp3', story_type: 'venue', author_last: 'Collins'}
 ])
 puts "Seeded #{stories.length} stories: "
 stories.each { |s| p "#{s.title} by #{s.author_last}, story_type: #{s.story_type}" }
@@ -142,42 +125,18 @@ puts "\n\n"
 
 puts 'Seeding buttons…'
 buttons = Button.create!([
-  { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: phones[0] },
-  { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: phones[0] },
-  { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: phones[0] },
-  { assignment: '1', story: Story.find_by_title('The Infernal Devices'), phone: phones[0] },
-  { assignment: '2', story: Story.find_by_title('Trigger'), phone: phones[0] },
-  { assignment: '3', story: Story.find_by_title('Battle Royale'), phone: phones[0] },
-  { assignment: '4', story: Story.find_by_title('Looking For Alaska'), phone: phones[0] },
+  { assignment: '*', story: Story.find_by_title('On Looking'), phone: phones[0] },
+  { assignment: '#', story: Story.find_by_title('Extremely Loud and Incredibly Close'), phone: phones[0] },
+  { assignment: '0', story: Story.find_by_title('Pajama Time'), phone: phones[0] },
+  { assignment: '1', story: Story.find_by_title('Merriam Webster Dictionary'), phone: phones[0] },
+  { assignment: '2', story: Story.find_by_title('The Sneetches'), phone: phones[0] },
+  { assignment: '3', story: Story.find_by_title('Pride And Prejudice'), phone: phones[0] },
+  { assignment: '4', story: Story.find_by_title('Anna Karenina'), phone: phones[0] },
   { assignment: '5', story: Story.find_by_title('The Fault In Our Stars'), phone: phones[0] },
-  { assignment: '6', story: Story.find_by_title('Bossy Pants'), phone: phones[0] },
-  { assignment: '7', story: Story.find_by_title('A Dogs Purpose'), phone: phones[0] },
-  { assignment: '8', story: Story.find_by_title('City of Bones (Mortal Instruments)'), phone: phones[0] },
-  { assignment: '9', story: Story.find_by_title('Radical'), phone: phones[0] },
-  { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: phones[1] },
-  { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: phones[1] },
-  { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: phones[1] },
-  { assignment: '6', story: Story.find_by_title('Speak'), phone: phones[1] },
-  { assignment: '5', story: Story.find_by_title('If I Stay'), phone: phones[1] },
-  { assignment: '2', story: Story.find_by_title('The Spectacular Now'), phone: phones[1] },
-  { assignment: '1', story: Story.find_by_title('Feed'), phone: phones[1] },
-  { assignment: '9', story: Story.find_by_title('Where’d You Go Bernadette'), phone: phones[1] },
-  { assignment: '3', story: Story.find_by_title('The Perks of Being A Wallflower'), phone: phones[1] },
-  { assignment: '4', story: Story.find_by_title('A Prayer for Owen Meany'), phone: phones[1] },
-  { assignment: '8', story: Story.find_by_title('Eleanor & Park'), phone: phones[1] },
-  { assignment: '7', story: Story.find_by_title('Bossy Pants'), phone: phones[1] },
-  { assignment: '*', story: Story.find_by_title('Gone Girl'), phone: phones[2] },
-  { assignment: '#', story: Story.find_by_title('Crime And Punishment'), phone: phones[2] },
-  { assignment: '0', story: Story.find_by_title('Peter Pan'), phone: phones[2] },
-  { assignment: '3', story: Story.find_by_title('Speak'), phone: phones[2] },
-  { assignment: '1', story: Story.find_by_title('If I Stay'), phone: phones[2] },
-  { assignment: '5', story: Story.find_by_title('The Spectacular Now'), phone: phones[2] },
-  { assignment: '8', story: Story.find_by_title('Feed'), phone: phones[2] },
-  { assignment: '6', story: Story.find_by_title('Where’d You Go Bernadette'), phone: phones[2] },
-  { assignment: '2', story: Story.find_by_title('The Perks of Being A Wallflower'), phone: phones[2] },
-  { assignment: '4', story: Story.find_by_title('A Prayer for Owen Meany'), phone: phones[2] },
-  { assignment: '7', story: Story.find_by_title('Eleanor & Park'), phone: phones[2] },
-  { assignment: '9', story: Story.find_by_title('Bossy Pants'), phone: phones[2] },
+  { assignment: '6', story: Story.find_by_title('Harry Potter'), phone: phones[0] },
+  { assignment: '7', story: Story.find_by_title('The Oldest Living Things in the World'), phone: phones[0] },
+  { assignment: '8', story: Story.find_by_title('A Short History of Nearly Everything'), phone: phones[0] },
+  { assignment: '9', story: Story.find_by_title('Not Even Wrong'), phone: phones[0] },
 ])
 puts "Seeded #{buttons.length} buttons as a join table:"
 buttons.each { |b| p "#{b.assignment} button is assigned #{b.story.title} on phone #{b.phone.unique_identifier} at venue #{b.phone.venue.name}" }
