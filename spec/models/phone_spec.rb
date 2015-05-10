@@ -5,12 +5,8 @@ describe Phone, type: :model do
   before(:all) do
     Venue.destroy_all
     Phone.destroy_all
-    User.destroy_all
     @venue_admin = User.create({firstname: 'foo', lastname: 'bar', phonenumber: 5555555555, username: 'foobar', role: 'venue_admin', email: 'foo@bar.com', password: 'secret'})
-    @venue = Venue.create({
-      name: '9 Candlewick',
-      user: @venue_admin
-    })
+    @venue = Venue.create({ name: '9 Candlewick' })
     @phones = Phone.create([
       { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: @venue},
       { wifiSSID: '79:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venue},

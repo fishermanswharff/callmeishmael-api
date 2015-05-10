@@ -8,9 +8,9 @@ RSpec.describe Venue, type: :model do
     @venue_admin = User.create({firstname: 'foo', lastname: 'bar', phonenumber: 5555555555, username: 'foobar', role: 'venue_admin', email: 'foo@bar.com', password: 'secret'})
     @venue = Venue.create({
       name: '9 Candlewick',
-      user: @venue_admin,
       number_phones: 2
     })
+    @venue.users << @venue_admin
   end
 
   it 'has a name' do
@@ -29,8 +29,8 @@ RSpec.describe Venue, type: :model do
     expect(@venue.number_phones).to eq 2
   end
 
-  it 'belongs to a user who is the main contact' do
-    expect(@venue.user).to be @venue_admin
+  it 'has many users' do
+    expect(@venue.users.first).to eq @venue_admin
   end
 
 end

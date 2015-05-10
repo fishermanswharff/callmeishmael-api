@@ -14,6 +14,7 @@ class VenuesController < ApplicationController
 
   def create
     @venue = Venue.create(venue_params)
+    @venue.users << User.find(params["venue"]["user_id"]) if params["venue"]["user_id"]
     if @venue.save
       render json: @venue, status: :created, location: venue_url(@venue)
     else
@@ -22,6 +23,7 @@ class VenuesController < ApplicationController
   end
 
   def update
+    @venue.users << User.find(params["venue"]["user_id"]) if params["venue"]["user_id"]
     if @venue.update(venue_params)
       render json: @venue, status: :ok
     else
@@ -37,7 +39,7 @@ class VenuesController < ApplicationController
   private
 
   def venue_params
-    params.require(:venue).permit(:name, :status, :number_phones, :user_id)
+    params.require(:venue).permit(:name, :status, :number_phones, user_ids: [])
   end
 
   def set_venue

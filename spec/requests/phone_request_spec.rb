@@ -10,9 +10,9 @@ describe 'Phone API endpoint' do
     @another_venue_admin = User.create({firstname: 'baz', lastname: 'fah', phonenumber: 5555555555, username: 'bazfah', role: 'venue_admin', email: 'baz@fah.com', password: 'secret'})
     @admin = User.create({firstname: 'Logan', lastname: 'Smalley', phonenumber: 5555555555, username: 'logan', role: 'admin', email: 'logan@ted.com', password: 'secret'})
     @venues = Venue.create([
-      { name: '9 Candlewick', user: @venue_admin },
-      { name: '21 Shepard', user: @venue_admin },
-      { name: 'Strand Bookstore', user: @venue_admin },
+      { name: '9 Candlewick' },
+      { name: '21 Shepard' },
+      { name: 'Strand Bookstore' },
     ])
     @phones = Phone.create([
       { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: @venues[0]},

@@ -1,6 +1,6 @@
 class Venue < ActiveRecord::Base
   after_create :set_unique_id
-  belongs_to :user, dependent: :destroy
+  has_and_belongs_to_many :users
   has_many :phones
 
   def set_unique_id

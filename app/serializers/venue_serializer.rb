@@ -1,6 +1,6 @@
 class VenueSerializer < ActiveModel::Serializer
   attributes :id, :unique_identifier, :name, :status, :number_phones, :post_roll_listens, :total_stories, :created_at, :updated_at
-  belongs_to :user
+  has_many :users
 
   def created_at
     object.created_at.strftime('%Y-%m-%d')

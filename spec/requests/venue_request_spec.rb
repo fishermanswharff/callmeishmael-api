@@ -8,10 +8,16 @@ describe 'Venue API Endpoint' do
     @another_venue_admin = User.create({firstname: 'baz', lastname: 'fah', phonenumber: 5555555555, username: 'bazfah', role: 'venue_admin', email: 'baz@fah.com', password: 'secret'})
     @admin = User.create({firstname: 'Logan', lastname: 'Smalley', phonenumber: 5555555555, username: 'logan', role: 'admin', email: 'logan@ted.com', password: 'secret'})
     @venues = Venue.create([
-      { name: '9 Candlewick', user: @venue_admin, number_phones: 2 },
-      { name: '21 Shepard', user: @venue_admin, number_phones: 1 },
-      { name: 'Strand Bookstore', user: @venue_admin, number_phones: 3 },
+      { name: '9 Candlewick', number_phones: 2 },
+      { name: '21 Shepard', number_phones: 1 },
+      { name: 'Strand Bookstore', number_phones: 3 },
     ])
+
+    @venues.first.users << @venue_admin
+    @venues.first.users << @another_venue_admin
+    @venues.first.users << @admin
+    @venues.second.users << @another_venue_admin
+    @venues.third.users << @venue_admin
   end
 
   describe '#index' do
@@ -43,7 +49,7 @@ describe 'Venue API Endpoint' do
       venue = json(response.body)
       expect(venue[:name]).to eq '9 Candlewick'
       expect(venue[:number_phones]).to eq 2
-      expect(venue[:user][:username]).to eq 'foobar'
+      expect(venue[:users][0][:username]).to eq 'foobar'
     end
   end
 
@@ -86,17 +92,17 @@ describe 'Venue API Endpoint' do
       end
       it 'returns the newly created venue with the user' do
         venue = json(response.body)
-        expect(venue[:user][:firstname]).to eq 'foo'
+        expect(venue[:users][0][:firstname]).to eq 'foo'
       end
     end
   end
 
   describe '#update' do
     before(:each) do
-      patch "/venues/#{@venues[0].id}",
+      patch "/venues/#{@venues[2].id}",
       { venue:
         {
-          name: '9 Candlewick',
+          name: 'Strand Bookstore on 5th Avenue',
           number_phones: 3,
           user_id: "#{@another_venue_admin.id}",
         }
@@ -112,8 +118,8 @@ describe 'Venue API Endpoint' do
     end
     it 'updates only the changed attributes of the venue' do
       venue = json(response.body)
-      expect(venue[:user][:id]).to eq "#{@another_venue_admin.id}"
-      expect(venue[:name]).to eq '9 Candlewick'
+      expect(venue[:users].last[:id]).to eq "#{@another_venue_admin.id}"
+      expect(venue[:name]).to eq 'Strand Bookstore on 5th Avenue'
       expect(venue[:number_phones]).to eq 3
     end
   end
