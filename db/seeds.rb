@@ -83,13 +83,25 @@ puts "\n\n"
 
 puts 'Seeding venues…'
 venues = Venue.create!([
-  { name: 'The Strand', user: User.find_by_email('fishermanswharff@mac.com') },
-  { name: 'Reading Rainbow', user: User.find_by_email('fishermanswharff@mac.com') },
-  { name: 'Sesame Street', user: User.find_by_email('fishermanswharff@mac.com') },
-  { name: '21 Shepard St.', user: User.find_by_email('fishermanswharff@mac.com'), status: 'paused' },
+  { name: 'The Strand'  },
+  { name: 'Reading Rainbow' },
+  { name: 'Sesame Street' },
+  { name: '21 Shepard St.', status: 'paused' },
 ])
+venues.first.users << User.find_by_email('fishermanswharff@mac.com')
+venues.first.users << User.find_by_email('shawn@test.com')
+venues.first.users << User.find_by_email('logan@test.com')
+venues.first.users << User.find_by_email('chris@test.com')
+venues.first.users << User.find_by_email('ayo@test.com')
+venues.first.users << User.find_by_email('andy@test.com')
+venues.first.users << User.find_by_email('joe@user.com')
+venues.second.users << User.find_by_email('fishermanswharff@mac.com')
+venues.second.users << User.find_by_email('joe@user.com')
+venues.third.users << User.find_by_email('fishermanswharff@mac.com')
+venues.fourth.users << User.find_by_email('fishermanswharff@mac.com')
+
 puts "Seeded #{venues.length} venues:"
-venues.each { |v| p v.name }
+venues.each { |v| p v.name + " has #{v.users.length} users" }
 puts "\n\n"
 
 puts 'Seeding Phones:'
