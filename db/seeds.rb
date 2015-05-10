@@ -23,7 +23,7 @@ users = User.create!([
     role: 'admin',
     email: 'logan@test.com',
     phonenumber: 5554443333,
-    password_digest: '$2a$10$R4USxlyVTxfpt29btx9ZOeCv7LQ2Ht9vs4Dgaz9oq3Av1oJXIAwk6',
+    password_digest: '$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq',
     token: '155a18a873bf4078b60bed27936f2f55'
   },
   {
@@ -33,7 +33,7 @@ users = User.create!([
     role: 'admin',
     email: "shawn@test.com",
     phonenumber: 5748509840,
-    password_digest: "$2a$10$wHq8qGNohGxYV7ZS16hnvePqyUzycVK9jK4elVq4dJYU.j6QzlOfi",
+    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
     token: "5f780acadc3d4091b88749e8e289de49",
   },
   {
@@ -43,7 +43,7 @@ users = User.create!([
     role: 'admin',
     email: "chris@test.com",
     phonenumber: 5085071285,
-    password_digest: "$2a$10$LXCvp9murX/Q89oozsBA3eKwfXVb3R6E1eG.vonA0eCstqzriV1we",
+    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
     token: "658ad3dfbbbc4230a2d989053d25830d",
   },
   {
@@ -53,7 +53,7 @@ users = User.create!([
     role: 'admin',
     email: "ayo@test.com",
     phonenumber: 5554443333,
-    password_digest: "$2a$10$s1kpIuXhWRgAris6yLmb7.42OP7flqDUurK9mdx7nuy8Uygf2RJyK",
+    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
     token: "0ca0b535bb8245bc82d2726ced45c741",
   },
   {
@@ -63,7 +63,7 @@ users = User.create!([
     role: 'admin',
     email: "andy@test.com",
     phonenumber: 5554443333,
-    password_digest: "$2a$10$94LnIQeGX65mxMAMxGGehem0NqfzdBCf0Ay5.dSsDcMwwD8JdYSMq",
+    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
     token: "b0607162ae7f41baa78f2b7266520b09",
   },
   {
