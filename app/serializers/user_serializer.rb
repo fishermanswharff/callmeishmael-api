@@ -3,9 +3,9 @@ class UserSerializer < ActiveModel::Serializer
   has_many :venues
 
   def created_at
-    object.created_at.strftime('%m-%d-%Y')
+    object.created_at.strftime('%A, %D')
   end
   def updated_at
-    object.updated_at.strftime('%m-%d-%Y')
+    object.updated_at.strftime('%A, %D')
   end
 end

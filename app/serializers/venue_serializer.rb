@@ -3,11 +3,11 @@ class VenueSerializer < ActiveModel::Serializer
   has_many :users
 
   def created_at
-    object.created_at.strftime('%Y-%m-%d')
+    object.created_at.strftime('%A, %D')
   end
 
   def updated_at
-    object.updated_at.strftime('%Y-%m-%d')
+    object.updated_at.strftime('%A, %D')
   end
 
   def status
