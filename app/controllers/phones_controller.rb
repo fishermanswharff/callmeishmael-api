@@ -65,9 +65,6 @@ class PhonesController < ApplicationController
       output = File.open("#{s}_log.txt", "w")
       output.puts Base64.decode64(params[:log])
       output.close
-
-      binding.pry
-
       file_stat = File::Stat.new(output)
       if File.stat(output).file? && file_stat.size? > 0
         render json: { path: File.realpath(output) }, status: :created
