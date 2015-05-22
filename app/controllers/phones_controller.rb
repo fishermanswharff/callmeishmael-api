@@ -57,6 +57,7 @@ class PhonesController < ApplicationController
     venue = Venue.find(params[:venue_id])
     log = Base64.decode64(params[:log])
     dir = FileUtils.mkdir_p("#{Rails.root}/log/venue_#{venue.id}/phone_#{phone.id}")
+
     FileUtils.cd(dir.first) do
       s = "%10.9f" % Time.now.to_f
       # convert back to Time with:
@@ -64,6 +65,15 @@ class PhonesController < ApplicationController
       output = File.open("#{s}_log.txt", "w")
       output.puts Base64.decode64(params[:log])
       output.close
+
+      binding.pry
+
+      file_stat = File::Stat.new(output)
+      if File.stat(output).file? && file_stat.size? > 0
+        render json: { path: File.realpath(output) }, status: :created
+      else
+        render json: { error: 'Something bad happened' }, status: :unprocessable_entity
+      end
     end
   end
 
