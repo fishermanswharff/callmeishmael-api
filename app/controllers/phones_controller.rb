@@ -1,7 +1,7 @@
 class PhonesController < ApplicationController
 
   before_action :get_phone_by_id, only: [:show, :update, :destroy]
-  before_action :get_phone_by_phoneid, only: [:ping, :files]
+  before_action :get_phone_by_phoneid, only: [:ping, :files, :log]
   before_filter :admin_only, only: [:create]
 
   def index
@@ -50,6 +50,21 @@ class PhonesController < ApplicationController
   def files
     files = @phone.get_urls
     render json: files, status: :ok
+  end
+
+  def log
+    phone = Phone.find(params[:phone_id])
+    venue = Venue.find(params[:venue_id])
+    log = Base64.decode64(params[:log])
+    dir = FileUtils.mkdir_p("#{Rails.root}/log/venue_#{venue.id}/phone_#{phone.id}")
+    FileUtils.cd(dir.first) do
+      s = "%10.9f" % Time.now.to_f
+      # convert back to Time with:
+      # Time.at(s.to_i)
+      output = File.open("#{s}_log.txt", "w")
+      output.puts Base64.decode64(params[:log])
+      output.close
+    end
   end
 
   private
