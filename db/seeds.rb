@@ -118,21 +118,21 @@ puts "\n\n"
 
 puts 'Seeding stories…'
 stories = Story.create!([
-  { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz.mp3', story_type: 'fixed', author_last: 'Horowitz' },
-  { title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer.mp3', story_type: 'fixed', author_last: 'Safran Foer' },
-  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/71-Pajama-Time-by-Sandra-Boynton.mp3', story_type: 'fixed', author_last: 'Boynton' },
-  { title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary.mp3', story_type: 'fixed', author_last: 'Webster' },
-  { title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss.mp3', story_type: 'fixed', author_last: 'Seuss' },
-  { title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen.mp3', story_type: 'fixed', author_last: 'Austen' },
-  { title: 'Anna Karenina', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy.mp3', story_type: 'fixed', author_last: 'Tolstoy', author_first: 'Leo' },
-  { title: 'The Fault In Our Stars', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green.mp3', story_type: 'fixed', author_last: 'Green', author_first: 'John' },
-  { title: 'Harry Potter', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling.mp3', story_type: 'fixed', author_last: 'Rowling' },
-  { title: 'The Oldest Living Things in the World', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman.mp3', story_type: 'fixed', author_last: 'Sussman', author_first: 'Rachel' },
-  { title: 'A Short History of Nearly Everything', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson.mp3', story_type: 'fixed', author_last: 'Bryson' },
-  { title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/64-Not-Even-Wrong-by-Paul-Collins.mp3', story_type: 'fixed', author_last: 'Collins'},
-  { title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed.mp3', story_type: 'venue', author_last: 'Strayed'},
-  { title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson.mp3', story_type: 'venue', author_last: 'Lawson'},
-  { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee.mp3', story_type: 'venue', author_last: 'Lee'}
+  { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.aif', story_type: 'fixed', author_last: 'Horowitz' },
+  { title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.aif', story_type: 'fixed', author_last: 'Safran Foer' },
+  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/71-Pajama-Time-by-Sandra-Boynton-final.aif', story_type: 'fixed', author_last: 'Boynton' },
+  { title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary-final.aif', story_type: 'fixed', author_last: 'Webster' },
+  { title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss-final.aif', story_type: 'fixed', author_last: 'Seuss' },
+  { title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen-final.aif', story_type: 'fixed', author_last: 'Austen' },
+  { title: 'Anna Karenina', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy-final.aif', story_type: 'fixed', author_last: 'Tolstoy', author_first: 'Leo' },
+  { title: 'The Fault In Our Stars', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green-final.aif', story_type: 'fixed', author_last: 'Green', author_first: 'John' },
+  { title: 'Harry Potter', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling-final.aif', story_type: 'fixed', author_last: 'Rowling' },
+  { title: 'The Oldest Living Things in the World', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final.aif', story_type: 'fixed', author_last: 'Sussman', author_first: 'Rachel' },
+  { title: 'A Short History of Nearly Everything', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.aif', story_type: 'fixed', author_last: 'Bryson' },
+  { title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/64-Not-Even-Wrong-by-Paul-Collins-final.aif', story_type: 'fixed', author_last: 'Collins'},
+  { title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.aif', story_type: 'venue', author_last: 'Strayed'},
+  { title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.aif', story_type: 'venue', author_last: 'Lawson'},
+  { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.aif', story_type: 'venue', author_last: 'Lee'}
 ])
 puts "Seeded #{stories.length} stories: "
 stories.each { |s| p "#{s.title} by #{s.author_last}, story_type: #{s.story_type}" }
