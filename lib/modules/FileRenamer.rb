@@ -7,7 +7,7 @@ module FileRenamer
 
       Dir.foreach(filepath){ |file|
         next if file.in?(%w(. .. .DS_Store))
-        File.rename(filepath + '/' + file, filepath + '/' + file.gsub(/\s/,'-') + File.extname(file))
+        File.rename(filepath + '/' + file, filepath + '/' + file.gsub(/\s/,'-'))
       }
     end
   end
