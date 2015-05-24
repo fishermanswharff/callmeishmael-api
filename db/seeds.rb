@@ -120,7 +120,7 @@ puts 'Seeding stories…'
 stories = Story.create!([
   { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.aif', story_type: 'fixed', author_last: 'Horowitz' },
   { title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.aif', story_type: 'fixed', author_last: 'Safran Foer' },
-  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/71-Pajama-Time-by-Sandra-Boynton-final.aif', story_type: 'fixed', author_last: 'Boynton' },
+  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/071-Pajama-Time-by-Sandra-Boynton-final.aif', story_type: 'fixed', author_last: 'Boynton' },
   { title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary-final.aif', story_type: 'fixed', author_last: 'Webster' },
   { title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss-final.aif', story_type: 'fixed', author_last: 'Seuss' },
   { title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen-final.aif', story_type: 'fixed', author_last: 'Austen' },
