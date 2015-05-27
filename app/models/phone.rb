@@ -38,7 +38,7 @@ class Phone < ActiveRecord::Base
     bucket = s3.bucket(ENV['S3_LOG_BUCKET_NAME'])
     s = "%10.9f" % Time.now.to_f
     resp = bucket.put_object({key: "venue_#{venue.id}/phone_#{self.id}/#{s}.txt", body: log})
-    resp
+    { response: resp, bucket_url: bucket.url }
   end
 
   private

@@ -57,7 +57,7 @@ class PhonesController < ApplicationController
     venue = Venue.find(params[:venue_id])
     log = Base64.decode64(params[:log])
     resp = @phone.send_log_file(log)
-    render json: { path: resp.key }, status: :ok
+    render json: { path: resp[:bucket_url] + '/' + resp[:response].key }, status: :ok
   end
 
   private
