@@ -32,6 +32,15 @@ class Phone < ActiveRecord::Base
     array.to_json
   end
 
+  def send_log_file(log)
+    Aws.config[:credentials] = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+    s3 = Aws::S3::Resource.new
+    bucket = s3.bucket(ENV['S3_LOG_BUCKET_NAME'])
+    s = "%10.9f" % Time.now.to_f
+    resp = bucket.put_object({key: "venue_#{venue.id}/phone_#{self.id}/#{s}.txt", body: log})
+    resp
+  end
+
   private
   def set_token
     return if token.present?

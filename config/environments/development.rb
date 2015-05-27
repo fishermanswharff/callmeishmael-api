@@ -45,4 +45,9 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_options = {from: 'jasonwharff@gmail.com'}
   config.action_mailer.delivery_method = :smtp
+
+  Aws.config.update({
+    region: 'us-west-2',
+    credentials: Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+  })
 end

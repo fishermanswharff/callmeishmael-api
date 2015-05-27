@@ -78,7 +78,7 @@ describe 'Venue API Endpoint' do
       before(:each) do
         post '/venues',
         { venue:
-          { name: 'Harvard Book Store', user_id: @venue_admin.id, number_phones: 1 }
+          { name: 'Harvard Book Store', user_ids: [@venue_admin.id, @another_venue_admin.id], number_phones: 1 }
         }.to_json,
         {
           'Accept' => Mime::JSON,
@@ -93,6 +93,7 @@ describe 'Venue API Endpoint' do
       it 'returns the newly created venue with the user' do
         venue = json(response.body)
         expect(venue[:users][0][:firstname]).to eq 'foo'
+        expect(venue[:users][1][:firstname]).to eq 'baz'
       end
     end
   end

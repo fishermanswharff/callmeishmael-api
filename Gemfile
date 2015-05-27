@@ -9,6 +9,7 @@ gem 'active_model_serializers', github: 'rails-api/active_model_serializers'
 gem 'nokogiri'
 gem 'bcrypt'
 gem 'rack-ssl-enforcer'
+gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'spring'
