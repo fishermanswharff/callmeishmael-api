@@ -63,7 +63,7 @@ class PhonesController < ApplicationController
   private
 
   def phone_params
-    params.require(:phone).permit(:wifiSSID, :wifiPassword, :venue_id)
+    params.require(:phone).permit(:wifiSSID, :wifiPassword, :status, :venue_id)
   end
 
   def get_phone_by_id
