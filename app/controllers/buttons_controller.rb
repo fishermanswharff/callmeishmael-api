@@ -1,6 +1,7 @@
 class ButtonsController < ApplicationController
 
   def create
+    binding.pry
     button = Button.create(button_params)
     if button.save
       render json: button, status: :created
