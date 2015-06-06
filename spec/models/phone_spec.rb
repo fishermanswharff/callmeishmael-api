@@ -33,9 +33,4 @@ describe Phone, type: :model do
     expect(@phones[1].unique_identifier).to eq "#{@venue.id}-#{@phones[1].id}"
   end
 
-  it 'has a one story as the postroll story, only if story_type == postroll' do
-    @phones.first.post_roll_story_id = @stories[0].id
-    binding.pry
-  end
-
 end

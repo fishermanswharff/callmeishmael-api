@@ -1,7 +1,7 @@
 class PhonesController < ApplicationController
 
   before_action :get_phone_by_id, only: [:show, :update, :destroy]
-  before_action :get_phone_by_phoneid, only: [:ping, :files, :log, :postroll]
+  before_action :get_phone_by_phoneid, only: [:ping, :files, :log]
   before_filter :admin_only, only: [:create]
 
   def index
@@ -58,10 +58,6 @@ class PhonesController < ApplicationController
     log = Base64.decode64(params[:log])
     resp = @phone.send_log_file(log)
     render json: { path: resp[:bucket_url] + '/' + resp[:response].key }, status: :ok
-  end
-
-  def postroll
-    binding.pry
   end
 
   private

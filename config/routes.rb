@@ -9,7 +9,6 @@ Rails.application.routes.draw do
         match '/ping' => 'phones#ping', via: [:get, :post]
         match '/files' => 'phones#files', via: [:get]
         match '/log' => 'phones#log', via: :post
-        match '/postroll' => 'phones#postroll', via: :post
       end
     end
     resources :stories
