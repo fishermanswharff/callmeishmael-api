@@ -1,7 +1,7 @@
 ActiveRecord::Base.establish_connection
 ActiveRecord::Base.connection.tables.each do |table|
   next if table == 'schema_migrations'
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table}")
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE")
 end
 
 puts 'Creating users…'
@@ -130,7 +130,8 @@ stories = Story.create!([
   { title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/64-Not-Even-Wrong-by-Paul-Collins-final.aif', story_type: 'ishmaels', author_last: 'Collins'},
   { title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.aif', story_type: 'ishmaels', author_last: 'Strayed'},
   { title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.aif', story_type: 'ishmaels', author_last: 'Lawson'},
-  { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.aif', story_type: 'ishmaels', author_last: 'Lee'}
+  { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.aif', story_type: 'ishmaels', author_last: 'Lee'},
+  { title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.aif', story_type: 'postroll', author_last: ''}
 ])
 puts "Seeded #{stories.length} stories: "
 stories.each { |s| p "#{s.title} by #{s.author_last}, story_type: #{s.story_type}" }
@@ -150,6 +151,7 @@ buttons = Button.create!([
   { assignment: '7', story: Story.find_by_title('The Oldest Living Things in the World'), phone: phones[0] },
   { assignment: '8', story: Story.find_by_title('A Short History of Nearly Everything'), phone: phones[0] },
   { assignment: '9', story: Story.find_by_title('Not Even Wrong'), phone: phones[0] },
+  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[0] }
 ])
 puts "Seeded #{buttons.length} buttons as a join table:"
 buttons.each { |b| p "#{b.assignment} button is assigned #{b.story.title} on phone #{b.phone.unique_identifier} at venue #{b.phone.venue.name}" }

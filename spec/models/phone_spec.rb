@@ -11,6 +11,11 @@ describe Phone, type: :model do
       { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: @venue},
       { wifiSSID: '79:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venue},
     ])
+    @stories = Story.create!([
+      { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.aif', story_type: 'fixed', author_last: 'Horowitz' },
+      { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.aif', story_type: 'ishmaels', author_last: 'Lee'},
+      { title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.aif', story_type: 'postroll', author_last: ''}
+    ])
   end
 
   it 'is a phone' do
@@ -26,6 +31,11 @@ describe Phone, type: :model do
   it 'has a unique id generated from the venue id and the phone id' do
     expect(@phones[0].unique_identifier).to eq "#{@venue.id}-#{@phones[0].id}"
     expect(@phones[1].unique_identifier).to eq "#{@venue.id}-#{@phones[1].id}"
+  end
+
+  it 'has a one story as the postroll story, only if story_type == postroll' do
+    @phones.first.post_roll_story_id = @stories[0].id
+    binding.pry
   end
 
 end

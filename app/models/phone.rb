@@ -29,6 +29,7 @@ class Phone < ActiveRecord::Base
     array[9] = stories['7']
     array[10] = stories['8']
     array[11] = stories['9']
+    array[12] = stories['PR']
     array.to_json
   end
 
