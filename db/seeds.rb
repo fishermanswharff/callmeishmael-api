@@ -4,6 +4,8 @@ ActiveRecord::Base.connection.tables.each do |table|
   ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE")
 end
 
+#   USERS
+# —————————————————
 puts 'Creating users…'
 users = User.create!([
   {
@@ -81,6 +83,9 @@ puts "seeded #{users.length} users:"
 users.each { |u| p "#{u.firstname} #{u.lastname}" }
 puts "\n\n"
 
+
+#   VENUES
+# —————————————————
 puts 'Seeding venues…'
 venues = Venue.create!([
   { name: 'The Strand'  },
@@ -104,6 +109,8 @@ puts "Seeded #{venues.length} venues:"
 venues.each { |v| p v.name + " has #{v.users.length} users" }
 puts "\n\n"
 
+#   PHONES
+# —————————————————
 puts 'Seeding Phones:'
 phones = Phone.create!([
   { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: Venue.find_by_name('The Strand') },
@@ -114,6 +121,8 @@ puts "Seeded #{phones.length} phones:"
 phones.each { |p| p "#{p.unique_identifier} at venue #{p.venue.name}" }
 puts "\n\n"
 
+#   STORIES
+# —————————————————
 puts 'Seeding stories…'
 stories = Story.create!([
   { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg', story_type: 'fixed', author_last: 'Horowitz' },
@@ -137,6 +146,9 @@ puts "Seeded #{stories.length} stories: "
 stories.each { |s| p "#{s.title} by #{s.author_last}, story_type: #{s.story_type}" }
 puts "\n\n"
 
+
+#   BUTTONS
+# —————————————————
 puts 'Seeding buttons…'
 buttons = Button.create!([
   { assignment: '*', story: Story.find_by_title('On Looking'), phone: phones[0] },
