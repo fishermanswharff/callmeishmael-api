@@ -9,7 +9,6 @@ class UserMailer < ActionMailer::Base
   def reset_email(user)
     @user = user
     @url = ENV['PASSWORD_RESET_URL'] + "?userId=#{@user.id}&userEmail=#{@user.email}"
-    puts ENV['PASSWORD_RESET_URL']
     mail(to: @user.email, subject: 'Call Me Ishmael Password Reset')
   end
 end
