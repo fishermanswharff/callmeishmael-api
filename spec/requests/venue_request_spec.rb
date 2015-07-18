@@ -1,7 +1,11 @@
 require 'rails_helper'
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
 describe 'Venue API Endpoint' do
   before(:all) do
+    Venuestory.destroy_all
     Venue.destroy_all
     User.destroy_all
     @venue_admin = User.create({firstname: 'foo', lastname: 'bar', phonenumber: 5555555555, username: 'foobar', role: 'venue_admin', email: 'foo@bar.com', password: 'secret'})
@@ -14,7 +18,6 @@ describe 'Venue API Endpoint' do
       { name: '21 Shepard', number_phones: 1 },
       { name: 'Strand Bookstore', number_phones: 3 },
     ])
-
     @venues.first.users << @venue_admin
     @venues.first.users << @another_venue_admin
     @venues.first.users << @admin
@@ -67,6 +70,10 @@ describe 'Venue API Endpoint' do
     it 'returns a single venue' do
       venue = json(response.body)
       expect(venue[:name]).to_not be nil
+    end
+
+    it 'has a list of stories associated with the venue' do
+      venue = json(response.body)
       expect(venue[:stories].length).to be 284
     end
   end
