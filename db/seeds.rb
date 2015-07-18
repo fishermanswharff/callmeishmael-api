@@ -77,12 +77,22 @@ users = User.create!([
     phonenumber: 5554443333,
     password_digest: "$2a$10$n7Buns1Q3ZoRvN.SKUGFy.TsjkmjQ/EqSdm2vmXG1jf51Wa1PgQCi",
     token: "462e4dce8ceb43d7a801e7210ca9073a",
+  },
+  {
+    firstname: 'Estella',
+    lastname: 'Wharff',
+    username: 'estella',
+    role: 'venue_admin',
+    email: 'fishermanswharff@me.com',
+    phonenumber: 6173889520,
+    password_digest: '$2a$10$ukerRC64qS146G.bhY65A.iKh.tdG194qErA5.i1gAi46dneu2t4m',
+    token: '25f41b2be80747ceb2fe2ab059163903',
+
   }
 ])
 puts "seeded #{users.length} users:"
 users.each { |u| p "#{u.firstname} #{u.lastname}" }
 puts "\n\n"
-
 
 #   VENUES
 # —————————————————
@@ -104,6 +114,7 @@ venues.second.users << User.find_by_email('fishermanswharff@mac.com')
 venues.second.users << User.find_by_email('joe@user.com')
 venues.third.users << User.find_by_email('fishermanswharff@mac.com')
 venues.fourth.users << User.find_by_email('fishermanswharff@mac.com')
+venues.fourth.users << User.find_by_email('fishermanswharff@me.com')
 
 puts "Seeded #{venues.length} venues:"
 venues.each { |v| p v.name + " has #{v.users.length} users" }
@@ -142,10 +153,27 @@ stories = Story.create!([
   { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg', story_type: 'ishmaels', author_last: 'Lee'},
   { title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.ogg', story_type: 'postroll', author_last: ''}
 ])
+
 puts "Seeded #{stories.length} stories: "
 stories.each { |s| p "#{s.title} by #{s.author_last}, story_type: #{s.story_type}" }
 puts "\n\n"
 
+puts 'Seeding venue stories for 21 Shepard St.'
+Venue.find_by(name: '21 Shepard St.').stories << Story.create!([
+  {title: 'Coming Home', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/01_Coming_Home.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Better Man', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/02_Better_Man.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Brown Skin Girl', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/03_Brown_Skin_Girl.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Smooth Sailin', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/04_Smooth_Sailin_39_.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Shine', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/05_Shine.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Lisa Sawyer', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/06_Lisa_Sawyer.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Flowers', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/07_Flowers.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Pull Away', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/08_Pull_Away.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Twistin and Groovin', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/09_Twistin_39_and_Groovin_39_.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'River', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/10_River.ogg', story_type: 'venue', author_last: 'Bridges'},
+])
+puts '21 Shepard St. has: '
+Venue.find_by(name: '21 Shepard St.').stories.each { |s| p "#{s.title} by #{s.author_last}, url: #{s.url}, story_type: #{s.story_type}" }
+puts "\n\n"
 
 #   BUTTONS
 # —————————————————
@@ -178,3 +206,6 @@ puts 'Done seeding the database. Farewell.'
 # curl -d "user[firstname]=Andy&user[lastname]=Cavatorta&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=andycavatorta&user[email]=fishermanswharff@icloud.com&user[role]=admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
 # curl -d "user[firstname]=Ayodamola&user[lastname]=Okunseinde&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=ayodamolaokunseinde&user[email]=fishermanswharff@me.com&user[role]=admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
 # curl -d "user[firstname]=joe&user[lastname]=user&user[password]=password&user[password_confirmation]=password&user[username]=joeuser&user[email]=joe@user.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# curl -d "user[firstname]=Estella&user[lastname]=Wharff&user[password]=password&user[password_confirmation]=password&user[username]=estella&user[email]=fishermanswharff@me.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+
+
