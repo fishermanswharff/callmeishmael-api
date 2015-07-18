@@ -16,6 +16,7 @@ class VenueSerializer < ActiveModel::Serializer
   end
 
   def total_stories
-    object.phones.map { |phone| phone.stories.count }.reduce(:+)
+    # object.phones.map { |phone| phone.stories.count }.reduce(:+)
+    object.stories.count
   end
 end

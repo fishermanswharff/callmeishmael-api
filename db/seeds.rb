@@ -127,6 +127,7 @@ phones = Phone.create!([
   { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: Venue.find_by_name('The Strand') },
   { wifiSSID: '72:33:a2:ad:c2:69', wifiPassword: 'password', venue: Venue.find_by_name('Reading Rainbow') },
   { wifiSSID: '32:21:d2:bd:a1:85', wifiPassword: 'password', venue: Venue.find_by_name('Sesame Street') },
+  { wifiSSID: '32:21:d2:bd:a1:85', wifiPassword: 'password', venue: Venue.find_by_name('21 Shepard St.') },
 ])
 puts "Seeded #{phones.length} phones:"
 phones.each { |p| p "#{p.unique_identifier} at venue #{p.venue.name}" }
@@ -191,7 +192,21 @@ buttons = Button.create!([
   { assignment: '7', story: Story.find_by_title('The Oldest Living Things in the World'), phone: phones[0] },
   { assignment: '8', story: Story.find_by_title('A Short History of Nearly Everything'), phone: phones[0] },
   { assignment: '9', story: Story.find_by_title('Not Even Wrong'), phone: phones[0] },
-  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[0] }
+  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[0] },
+  { assignment: '*', story: Story.find_by_title('On Looking'), phone: phones[3] },
+  { assignment: '#', story: Story.find_by_title('Extremely Loud and Incredibly Close'), phone: phones[3] },
+  { assignment: '3', story: Story.find_by_title('Pajama Time'), phone: phones[3] },
+  { assignment: '1', story: Story.find_by_title('Merriam Webster Dictionary'), phone: phones[3] },
+  { assignment: '2', story: Story.find_by_title('The Sneetches'), phone: phones[3] },
+  { assignment: '3', story: Story.find_by_title('Pride And Prejudice'), phone: phones[3] },
+  { assignment: '4', story: Story.find_by_title('Anna Karenina'), phone: phones[3] },
+  { assignment: '5', story: Story.find_by_title('The Fault In Our Stars'), phone: phones[3] },
+  { assignment: '6', story: Story.find_by_title('Harry Potter'), phone: phones[3] },
+  { assignment: '7', story: Story.find_by_title('The Oldest Living Things in the World'), phone: phones[3] },
+  { assignment: '8', story: Story.find_by_title('A Short History of Nearly Everything'), phone: phones[3] },
+  { assignment: '9', story: Story.find_by_title('Not Even Wrong'), phone: phones[3] },
+  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[3] },
+
 ])
 puts "Seeded #{buttons.length} buttons as a join table:"
 buttons.each { |b| p "#{b.assignment} button is assigned #{b.story.title} on phone #{b.phone.unique_identifier} at venue #{b.phone.venue.name}" }
