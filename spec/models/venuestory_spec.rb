@@ -26,7 +26,7 @@ RSpec.describe Venuestory, type: :model do
     stories = Story.all
     expect(@the_strand.stories.length).to eq 56
     expect(@reading_rainbow.stories.length).to eq 39
-    expect(stories.length).to eq 2680
+    expect(stories.length).to eq @the_strand.stories.length + @reading_rainbow.stories.length + @ishmaelsstories.length
   end
 
 end
