@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
 RSpec.describe Story, type: :model do
 
@@ -32,6 +35,6 @@ RSpec.describe Story, type: :model do
   end
 
   it 'has a unique identifier' do
-    expect(@stories[3].unique_identifier).to eq '4-1000'
+    expect(@stories[3].unique_identifier).to eq '7-1000'
   end
 end

@@ -10,6 +10,7 @@ gem 'nokogiri'
 gem 'bcrypt'
 gem 'rack-ssl-enforcer'
 gem 'aws-sdk', '~> 2'
+gem 'database_cleaner'
 
 group :development, :test do
   gem 'spring'
