@@ -7,6 +7,8 @@ describe 'Venue API Endpoint' do
     @venue_admin = User.create({firstname: 'foo', lastname: 'bar', phonenumber: 5555555555, username: 'foobar', role: 'venue_admin', email: 'foo@bar.com', password: 'secret'})
     @another_venue_admin = User.create({firstname: 'baz', lastname: 'fah', phonenumber: 5555555555, username: 'bazfah', role: 'venue_admin', email: 'baz@fah.com', password: 'secret'})
     @admin = User.create({firstname: 'Logan', lastname: 'Smalley', phonenumber: 5555555555, username: 'logan', role: 'admin', email: 'logan@ted.com', password: 'secret'})
+    @reading_rainbow = FactoryGirl.create(:venue)
+    @reading_rainbow.stories = FactoryGirl.create_list(:story, 284)
     @venues = Venue.create([
       { name: '9 Candlewick', number_phones: 2 },
       { name: '21 Shepard', number_phones: 1 },
@@ -33,7 +35,7 @@ describe 'Venue API Endpoint' do
       expect(names).to include '9 Candlewick'
       expect(names).to include '21 Shepard'
       expect(names).to include 'Strand Bookstore'
-      expect(names.length).to be 3
+      expect(names.length).to be 4
     end
   end
 
@@ -50,6 +52,22 @@ describe 'Venue API Endpoint' do
       expect(venue[:name]).to eq '9 Candlewick'
       expect(venue[:number_phones]).to eq 2
       expect(venue[:users][0][:username]).to eq 'foobar'
+    end
+  end
+
+  describe '#show with venue stories' do
+    before(:each) do
+      get "/venues/#{@reading_rainbow.id}"
+    end
+
+    it 'returns successfully' do
+      expect(response.status).to eq 200
+    end
+
+    it 'returns a single venue' do
+      venue = json(response.body)
+      expect(venue[:name]).to_not be nil
+      expect(venue[:stories].length).to be 284
     end
   end
 
