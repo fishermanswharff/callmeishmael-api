@@ -195,7 +195,7 @@ buttons = Button.create!([
   { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[0] },
   { assignment: '*', story: Story.find_by_title('On Looking'), phone: phones[3] },
   { assignment: '#', story: Story.find_by_title('Extremely Loud and Incredibly Close'), phone: phones[3] },
-  { assignment: '3', story: Story.find_by_title('Pajama Time'), phone: phones[3] },
+  { assignment: '0', story: Story.find_by_title('Pajama Time'), phone: phones[3] },
   { assignment: '1', story: Story.find_by_title('Merriam Webster Dictionary'), phone: phones[3] },
   { assignment: '2', story: Story.find_by_title('The Sneetches'), phone: phones[3] },
   { assignment: '3', story: Story.find_by_title('Pride And Prejudice'), phone: phones[3] },

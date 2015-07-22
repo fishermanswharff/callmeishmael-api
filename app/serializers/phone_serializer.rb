@@ -16,5 +16,20 @@ class PhoneSerializer < ActiveModel::Serializer
     stories = phone_stories.each_with_object({}) { |i,o|
       o[i[0]] = { button_id: i[1], story_id: i[2], title: i[3], created_at: Date.parse(i[4]).strftime('%A, %D') , url: i[5] }
     }
+    array = []
+    array[0] = { '1' => stories['1'] }
+    array[1] = { '2' => stories['2'] }
+    array[2] = { '3' => stories['3'] }
+    array[3] = { '4' => stories['4'] }
+    array[4] = { '5' => stories['5'] }
+    array[5] = { '6' => stories['6'] }
+    array[6] = { '7' => stories['7'] }
+    array[7] = { '8' => stories['8'] }
+    array[8] = { '9' => stories['9'] }
+    array[9] = { '0' => stories['0'] }
+    array[10] = { '#' => stories['#'] }
+    array[11] = { '*' => stories['*'] }
+    array[12] = { 'PR' => stories['PR'] }
+    array
   end
 end
