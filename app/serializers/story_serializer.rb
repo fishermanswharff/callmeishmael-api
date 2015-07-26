@@ -1,6 +1,7 @@
 class StorySerializer < ActiveModel::Serializer
   attributes :id, :unique_identifier, :title, :url, :story_type, :author_first, :author_last, :placements, :listens, :percentage, :created_at, :updated_at
   has_many :phones
+  has_many :venues
 
   def created_at
     object.created_at.strftime('%A, %D')
