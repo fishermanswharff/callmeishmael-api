@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   post '/login', to: 'admin/users#login'
   get '/logout', to: 'admin/users#logout'
   get '/resetpassword', to: 'admin/users#resetpassword'
+  get 'amazon/sign_key'
 
   get '/' => redirect('https://github.com/fishermanswharff/callmeishmael-api')
 

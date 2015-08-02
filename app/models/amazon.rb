@@ -1,13 +1,13 @@
 class Amazon
-  def self.get_s3_upload_key
-    @key = "uploads/#{SecureRandom.uuid}"
+  def self.get_s3_upload_key(params)
+    @key = "#{params[:filename]}"
     @policy = Base64.encode64(
       "{'expiration': '#{30.minutes.from_now.utc.strftime('%Y-%m-%dT%H:%M:%S.000Z')}',
       'conditions': [
-        {'bucket': '#{ENV['S3_BUCKET_NAME']}'},
+        {'bucket': '#{ENV['S3_FILES_BUCKET_NAME']}'},
         ['starts-with', '$key', '#{@key}'],
         {'acl': 'public-read'},
-        ['starts-with', '$Content-Type', 'image/jpeg'],
+        ['starts-with', '$Content-Type', '#{params[:filetype]}'],
         ['content-length-range', 0, 10485760],
       ]}").gsub(/\n|\r/, '')
     @signature = Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest.new('sha1'), ENV['AWS_SECRET_ACCESS_KEY'], @policy)).gsub(/\n| |\r/, '')
