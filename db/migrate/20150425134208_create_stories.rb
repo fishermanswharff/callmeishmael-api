@@ -7,8 +7,8 @@ class CreateStories < ActiveRecord::Migration
       t.integer :story_type, null: false, default: 1, index: true
       t.text :author_last
       t.text :author_first
-      t.integer :placements
-      t.integer :listens
+      t.integer :placements, default: 0, null: false
+      t.integer :listens, default: 0, null: false
       t.decimal :percentage, precision: 4, scale: 2
       t.timestamps
     end

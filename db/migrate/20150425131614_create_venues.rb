@@ -8,7 +8,7 @@ class CreateVenues < ActiveRecord::Migration
       t.integer :post_roll_listens
       t.integer :total_stories
       t.uuid :user_id
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

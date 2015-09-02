@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804214120) do
+ActiveRecord::Schema.define(version: 20150831234952) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20150804214120) do
   add_index "buttons", ["assignment"], name: "index_buttons_on_assignment", using: :btree
   add_index "buttons", ["phone_id"], name: "index_buttons_on_phone_id", using: :btree
   add_index "buttons", ["story_id"], name: "index_buttons_on_story_id", using: :btree
+
+  create_table "phonelogs", force: :cascade do |t|
+    t.text     "log_content"
+    t.integer  "phone_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "phones", force: :cascade do |t|
     t.text     "unique_identifier"
@@ -51,8 +58,8 @@ ActiveRecord::Schema.define(version: 20150804214120) do
     t.integer  "story_type",                                default: 1, null: false
     t.text     "author_last"
     t.text     "author_first"
-    t.integer  "placements"
-    t.integer  "listens"
+    t.integer  "placements",                                default: 0, null: false
+    t.integer  "listens",                                   default: 0, null: false
     t.decimal  "percentage",        precision: 4, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -99,8 +106,9 @@ ActiveRecord::Schema.define(version: 20150804214120) do
     t.integer  "number_phones"
     t.integer  "post_roll_listens"
     t.integer  "total_stories"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.integer  "total_listens"
   end
 
   add_index "venues", ["name"], name: "index_venues_on_name", using: :btree

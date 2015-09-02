@@ -1,0 +1,328 @@
+2015-07-08 17:33:48,100 Event: NetSync.syncFiles started
+2015-07-08 17:33:48,959 Event: NetSync.getRemoteFileNames retrieved remote file names from API
+2015-07-08 17:33:48,975 Event: NetSync.syncFiles complete
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:34:04,913 Event: AudioPlayer.playContent playing /home/pi/CMI/phone/audiofiles/08_451-Harry-Potter-by-J.K.-Rowling-final.ogg
+2015-07-08 17:35:41,469 Exception: AudioPlayer.run: file not playing, possibly incomplete or damaged
+2015-07-08 17:35:41,477 Event: AudioPlayer.playContent playing /home/pi/CMI/phone/audiofiles/12_whitenoise.ogg
+2015-07-08 17:35:51,782 Event: HWListener thread started
+2015-07-08 17:35:51,792 Event: AudioPlayer thread starting
+2015-07-08 17:35:51,922 Event: AudioPlayer.getFileNames found 0 local audio files
+2015-07-08 17:35:51,926 Event: AudioPlayer.getFileNames succeeded
+2015-07-08 17:35:51,930 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/0.aiff
+2015-07-08 17:35:51,935 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/1.aiff
+2015-07-08 17:35:51,939 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/2.aiff
+2015-07-08 17:35:51,944 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/3.aiff
+2015-07-08 17:35:51,948 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/4.aiff
+2015-07-08 17:35:51,953 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/5.aiff
+2015-07-08 17:35:51,957 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/6.aiff
+2015-07-08 17:35:51,962 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/7.aiff
+2015-07-08 17:35:51,967 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/8.aiff
+2015-07-08 17:35:51,971 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/9.aiff
+2015-07-08 17:35:51,976 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/10.aiff
+2015-07-08 17:35:51,980 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/11.aiff
+2015-07-08 17:35:51,984 Event: AudioPlayer thread initialized
+2015-07-08 17:35:51,987 Event: NetSync thread started
+2015-07-08 17:35:51,991 Event: NetSync thread initialized
+2015-07-08 17:35:51,997 Event: HWListener.checkHang detects  receiver lifted 
+2015-07-08 16:49:11,113 Event: NetSync.syncFiles started
+2015-07-08 16:49:12,084 Event: NetSync.getRemoteFileNames retrieved remote file names from API
+2015-07-08 16:49:12,099 Event: NetSync.syncFiles complete
+2015-07-08 16:49:28,136 Event: HWListener detects button push7
+2015-07-08 16:49:33,176 Event: AudioPlayer.playContent playing /home/pi/CMI/phone/audiofiles/07_074-Fault-In-Our-stars-by-John-Green-final.ogg
+2015-07-08 16:50:14,140 Event: NetSync.getPing sending request
+2015-07-08 16:50:14,644 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"e9a9e45cd25849d6a2f9c11215a4a85a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-07T14:26:51.172Z","updated_at":"2015-07-07T14:26:51.172Z","venue_id":1}}
+2015-07-08 16:50:37,119 Exception: AudioPlayer.run: file not playing, possibly incomplete or damaged
+2015-07-08 16:50:37,123 Exception: AudioPlayer.playContent: IndexError('list index out of range',)
+2015-07-08 16:50:45,681 Event: NetSync.getPing sending request
+2015-07-08 16:50:46,036 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"e9a9e45cd25849d6a2f9c11215a4a85a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-07T14:26:51.172Z","updated_at":"2015-07-07T14:26:51.172Z","venue_id":1}}
+2015-07-08 17:00:04,341 Event: NetSync.getPing sending request
+2015-07-08 17:00:04,854 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"e9a9e45cd25849d6a2f9c11215a4a85a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-07T14:26:51.172Z","updated_at":"2015-07-07T14:26:51.172Z","venue_id":1}}
+2015-07-08 17:00:04,860 Event: NetSync.syncFiles started
+2015-07-08 17:00:05,315 Event: NetSync.getRemoteFileNames retrieved remote file names from API
+2015-07-08 17:00:05,333 Event: NetSync.syncFiles complete
+2015-07-29 23:05:44,425 Event: NetSync.syncFiles started
+2015-07-29 23:05:49,708 Event: NetSync.getRemoteFileNames retrieved remote file names from API
+2015-07-29 23:05:49,718 Event: AudioPlayer.getFileNames found 13 local audio files
+2015-07-29 23:05:49,720 Event: AudioPlayer.getFileNames succeeded
+2015-07-29 23:05:58,312 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/00_703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.ogg
+2015-07-29 23:06:02,442 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/01_699-On-Looking-by-Alexandra-Horowitz-final.ogg
+2015-07-29 23:06:06,911 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/02_071-Pajama-Time-by-Sandra-Boynton-final.ogg
+2015-07-29 23:06:12,565 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/03_323-Anna-Karenina-by-Leo-Tolstoy-final.ogg
+2015-07-29 23:06:16,454 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/04_777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.ogg
+2015-07-29 23:06:20,949 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/05_451-Harry-Potter-by-J.K.-Rowling-final.ogg
+2015-07-29 23:06:25,100 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/06_800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.ogg
+2015-07-29 23:06:35,016 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/07_028-The-Sneetches-by-Dr-Seuss-final.ogg
+2015-07-29 23:06:38,284 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/08_592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.ogg
+2015-07-29 23:06:44,529 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/09_888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg
+2015-07-29 23:06:47,469 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/10_074-Fault-In-Our-stars-by-John-Green-final.ogg
+2015-07-29 23:06:51,996 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/11_020-Merriam-Webster-Dictionary-final.ogg
+2015-07-29 23:06:52,793 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/12_whitenoise.ogg
+2015-07-29 23:06:52,795 Event: NetSync.syncFiles complete
+2015-07-29 23:10:29,957 Event: NetSync.getPing sending request
+2015-07-29 23:10:30,445 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:20:19,930 Event: NetSync.getPing sending request
+2015-07-29 23:20:20,470 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:20:51,480 Event: NetSync.getPing sending request
+2015-07-29 23:20:57,096 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:30:15,551 Event: NetSync.getPing sending request
+2015-07-29 23:30:21,017 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:30:52,051 Event: NetSync.getPing sending request
+2015-07-29 23:30:52,259 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:40:10,676 Event: NetSync.getPing sending request
+2015-07-29 23:40:11,153 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:40:42,188 Event: NetSync.getPing sending request
+2015-07-29 23:40:47,526 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:50:05,884 Event: NetSync.getPing sending request
+2015-07-29 23:50:06,482 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-29 23:50:37,517 Event: NetSync.getPing sending request
+2015-07-29 23:50:41,328 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:00:30,816 Event: NetSync.getPing sending request
+2015-07-30 00:00:31,086 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:10:20,509 Event: NetSync.getPing sending request
+2015-07-30 00:10:21,049 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:10:52,074 Event: NetSync.getPing sending request
+2015-07-30 00:10:52,342 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:20:10,770 Event: NetSync.getPing sending request
+2015-07-30 00:20:15,987 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:20:46,991 Event: NetSync.getPing sending request
+2015-07-30 00:20:48,265 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:30:06,757 Event: NetSync.getPing sending request
+2015-07-30 00:30:07,165 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:30:38,190 Event: NetSync.getPing sending request
+2015-07-30 00:30:43,452 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:40:01,761 Event: NetSync.getPing sending request
+2015-07-30 00:40:02,049 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:40:33,070 Event: NetSync.getPing sending request
+2015-07-30 00:40:38,359 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:50:27,676 Event: NetSync.getPing sending request
+2015-07-30 00:50:27,983 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 00:50:59,018 Event: NetSync.getPing sending request
+2015-07-30 00:50:59,404 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:00:17,726 Event: NetSync.getPing sending request
+2015-07-30 01:00:22,977 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:00:54,011 Event: NetSync.getPing sending request
+2015-07-30 01:00:54,196 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:10:12,564 Event: NetSync.getPing sending request
+2015-07-30 01:10:13,020 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:10:44,048 Event: NetSync.getPing sending request
+2015-07-30 01:10:44,697 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:20:03,136 Event: NetSync.getPing sending request
+2015-07-30 01:20:03,437 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:20:34,441 Event: NetSync.getPing sending request
+2015-07-30 01:20:34,722 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:30:24,134 Event: NetSync.getPing sending request
+2015-07-30 01:30:24,562 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:30:55,572 Event: NetSync.getPing sending request
+2015-07-30 01:30:55,997 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:40:14,344 Event: NetSync.getPing sending request
+2015-07-30 01:40:14,780 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:40:45,811 Event: NetSync.getPing sending request
+2015-07-30 01:40:46,136 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:50:04,415 Event: NetSync.getPing sending request
+2015-07-30 01:50:04,776 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 01:50:35,781 Event: NetSync.getPing sending request
+2015-07-30 01:50:36,130 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:00:25,505 Event: NetSync.getPing sending request
+2015-07-30 02:00:26,005 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:00:57,017 Event: NetSync.getPing sending request
+2015-07-30 02:00:57,249 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:10:15,604 Event: NetSync.getPing sending request
+2015-07-30 02:10:26,123 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:10:57,139 Event: NetSync.getPing sending request
+2015-07-30 02:10:57,404 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:20:15,767 Event: NetSync.getPing sending request
+2015-07-30 02:20:16,036 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:20:47,069 Event: NetSync.getPing sending request
+2015-07-30 02:20:52,394 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:30:10,831 Event: NetSync.getPing sending request
+2015-07-30 02:30:11,180 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:30:42,215 Event: NetSync.getPing sending request
+2015-07-30 02:30:42,593 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:40:01,157 Event: NetSync.getPing sending request
+2015-07-30 02:40:01,501 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:40:32,513 Event: NetSync.getPing sending request
+2015-07-30 02:40:32,870 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:50:22,251 Event: NetSync.getPing sending request
+2015-07-30 02:50:22,671 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 02:50:53,676 Event: NetSync.getPing sending request
+2015-07-30 02:50:53,974 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:00:12,535 Event: NetSync.getPing sending request
+2015-07-30 03:00:12,802 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:00:43,820 Event: NetSync.getPing sending request
+2015-07-30 03:00:44,167 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:10:02,488 Event: NetSync.getPing sending request
+2015-07-30 03:10:02,908 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:10:33,944 Event: NetSync.getPing sending request
+2015-07-30 03:10:34,457 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:20:23,945 Event: NetSync.getPing sending request
+2015-07-30 03:20:27,341 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:20:58,348 Event: NetSync.getPing sending request
+2015-07-30 03:20:58,704 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:30:17,124 Event: NetSync.getPing sending request
+2015-07-30 03:30:17,429 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:30:48,464 Event: NetSync.getPing sending request
+2015-07-30 03:30:48,708 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:40:07,173 Event: NetSync.getPing sending request
+2015-07-30 03:40:07,761 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:40:38,790 Event: NetSync.getPing sending request
+2015-07-30 03:40:41,747 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 03:50:30,994 Event: NetSync.getPing sending request
+2015-07-30 03:50:32,297 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:00:21,712 Event: NetSync.getPing sending request
+2015-07-30 04:00:21,906 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:00:52,941 Event: NetSync.getPing sending request
+2015-07-30 04:00:58,278 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:10:16,757 Event: NetSync.getPing sending request
+2015-07-30 04:10:17,174 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:10:48,190 Event: NetSync.getPing sending request
+2015-07-30 04:10:48,633 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:20:07,102 Event: NetSync.getPing sending request
+2015-07-30 04:20:12,254 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:20:43,287 Event: NetSync.getPing sending request
+2015-07-30 04:20:43,586 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:30:02,027 Event: NetSync.getPing sending request
+2015-07-30 04:30:02,369 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:30:33,388 Event: NetSync.getPing sending request
+2015-07-30 04:30:33,602 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:40:22,974 Event: NetSync.getPing sending request
+2015-07-30 04:40:23,484 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:40:54,489 Event: NetSync.getPing sending request
+2015-07-30 04:40:54,764 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:50:13,161 Event: NetSync.getPing sending request
+2015-07-30 04:50:14,171 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 04:50:45,204 Event: NetSync.getPing sending request
+2015-07-30 04:50:45,392 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:00:03,821 Event: NetSync.getPing sending request
+2015-07-30 05:00:04,225 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:00:35,230 Event: NetSync.getPing sending request
+2015-07-30 05:00:35,529 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:10:24,953 Event: NetSync.getPing sending request
+2015-07-30 05:10:25,329 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:10:56,364 Event: NetSync.getPing sending request
+2015-07-30 05:10:56,739 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:20:15,138 Event: NetSync.getPing sending request
+2015-07-30 05:20:15,619 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:20:46,648 Event: NetSync.getPing sending request
+2015-07-30 05:20:46,961 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:30:05,295 Event: NetSync.getPing sending request
+2015-07-30 05:30:10,599 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:30:41,630 Event: NetSync.getPing sending request
+2015-07-30 05:30:41,844 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:40:00,276 Event: NetSync.getPing sending request
+2015-07-30 05:40:01,374 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:40:32,378 Event: NetSync.getPing sending request
+2015-07-30 05:40:32,676 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:50:22,070 Event: NetSync.getPing sending request
+2015-07-30 05:50:22,557 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 05:50:53,588 Event: NetSync.getPing sending request
+2015-07-30 05:50:53,836 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:00:12,252 Event: NetSync.getPing sending request
+2015-07-30 06:00:12,509 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:00:43,513 Event: NetSync.getPing sending request
+2015-07-30 06:00:44,011 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:10:02,373 Event: NetSync.getPing sending request
+2015-07-30 06:10:02,607 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:10:33,641 Event: NetSync.getPing sending request
+2015-07-30 06:10:34,996 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:20:24,230 Event: NetSync.getPing sending request
+2015-07-30 06:20:24,699 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:20:55,734 Event: NetSync.getPing sending request
+2015-07-30 06:20:56,096 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:30:14,503 Event: NetSync.getPing sending request
+2015-07-30 06:30:14,761 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:30:45,765 Event: NetSync.getPing sending request
+2015-07-30 06:30:46,096 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:40:04,501 Event: NetSync.getPing sending request
+2015-07-30 06:40:09,844 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:40:40,878 Event: NetSync.getPing sending request
+2015-07-30 06:40:41,838 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:50:00,271 Event: NetSync.getPing sending request
+2015-07-30 06:50:00,551 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 06:50:31,556 Event: NetSync.getPing sending request
+2015-07-30 06:50:31,784 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:00:21,195 Event: NetSync.getPing sending request
+2015-07-30 07:00:21,547 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:00:52,582 Event: NetSync.getPing sending request
+2015-07-30 07:00:52,921 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:10:11,331 Event: NetSync.getPing sending request
+2015-07-30 07:10:11,759 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:10:42,763 Event: NetSync.getPing sending request
+2015-07-30 07:10:42,971 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:20:01,330 Event: NetSync.getPing sending request
+2015-07-30 07:20:02,582 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:20:33,592 Event: NetSync.getPing sending request
+2015-07-30 07:20:39,051 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:30:28,511 Event: NetSync.getPing sending request
+2015-07-30 07:30:28,921 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:30:59,943 Event: NetSync.getPing sending request
+2015-07-30 07:31:05,363 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:40:23,761 Event: NetSync.getPing sending request
+2015-07-30 07:40:24,128 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:40:55,162 Event: NetSync.getPing sending request
+2015-07-30 07:40:55,380 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:50:13,704 Event: NetSync.getPing sending request
+2015-07-30 07:50:14,000 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 07:50:45,034 Event: NetSync.getPing sending request
+2015-07-30 07:50:45,295 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:00:03,754 Event: NetSync.getPing sending request
+2015-07-30 08:00:05,781 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:00:36,785 Event: NetSync.getPing sending request
+2015-07-30 08:00:37,073 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:10:26,513 Event: NetSync.getPing sending request
+2015-07-30 08:10:27,239 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:10:58,266 Event: NetSync.getPing sending request
+2015-07-30 08:11:03,576 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:20:21,975 Event: NetSync.getPing sending request
+2015-07-30 08:20:22,379 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:20:53,407 Event: NetSync.getPing sending request
+2015-07-30 08:20:53,702 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:30:12,057 Event: NetSync.getPing sending request
+2015-07-30 08:30:13,404 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:30:44,438 Event: NetSync.getPing sending request
+2015-07-30 08:30:44,793 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:40:03,190 Event: NetSync.getPing sending request
+2015-07-30 08:40:08,375 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:40:39,409 Event: NetSync.getPing sending request
+2015-07-30 08:40:42,083 Event: NetSync.getPing response: {"response":"ACK","phone":{"id":1,"unique_identifier":"1-1","token":"726a7d3b9f9442bcab34c1f194e9cc7a","status":"active","wifiSSID":"78:31:c1:cd:c6:82","wifiPassword":"secret","created_at":"2015-07-25T16:01:18.528Z","updated_at":"2015-07-25T16:01:18.528Z","venue_id":1}}
+2015-07-30 08:17:19,959 Event: HWListener thread started
+2015-07-30 08:17:19,963 Event: AudioPlayer thread starting
+2015-07-30 08:17:20,075 Event: AudioPlayer.getFileNames found 13 local audio files
+2015-07-30 08:17:20,076 Event: AudioPlayer.getFileNames succeeded
+2015-07-30 08:17:28,587 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/00_703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.ogg
+2015-07-30 08:17:32,708 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/01_699-On-Looking-by-Alexandra-Horowitz-final.ogg
+2015-07-31 20:11:40,053 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/02_071-Pajama-Time-by-Sandra-Boynton-final.ogg
+2015-07-31 20:11:45,666 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/03_323-Anna-Karenina-by-Leo-Tolstoy-final.ogg
+2015-07-31 20:11:49,537 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/04_777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.ogg
+2015-07-31 20:11:54,027 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/05_451-Harry-Potter-by-J.K.-Rowling-final.ogg
+2015-07-31 20:11:58,163 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/06_800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.ogg
+2015-07-31 20:12:08,204 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/07_028-The-Sneetches-by-Dr-Seuss-final.ogg
+2015-07-31 20:12:11,639 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/08_592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.ogg
+2015-07-31 20:12:17,950 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/09_888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg
+2015-07-31 20:12:20,907 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/10_074-Fault-In-Our-stars-by-John-Green-final.ogg
+2015-07-31 20:12:25,589 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/11_020-Merriam-Webster-Dictionary-final.ogg
+2015-07-31 20:12:26,424 Event: AudioPlayer.loadContentSounds succeeded for /home/pi/CMI/phone/audiofiles/12_whitenoise.ogg
+2015-07-31 20:12:26,429 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/0.aiff
+2015-07-31 20:12:26,432 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/1.aiff
+2015-07-31 20:12:26,434 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/2.aiff
+2015-07-31 20:12:26,437 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/3.aiff
+2015-07-31 20:12:26,440 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/4.aiff
+2015-07-31 20:12:26,442 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/5.aiff
+2015-07-31 20:12:26,445 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/6.aiff
+2015-07-31 20:12:26,447 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/7.aiff
+2015-07-31 20:12:26,450 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/8.aiff
+2015-07-31 20:12:26,453 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/9.aiff
+2015-07-31 20:12:26,455 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/10.aiff
+2015-07-31 20:12:26,458 Event: AudioPlayer.loadDTMFSounds succeeded for /home/pi/CMI/phone/dtmf/11.aiff
+2015-07-31 20:12:26,459 Event: AudioPlayer thread initialized
+2015-07-31 20:12:26,460 Event: NetSync thread started
+2015-07-31 20:12:26,461 Event: NetSync thread initialized
+2015-07-31 20:12:26,463 Event: HWListener.checkHang detects  receiver lifted 

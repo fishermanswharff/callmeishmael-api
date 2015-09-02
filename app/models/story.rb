@@ -10,4 +10,10 @@ class Story < ActiveRecord::Base
     self.unique_identifier = "#{self.id}-1000"
     self.save!
   end
+
+  def increment_listens
+    self.listens += 1
+    self.save!
+    self.listens
+  end
 end
