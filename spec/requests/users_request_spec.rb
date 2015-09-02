@@ -1,5 +1,8 @@
 require 'rails_helper'
 require 'spec_helper'
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
 describe 'User API Endpoint' do
   before(:each) do

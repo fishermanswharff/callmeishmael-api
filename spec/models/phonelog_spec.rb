@@ -32,7 +32,7 @@ describe Phonelog, type: :model do
   end
 
   it 'finds the stories associated with the buttons' do
-    matches = [["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 17:33:57,132", "8"], ["2015-07-08 16:49:28,136", "7"]]
+    matches = @log.match_listens
     response = @log.notify_stories(matches)
     expect(response).to be_a Array
     expect(response).to eq [1,2,3,4,5,6,7,8,9,1]

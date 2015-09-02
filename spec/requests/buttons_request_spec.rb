@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
 describe 'Buttons API Endpoint (Phone and Story Join Table)' do
 

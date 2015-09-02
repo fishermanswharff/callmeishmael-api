@@ -1,4 +1,7 @@
 require 'rails_helper'
+require 'database_cleaner'
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
 
 describe 'Phone API endpoint' do
 
@@ -216,7 +219,6 @@ describe 'Phone API endpoint' do
   end
 
   describe '#ping' do
-
   end
 
   describe '#files' do

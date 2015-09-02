@@ -35,6 +35,6 @@ RSpec.describe Story, type: :model do
   end
 
   it 'has a unique identifier' do
-    expect(@stories[3].unique_identifier).to eq '7-1000'
+    expect(@stories[3].unique_identifier).to eq "#{@stories[3].id}-1000"
   end
 end
