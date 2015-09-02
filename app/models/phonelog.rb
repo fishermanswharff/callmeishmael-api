@@ -8,9 +8,7 @@ class Phonelog < ActiveRecord::Base
   end
 
   def notify_stories(array)
-    array.map { |a|
-      Button.where(phone_id: phone.id, assignment: a[1]).first.story.increment_listens
-    }
+    array.map { |a| Button.where(phone_id: phone.id, assignment: a[1]).first.story.increment_listens }
   end
 
   # when a log comes in, i need to check for a line that looks like this:
