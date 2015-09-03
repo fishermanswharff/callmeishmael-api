@@ -270,7 +270,6 @@ describe 'Phone API endpoint' do
       expect(phonelog[:log_content]).not_to eq nil
       expect(phonelog[:phone_id]).to eq phone_id
       expect(phonelog[:id]).not_to eq nil
-      p phonelog
     end
   end
 end

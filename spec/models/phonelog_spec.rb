@@ -40,4 +40,8 @@ describe Phonelog, type: :model do
     expect(Button.where(phone_id: log.phone.id, assignment: '7').first.story.listens).to eq 1
   end
 
+  it 'parses the log after creation and notifies the venue' do
+    expect(log.phone.venue.total_listens).to eq 10
+  end
+
 end

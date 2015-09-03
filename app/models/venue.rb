@@ -9,4 +9,8 @@ class Venue < ActiveRecord::Base
     self.unique_identifier = "#{self.id}-1000"
     self.save!
   end
+
+  def increment_listens(amount)
+    self.total_listens += amount
+  end
 end

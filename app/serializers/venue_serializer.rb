@@ -1,5 +1,5 @@
 class VenueSerializer < ActiveModel::Serializer
-  attributes :id, :unique_identifier, :name, :status, :number_phones, :post_roll_listens, :total_stories, :created_at, :updated_at
+  attributes :id, :unique_identifier, :name, :status, :number_phones, :post_roll_listens, :total_stories, :created_at, :updated_at, :total_listens
   has_many :users
   has_many :stories
 

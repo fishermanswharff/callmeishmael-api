@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(version: 20150831234952) do
     t.integer  "total_stories"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.integer  "total_listens"
+    t.integer  "total_listens",     default: 0,    null: false
   end
 
   add_index "venues", ["name"], name: "index_venues_on_name", using: :btree
