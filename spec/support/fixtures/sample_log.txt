@@ -32,7 +32,7 @@
 2015-07-08 17:35:51,984 Event: AudioPlayer thread initialized
 2015-07-08 17:35:51,987 Event: NetSync thread started
 2015-07-08 17:35:51,991 Event: NetSync thread initialized
-2015-07-08 17:35:51,997 Event: HWListener.checkHang detects  receiver lifted 
+2015-07-08 17:35:51,997 Event: HWListener.checkHang detects  receiver lifted
 2015-07-08 16:49:11,113 Event: NetSync.syncFiles started
 2015-07-08 16:49:12,084 Event: NetSync.getRemoteFileNames retrieved remote file names from API
 2015-07-08 16:49:12,099 Event: NetSync.syncFiles complete
@@ -325,4 +325,4 @@
 2015-07-31 20:12:26,459 Event: AudioPlayer thread initialized
 2015-07-31 20:12:26,460 Event: NetSync thread started
 2015-07-31 20:12:26,461 Event: NetSync thread initialized
-2015-07-31 20:12:26,463 Event: HWListener.checkHang detects  receiver lifted 
+2015-07-31 20:12:26,463 Event: HWListener.checkHang detects  receiver lifted

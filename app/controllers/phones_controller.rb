@@ -56,8 +56,16 @@ class PhonesController < ApplicationController
     phone = Phone.find(params[:phone_id])
     venue = Venue.find(params[:venue_id])
     log = Base64.decode64(params[:log])
-    resp = @phone.send_log_file(log)
-    render json: { path: resp[:bucket_url] + '/' + resp[:response].key }, status: :ok
+    phonelog = Phonelog.create!(log_content: log, phone: phone)
+    if phonelog.save
+      unless Rails.env == 'test' || Rails.env == 'development'
+        resp = @phone.send_log_file(log)
+      end
+      render json: phonelog, status: :created
+    else
+      render json: phonelog.errors, status: :unprocessable_entity
+    end
+    # render json: { path: resp[:bucket_url] + '/' + resp[:response].key }, status: :ok
   end
 
   private

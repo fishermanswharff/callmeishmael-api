@@ -251,6 +251,28 @@ describe 'Phone API endpoint' do
       expect(stories[4]).to eq 'http://callmeishmael.com/thespectacularnow.mp3'
     end
   end
+
+  describe '#log' do
+    let(:log) { File.read("#{Rails.root}/spec/support/fixtures/url_encoded_log.txt") }
+    let(:venue_id) { @venues[0].id }
+    let(:phone_id) { @venues[0].phones.first.id }
+
+    before(:each) do
+      post "/venues/#{venue_id}/phones/#{phone_id}/log", { log: URI.unescape(log) }
+    end
+
+    it 'responds with success' do
+      expect(response.status).to eq 201
+    end
+
+    it 'creates the new log and returns it as json' do
+      phonelog = json(response.body)
+      expect(phonelog[:log_content]).not_to eq nil
+      expect(phonelog[:phone_id]).to eq phone_id
+      expect(phonelog[:id]).not_to eq nil
+      p phonelog
+    end
+  end
 end
 
 
