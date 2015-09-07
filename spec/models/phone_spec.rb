@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: phones
+#
+#  id                :integer          not null, primary key
+#  unique_identifier :text
+#  token             :text             not null
+#  status            :integer          default(0), not null
+#  wifiSSID          :text
+#  wifiPassword      :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  venue_id          :integer
+#
+
 require 'rails_helper'
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
@@ -13,11 +28,6 @@ describe Phone, type: :model do
     @phones = Phone.create([
       { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: @venue},
       { wifiSSID: '79:30:b1:bc:c4:78', wifiPassword: 'password', venue: @venue},
-    ])
-    @stories = Story.create!([
-      { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.aif', story_type: 'fixed', author_last: 'Horowitz' },
-      { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.aif', story_type: 'ishmaels', author_last: 'Lee'},
-      { title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.aif', story_type: 'postroll', author_last: ''}
     ])
   end
 

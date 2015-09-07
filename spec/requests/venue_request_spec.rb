@@ -12,14 +12,14 @@ describe 'Venue API Endpoint' do
     @venue_admin = User.create({firstname: 'foo', lastname: 'bar', phonenumber: 5555555555, username: 'foobar', role: 'venue_admin', email: 'foo@bar.com', password: 'secret'})
     @another_venue_admin = User.create({firstname: 'baz', lastname: 'fah', phonenumber: 5555555555, username: 'bazfah', role: 'venue_admin', email: 'baz@fah.com', password: 'secret'})
     @admin = User.create({firstname: 'Logan', lastname: 'Smalley', phonenumber: 5555555555, username: 'logan', role: 'admin', email: 'logan@ted.com', password: 'secret'})
-    @reading_rainbow = FactoryGirl.create(:venue)
-    @reading_rainbow.stories = FactoryGirl.create_list(:story, 284)
-    @venues = Venue.create([
-      { name: '9 Candlewick', number_phones: 2 },
-      { name: '21 Shepard', number_phones: 1 },
-      { name: 'Strand Bookstore', number_phones: 3 },
-    ])
-    @story = Story.create({ title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg', story_type: 'fixed', author_last: 'Horowitz' })
+    @reading_rainbow = FactoryGirl.create(:venue, name: 'Reading Rainbow')
+    @reading_rainbow.stories = FactoryGirl.create_list(:story_associated_with_venue, 284, venues: [@reading_rainbow])
+    @venues = [
+      FactoryGirl.create(:venue_with_phone_and_buttons, number_phones: 2, name: '9 Candlewick'),
+      FactoryGirl.create(:venue_with_phone_and_buttons, name: '21 Shepard'),
+      FactoryGirl.create(:venue_with_stories, story_count: 43, name: 'Strand Bookstore'),
+    ]
+    @story = FactoryGirl.create(:story, :fixed_story, title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg' )
     @venues.first.users << @venue_admin
     @venues.first.users << @another_venue_admin
     @venues.first.users << @admin
@@ -152,9 +152,9 @@ describe 'Venue API Endpoint' do
       expect(venue[:name]).to eq 'Strand Bookstore on 5th Avenue'
       expect(venue[:number_phones]).to eq 3
     end
-    it 'has a story attached to the venue' do
+    it 'has stories attached to the venue' do
       venue = json(response.body)
-      expect(venue[:stories].last[:id]).to eq @story.id
+      expect(venue[:stories].count).to eq 44
     end
   end
 

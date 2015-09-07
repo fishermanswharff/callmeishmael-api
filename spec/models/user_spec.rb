@@ -1,3 +1,30 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id                     :uuid             not null, primary key
+#  firstname              :text
+#  lastname               :text
+#  username               :text
+#  role                   :integer          default(1), not null
+#  email                  :text
+#  phonenumber            :integer
+#  password_digest        :string
+#  token                  :string
+#  reset_password_token   :string
+#  reset_password_sent_at :datetime
+#  remember_created_at    :datetime
+#  sign_in_count          :integer          default(0), not null
+#  current_sign_in_at     :datetime
+#  last_sign_in_at        :datetime
+#  active                 :boolean          default(TRUE)
+#  main_store_contact     :boolean          default(FALSE)
+#  main_business_contact  :boolean          default(FALSE)
+#  confirmed              :boolean          default(FALSE)
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#
+
 require 'rails_helper'
 require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation

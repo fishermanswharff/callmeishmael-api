@@ -1,7 +1,20 @@
+# == Schema Information
+#
+# Table name: phonelogs
+#
+#  id          :integer          not null, primary key
+#  log_content :text
+#  phone_id    :integer
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Phonelog < ActiveRecord::Base
   belongs_to :phone
+
   validates :log_content, presence: true
   validates_associated :phone
+
   after_create :parse_logs, :notify_venue, if: Proc.new { |phonelog| phonelog.match_listens.length > 0 }
 
   def match_listens

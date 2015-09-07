@@ -1,3 +1,18 @@
+# == Schema Information
+#
+# Table name: phones
+#
+#  id                :integer          not null, primary key
+#  unique_identifier :text
+#  token             :text             not null
+#  status            :integer          default(0), not null
+#  wifiSSID          :text
+#  wifiPassword      :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  venue_id          :integer
+#
+
 class PhoneSerializer < ActiveModel::Serializer
   attributes :id, :unique_identifier, :token, :status, :wifiSSID, :wifiPassword, :created_at, :updated_at, :buttons
   belongs_to :venue

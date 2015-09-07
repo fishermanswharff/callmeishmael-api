@@ -5,7 +5,7 @@ class CreateVenuestories < ActiveRecord::Migration
       t.belongs_to :story, index: true
       t.timestamps
     end
-    add_foreign_key :venuestories, :venues
-    add_foreign_key :venuestories, :stories
+    add_foreign_key :venuestories, :venues, on_delete: :cascade
+    add_foreign_key :venuestories, :stories, on_delete: :cascade
   end
 end

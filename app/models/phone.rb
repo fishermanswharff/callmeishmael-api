@@ -1,10 +1,29 @@
+# == Schema Information
+#
+# Table name: phones
+#
+#  id                :integer          not null, primary key
+#  unique_identifier :text
+#  token             :text             not null
+#  status            :integer          default(0), not null
+#  wifiSSID          :text
+#  wifiPassword      :text
+#  created_at        :datetime
+#  updated_at        :datetime
+#  venue_id          :integer
+#
+
 class Phone < ActiveRecord::Base
   before_create :set_token
   after_create :set_unique_id
   belongs_to :venue, counter_cache: :number_phones
   has_many :buttons
   has_many :stories, through: :buttons
+  has_many :phonelogs
   enum status: [:active, :inactive, :retired, :fixable]
+
+  validates_associated :venue
+  validates_associated :buttons, if: :has_buttons?
 
   def set_unique_id
     if self.venue
@@ -51,5 +70,11 @@ class Phone < ActiveRecord::Base
 
   def generate_token
     SecureRandom.uuid.gsub(/\-/, '')
+  end
+
+  private
+
+  def has_buttons?
+    self.buttons.length > 0
   end
 end

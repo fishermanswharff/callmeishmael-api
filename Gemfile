@@ -10,7 +10,6 @@ gem 'nokogiri'
 gem 'bcrypt'
 gem 'rack-ssl-enforcer'
 gem 'aws-sdk', '~> 2'
-gem 'database_cleaner'
 
 group :development, :test do
   gem 'spring'
@@ -25,6 +24,8 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.0'
   gem 'faker'
   gem 'codeclimate-test-reporter', require: nil
+  gem 'annotate'
+  gem 'database_cleaner'
 end
 
 group :development do

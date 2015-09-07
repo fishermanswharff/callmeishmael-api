@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
 
   before_action :set_story, only: [:show, :update, :destroy]
-  before_filter :admin_only, only: [:create]
+  before_filter :admin_only, only: [:create, :update]
 
   def index
     stories = Story.all
@@ -41,7 +41,7 @@ class StoriesController < ApplicationController
   end
 
   def story_params
-    params.require(:story).permit(:title, :url, :story_type, :author_last, :author_first, :listens, :percentage, :call_length, :common_title, :call_date)
+    params.require(:story).permit(:title, :url, :story_type, :author_last, :author_first, :listens, :percentage, :call_length, :common_title, :call_date, :spoiler_alert, :child_appropriate, :explicit, :gender, :rating)
   end
 
 end

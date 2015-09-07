@@ -137,22 +137,22 @@ puts "\n\n"
 # —————————————————
 puts 'Seeding stories…'
 stories = Story.create!([
-  { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg', story_type: 'fixed', author_last: 'Horowitz' },
-  { title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.ogg', story_type: 'fixed', author_last: 'Safran Foer' },
-  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/071-Pajama-Time-by-Sandra-Boynton-final.ogg', story_type: 'fixed', author_last: 'Boynton' },
-  { title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary-final.ogg', story_type: 'ishmaels', author_last: 'Webster' },
-  { title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss-final.ogg', story_type: 'ishmaels', author_last: 'Seuss' },
-  { title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen-final.ogg', story_type: 'ishmaels', author_last: 'Austen' },
-  { title: 'Anna Karenina', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy-final.ogg', story_type: 'ishmaels', author_last: 'Tolstoy', author_first: 'Leo' },
-  { title: 'The Fault In Our Stars', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green-final.ogg', story_type: 'ishmaels', author_last: 'Green', author_first: 'John' },
-  { title: 'Harry Potter', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling-final.ogg', story_type: 'ishmaels', author_last: 'Rowling' },
-  { title: 'The Oldest Living Things in the World', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final.ogg', story_type: 'ishmaels', author_last: 'Sussman', author_first: 'Rachel' },
-  { title: 'A Short History of Nearly Everything', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.ogg', story_type: 'ishmaels', author_last: 'Bryson' },
-  { title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/064-Not-Even-Wrong-by-Paul-Collins-final.ogg', story_type: 'ishmaels', author_last: 'Collins'},
-  { title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.ogg', story_type: 'ishmaels', author_last: 'Strayed'},
-  { title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.ogg', story_type: 'ishmaels', author_last: 'Lawson'},
-  { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg', story_type: 'ishmaels', author_last: 'Lee'},
-  { title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.ogg', story_type: 'postroll', author_last: ''}
+  { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg', story_type: 'ishmaels',author_first: 'Alexandra', author_last: 'Horowitz', call_length: '0:00', common_title: 'On Looking Review', call_date: Date.today },
+  { title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.ogg', story_type: 'ishmaels', author_last: 'Safran Foer', author_first: 'Jonathan', call_length: '0:00', common_title: '703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final', call_date: Date.today },
+  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/071-Pajama-Time-by-Sandra-Boynton-final.ogg', story_type: 'ishmaels', author_last: 'Boynton', author_first: 'Sandra', call_length: '0:00', common_title: '071-Pajama-Time-by-Sandra-Boynton-final', call_date: Date.today },
+  { title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary-final.ogg', story_type: 'ishmaels', author_last: 'Webster', author_first: 'Merriam', call_length: '0:00', common_title: '020-Merriam-Webster-Dictionary-final', call_date: Date.today },
+  { title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss-final.ogg', story_type: 'ishmaels', author_last: 'Seuss', author_first: 'Dr.', call_length: '0:00', common_title: '028-The-Sneetches-by-Dr-Seuss-final', call_date: Date.today },
+  { title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen-final.ogg', story_type: 'ishmaels', author_last: 'Austen', author_first: 'Jane', call_length: '0:00', common_title: '313-Pride-And-Prejudice-by-Jane-Austen-final', call_date: Date.today },
+  { title: 'Anna Karenina', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy-final.ogg', story_type: 'ishmaels', author_last: 'Tolstoy', author_first: 'Leo', call_length: '0:00', common_title: '323-Anna-Karenina-by-Leo-Tolstoy-final', call_date: Date.today },
+  { title: 'The Fault In Our Stars', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green-final.ogg', story_type: 'ishmaels', author_last: 'Green', author_first: 'John', call_length: '0:00', common_title: '074-Fault-In-Our-stars-by-John-Green-final', call_date: Date.today },
+  { title: 'Harry Potter', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling-final.ogg', story_type: 'ishmaels', author_last: 'Rowling', author_first: 'JK', call_length: '0:00', common_title: '451-Harry-Potter-by-J.K.-Rowling-final', call_date: Date.today },
+  { title: 'The Oldest Living Things in the World', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final.ogg', story_type: 'ishmaels', author_last: 'Sussman', author_first: 'Rachel', call_length: '0:00', common_title: '564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final', call_date: Date.today },
+  { title: 'A Short History of Nearly Everything', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.ogg', story_type: 'ishmaels', author_last: 'Bryson', author_first: 'Bill', call_length: '0:00', common_title: '592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final', call_date: Date.today },
+  { title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/064-Not-Even-Wrong-by-Paul-Collins-final.ogg', story_type: 'ishmaels', author_last: 'Collins', author_first: 'Paul', call_length: '0:00', common_title: '064-Not-Even-Wrong-by-Paul-Collins-final', call_date: Date.today},
+  { title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.ogg', story_type: 'ishmaels', author_last: 'Strayed', author_first: 'Cheryl', call_length: '0:00', common_title: '777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final', call_date: Date.today},
+  { title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.ogg', story_type: 'ishmaels', author_last: 'Lawson', author_first: 'Jenny', call_length: '0:00', common_title: '800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final', call_date: Date.today},
+  { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg', story_type: 'ishmaels', author_last: 'Lee', author_first: 'Harper', call_length: '0:00', common_title: '888-To-Kill-a-Mockingbird-by-Harper-Lee-final', call_date: Date.today},
+  { title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.ogg', story_type: 'postroll', author_last: 'White', author_first: 'Noise', call_length: '0:00', common_title: 'White noise for testing purposes', call_date: Date.today}
 ])
 
 puts "Seeded #{stories.length} stories: "
@@ -161,16 +161,16 @@ puts "\n\n"
 
 puts 'Seeding venue stories for 21 Shepard St.'
 Venue.find_by(name: '21 Shepard St.').stories << Story.create!([
-  {title: 'Coming Home', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/01_Coming_Home.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Better Man', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/02_Better_Man.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Brown Skin Girl', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/03_Brown_Skin_Girl.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Smooth Sailin', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/04_Smooth_Sailin_39_.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Shine', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/05_Shine.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Lisa Sawyer', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/06_Lisa_Sawyer.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Flowers', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/07_Flowers.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Pull Away', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/08_Pull_Away.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'Twistin and Groovin', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/09_Twistin_39_and_Groovin_39_.ogg', story_type: 'venue', author_last: 'Bridges'},
-  {title: 'River', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/10_River.ogg', story_type: 'venue', author_last: 'Bridges'},
+  {title: 'Coming Home', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/01_Coming_Home.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Coming Home by Leon Bridges', call_date: Date.today },
+  {title: 'Better Man', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/02_Better_Man.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Better Man by Leon Bridges', call_date: Date.today },
+  {title: 'Brown Skin Girl', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/03_Brown_Skin_Girl.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Brown Skin Girl by Leon Bridges', call_date: Date.today },
+  {title: 'Smooth Sailin', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/04_Smooth_Sailin_39_.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Smooth Sailing', call_date: Date.today },
+  {title: 'Shine', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/05_Shine.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Shine', call_date: Date.today },
+  {title: 'Lisa Sawyer', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/06_Lisa_Sawyer.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Lisa Sawyer', call_date: Date.today },
+  {title: 'Flowers', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/07_Flowers.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Flowers', call_date: Date.today },
+  {title: 'Pull Away', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/08_Pull_Away.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Pull Away', call_date: Date.today },
+  {title: 'Twistin and Groovin', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/09_Twistin_39_and_Groovin_39_.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'Twistin & Groovin', call_date: Date.today },
+  {title: 'River', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/10_River.ogg', story_type: 'venue', author_last: 'Bridges', author_first: 'Leon', call_length: '0:00', common_title: 'River', call_date: Date.today },
 ])
 puts '21 Shepard St. has: '
 Venue.find_by(name: '21 Shepard St.').stories.each { |s| p "#{s.title} by #{s.author_last}, url: #{s.url}, story_type: #{s.story_type}" }
@@ -205,8 +205,7 @@ buttons = Button.create!([
   { assignment: '7', story: Story.find_by_title('The Oldest Living Things in the World'), phone: phones[3] },
   { assignment: '8', story: Story.find_by_title('A Short History of Nearly Everything'), phone: phones[3] },
   { assignment: '9', story: Story.find_by_title('Not Even Wrong'), phone: phones[3] },
-  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[3] },
-
+  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[3] }
 ])
 puts "Seeded #{buttons.length} buttons as a join table:"
 buttons.each { |b| p "#{b.assignment} button is assigned #{b.story.title} on phone #{b.phone.unique_identifier} at venue #{b.phone.venue.name}" }

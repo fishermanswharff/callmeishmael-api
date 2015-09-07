@@ -2,7 +2,7 @@ class PhonesController < ApplicationController
 
   before_action :get_phone_by_id, only: [:show, :update, :destroy]
   before_action :get_phone_by_phoneid, only: [:ping, :files, :log]
-  before_filter :admin_only, only: [:create]
+  before_filter :admin_only, only: [:create, :update]
 
   def index
     if params[:venue_id]

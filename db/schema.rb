@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150831234952) do
+ActiveRecord::Schema.define(version: 20150905161334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,19 +53,24 @@ ActiveRecord::Schema.define(version: 20150831234952) do
 
   create_table "stories", force: :cascade do |t|
     t.text     "unique_identifier"
-    t.text     "title",                                                 null: false
-    t.text     "url",                                                   null: false
-    t.integer  "story_type",                                default: 1, null: false
+    t.text     "title",                                                        null: false
+    t.text     "url",                                                          null: false
+    t.integer  "story_type",                                default: 1,        null: false
     t.text     "author_last"
     t.text     "author_first"
-    t.integer  "placements",                                default: 0, null: false
-    t.integer  "listens",                                   default: 0, null: false
+    t.integer  "placements",                                default: 0,        null: false
+    t.integer  "listens",                                   default: 0,        null: false
     t.decimal  "percentage",        precision: 4, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "call_length"
     t.string   "common_title"
     t.date     "call_date"
+    t.boolean  "spoiler_alert",                             default: false,    null: false
+    t.boolean  "child_appropriate",                         default: true,     null: false
+    t.boolean  "explicit",                                  default: false,    null: false
+    t.string   "gender",                                    default: "Female", null: false
+    t.integer  "rating",                                    default: 1,        null: false
   end
 
   add_index "stories", ["story_type"], name: "index_stories_on_story_type", using: :btree
@@ -124,6 +129,6 @@ ActiveRecord::Schema.define(version: 20150831234952) do
   add_index "venuestories", ["story_id"], name: "index_venuestories_on_story_id", using: :btree
   add_index "venuestories", ["venue_id"], name: "index_venuestories_on_venue_id", using: :btree
 
-  add_foreign_key "venuestories", "stories"
-  add_foreign_key "venuestories", "venues"
+  add_foreign_key "venuestories", "stories", on_delete: :cascade
+  add_foreign_key "venuestories", "venues", on_delete: :cascade
 end
