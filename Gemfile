@@ -26,6 +26,7 @@ group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'annotate'
   gem 'database_cleaner'
+  gem 'webmock'
 end
 
 group :development do
