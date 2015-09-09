@@ -26,10 +26,9 @@ class Phone < ActiveRecord::Base
   validates_associated :buttons, if: :has_buttons?
 
   def set_unique_id
-    if self.venue
-      self.unique_identifier = "#{self.venue.id}-#{self.id}"
-      self.save!
-    end
+    venue.reload
+    self.unique_identifier = "#{venue.id}-#{venue.number_phones}"
+    self.save!
   end
 
   def get_urls
@@ -58,7 +57,7 @@ class Phone < ActiveRecord::Base
     bucket = s3.bucket(ENV['S3_LOG_BUCKET_NAME'])
     s = "%10.9f" % Time.now.to_f
     resp = bucket.put_object({key: "venue_#{venue.id}/phone_#{self.id}/#{s}.txt", body: log})
-    # LogMailer.log_email(bucket.url + '/' + resp.key).deliver_now
+    LogMailer.log_email(bucket.url + '/' + resp.key).deliver_now unless Rails.env.test?
     { response: resp, bucket_url: bucket.url }
   end
 

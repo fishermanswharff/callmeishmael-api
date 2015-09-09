@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150905161334) do
+ActiveRecord::Schema.define(version: 20150909004541) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,9 +108,9 @@ ActiveRecord::Schema.define(version: 20150905161334) do
     t.text     "unique_identifier"
     t.text     "name",                             null: false
     t.boolean  "status",            default: true
-    t.integer  "number_phones"
-    t.integer  "post_roll_listens"
-    t.integer  "total_stories"
+    t.integer  "number_phones",     default: 0,    null: false
+    t.integer  "post_roll_listens", default: 0,    null: false
+    t.integer  "total_stories",     default: 0,    null: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.integer  "total_listens",     default: 0,    null: false

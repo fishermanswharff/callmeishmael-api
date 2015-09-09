@@ -36,9 +36,7 @@ RSpec.describe Venue, type: :model do
     expect(@venue.name).to eq '9 Candlewick'
   end
 
-  it 'has a unique_identifier' do
-    expect(@venue.unique_identifier).to eq "#{@venue.id}-1000"
-  end
+  it 'has a unique_identifier'
 
   it 'has a default status of true' do
     expect(@venue.status).to eq true

@@ -22,7 +22,7 @@ class Venue < ActiveRecord::Base
   has_many :stories, through: :venuestories
 
   def set_unique_id
-    self.unique_identifier = "#{self.id}-1000"
+    self.unique_identifier = "#{self.id}-#{SecureRandom.uuid.gsub(/\-/, '')}"
     self.save!
   end
 

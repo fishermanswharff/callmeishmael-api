@@ -49,7 +49,7 @@ describe 'Phone API endpoint' do
     it 'returns json of the phone' do
       phone = json(response.body)
       expect(phone[:unique_identifier]).not_to eq nil
-      expect(phone[:unique_identifier]).to eq "#{@venues.first.id}-#{@venues.first.phones.first.id}"
+      expect(phone[:unique_identifier]).to eq "#{@venues.first.id}-#{@venues.first.phones.find_index(@venues.first.phones.first) + 1}"
       expect(phone[:venue][:id]).to eq @venues.first.id
     end
   end
@@ -76,7 +76,7 @@ describe 'Phone API endpoint' do
       before(:each) do
         post "/venues/#{@venues[2].id}/phones",
         { phone:
-          { wifiSSID: '70:20:a1:ac:b3:69', wifiPassword: '123456' }
+          { status: 'active' }
         }.to_json,
         { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@admin.token}"}
       end
@@ -85,7 +85,7 @@ describe 'Phone API endpoint' do
       end
       it 'responds with json object of the phone' do
         phone = json(response.body)
-        expect(phone[:unique_identifier]).to eq "#{@venues[2].id}-#{phone[:id]}"
+        expect(phone[:status]).to eq 'active'
       end
       it 'returns the location' do
         phone = json(response.body)
