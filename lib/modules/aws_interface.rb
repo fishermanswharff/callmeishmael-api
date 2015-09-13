@@ -3,7 +3,8 @@ require 'aws-sdk'
 module AwsInterface
 
   class LogGetter
-    def init
+
+    def init(output = 'db')
       Aws.config[:credentials] = Aws::Credentials.new('AKIAIPOX2WMWVUFJBMDQ', 'tLocOzzwd/3xE1w92wN/BI/Pc244cE/VCFSMVPWA')
       Aws.config[:region] = 'us-west-2'
       s3 = Aws::S3::Resource.new
@@ -14,7 +15,11 @@ module AwsInterface
         phone_match = /phone_(\d)/.match(objectsummary.key).values_at(-1)[0]
         resp = objectsummary.get
         log_content = resp.body.string
-        write_to_db(objectsummary.key, make_safe(log_content))
+        if output == 'local'
+          write_to_file(objectsummary.key, make_safe(log_content))
+        else
+          write_to_db(objectsummary.key, make_safe(log_content))
+        end
       end
     end
 

@@ -8,18 +8,17 @@ namespace :phonelogs do
     puts "You are running rake task in #{Rails.env} environment"
   end
 
-
   desc "Gets log files from AWS and populates the database with the contents of the files"
-  task get: :environment do
+  task :get, [:type] => :environment do |t,args|
     aws = AwsInterface::LogGetter.new
-    logger = Logger.new(STDOUT)
-    logger.level = Logger::INFO
-    Rails.logger = logger
-    aws.init
+    aws.init(args[:type])
   end
-
-  desc "TODO"
-  task post: :environment do
-  end
-
 end
+
+
+# namespace :tweets do
+#   desc 'Send some tweets to a user'
+#   task :send, [:username] => [:environment] do |t, args|
+#     Tweet.send(args[:username])
+#   end
+# end
