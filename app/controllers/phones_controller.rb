@@ -55,7 +55,7 @@ class PhonesController < ApplicationController
     phone = Phone.find(params[:phone_id])
     venue = Venue.find(params[:venue_id])
     log = Base64.decode64(params[:log])
-    phonelog = Phonelog.create!(log_content: log, phone: phone)
+    phonelog = Phonelog.create!(log_content: log.encode('UTF-8', 'binary', invalid: :replace, undef: :replace, replace: ''), phone: phone)
     if phonelog.save
       unless Rails.env == 'test' || Rails.env == 'development'
         resp = @phone.send_log_file(log)

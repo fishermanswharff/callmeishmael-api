@@ -47,6 +47,9 @@ FactoryGirl.define do
     trait :invalid_assignment_M do
       assignment {'M'}
     end
+    trait :button_post_roll do
+      assignment { 'PR' }
+    end
 
     trait :fixed_story_button do
       association :story, :fixed_story

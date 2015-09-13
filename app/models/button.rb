@@ -18,4 +18,5 @@ class Button < ActiveRecord::Base
   validates_associated :story
   validates :assignment, presence: true
   validates :assignment, inclusion: { in: ['*','#','0','1','2','3','4','5','6','7','8','9','PR'] }
+
 end

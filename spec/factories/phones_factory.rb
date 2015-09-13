@@ -18,7 +18,7 @@ FactoryGirl.define do
         create(:seven_button_with_venue_story, phone: phone)
         create(:eight_button_with_venue_story, phone: phone)
         create(:nine_button_with_venue_story, phone: phone)
-        create(:button, :postroll_story_button, phone: phone)
+        create(:button, :postroll_story_button, :button_post_roll, phone: phone)
       }
     end
   end

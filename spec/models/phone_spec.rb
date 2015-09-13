@@ -52,19 +52,23 @@ describe Phone, type: :model do
     expect(@venue_with_phone_and_buttons.phones.fourth.unique_identifier).to eq "#{@venue_with_phone_and_buttons.id}-4"
   end
 
-  it 'returns an array of urls that point to the files on the phone' do
-    phone = @venue_with_phone_and_buttons.phones.first
-    phone2 = @venue_with_phone_and_buttons.phones.second
-    phone3 = @venue_with_phone_and_buttons.phones.third
-    phone4 = @venue_with_phone_and_buttons.phones.fourth
-    json1 = json(phone.get_urls)
-    json2 = json(phone2.get_urls)
-    json3 = json(phone3.get_urls)
-    json4 = json(phone4.get_urls)
-    expect(json1.length).to eq 13
-    expect(json2.length).to eq 13
-    expect(json3.length).to eq 13
-    expect(json4.length).to eq 13
+  describe '#get_urls' do
+
+    let(:phone_with_buttons) { @venue_with_phone_and_buttons.phones.first }
+    let(:filenames) { json(@venue_with_phone_and_buttons.phones.first.get_urls) }
+
+    it 'returns an array of file urls that are assigned to the phone' do
+      expect(filenames.length).to eq 13
+      expect(filenames).to be_a Array
+    end
+
+    it 'returns the url of the file in order of assignment' do
+      hash_button = Button.where(phone_id: phone_with_buttons.id, assignment: '#')
+      post_roll_button = Button.where(phone_id: phone_with_buttons.id, assignment: 'PR')
+      expect(filenames[0]).to eq hash_button.first.story.url
+      expect(filenames[-1]).to eq post_roll_button.first.story.url
+    end
+
   end
 
   it 'sends a log file to aws'
