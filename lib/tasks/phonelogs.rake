@@ -11,8 +11,11 @@ namespace :phonelogs do
 
   desc "Gets log files from AWS and populates the database with the contents of the files"
   task get: :environment do
-    logger = AwsInterface::LogGetter.new
-    logger.init
+    aws = AwsInterface::LogGetter.new
+    logger = Logger.new(STDOUT)
+    logger.level = Logger::INFO
+    Rails.logger = logger
+    aws.init
   end
 
   desc "TODO"
