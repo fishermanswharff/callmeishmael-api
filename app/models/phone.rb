@@ -23,7 +23,6 @@ class Phone < ActiveRecord::Base
   enum status: [:active, :inactive, :retired, :fixable]
 
   validates_associated :venue
-  validates_associated :buttons, if: :has_buttons?
 
   def set_unique_id
     venue.reload

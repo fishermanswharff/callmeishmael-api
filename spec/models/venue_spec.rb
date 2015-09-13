@@ -6,9 +6,9 @@
 #  unique_identifier :text
 #  name              :text             not null
 #  status            :boolean          default(TRUE)
-#  number_phones     :integer
-#  post_roll_listens :integer
-#  total_stories     :integer
+#  number_phones     :integer          default(0), not null
+#  post_roll_listens :integer          default(0), not null
+#  total_stories     :integer          default(0), not null
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  total_listens     :integer          default(0), not null

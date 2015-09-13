@@ -67,17 +67,10 @@ describe Phone, type: :model do
     expect(json4.length).to eq 13
   end
 
-  it 'has buttons associated that are assigned stories'
-
-
-
-  it 'sends a log file to aws' do
-    phone = @venue_with_phone_and_buttons.phones.first
-    log = FactoryGirl.create(:phonelog, phone: phone)
-
-    request = phone.send_log_file(log.log_content)
-
-    expect(request.response.status).to eq 200
-  end
+  it 'sends a log file to aws'
+  # phone = @venue_with_phone_and_buttons.phones.first
+  # log = FactoryGirl.create(:phonelog, phone: phone)
+  # request = phone.send_log_file(log.log_content)
+  # expect(request.response.status).to eq 200
 
 end

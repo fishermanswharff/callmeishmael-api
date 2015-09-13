@@ -9,6 +9,7 @@ module AwsInterface
   bucket.objects.each do |objectsummary|
     # access to the objectsummary
     resp = objectsummary.get
+    binding.pry
     # save the resp.body.string to the db as a phonelog
     # p resp.body.string
   end

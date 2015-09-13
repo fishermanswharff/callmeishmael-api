@@ -1,3 +1,4 @@
+
 FactoryGirl.define do
   factory :button do
     assignment '1'
@@ -40,6 +41,12 @@ FactoryGirl.define do
     trait :button_nine do
       assignment {'9'}
     end
+    trait :invalid_assignment_ß do
+      assignment {'ß'}
+    end
+    trait :invalid_assignment_M do
+      assignment {'M'}
+    end
 
     trait :fixed_story_button do
       association :story, :fixed_story
@@ -77,6 +84,9 @@ FactoryGirl.define do
     factory :seven_button_with_venue_story, traits: [:button_seven, :venue_story_button]
     factory :eight_button_with_venue_story, traits: [:button_eight, :venue_story_button]
     factory :nine_button_with_venue_story, traits: [:button_nine, :venue_story_button]
+
+    factory :invalid_button_ß, traits: [:invalid_assignment_ß]
+    factory :invalid_button_M, traits: [:invalid_assignment_M]
 
   end
 end

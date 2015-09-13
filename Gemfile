@@ -13,25 +13,28 @@ gem 'aws-sdk', '~> 2'
 
 group :development, :test do
   gem 'spring'
-  gem 'capybara'
   gem 'rubocop'
   gem 'bullet'
   gem 'lol_dba'
   gem 'dotenv-rails'
-  gem 'rspec-rails', '~> 3.3.0'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'factory_girl_rails', '~> 4.0'
-  gem 'faker'
-  gem 'codeclimate-test-reporter', require: nil
   gem 'annotate'
-  gem 'database_cleaner'
-  gem 'webmock'
 end
 
 group :development do
   gem 'guard'
   gem 'guard-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'rspec-rails', '~> 3.3.0'
+  gem 'database_cleaner'
+  gem 'webmock'
+  gem 'codeclimate-test-reporter', require: nil
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'faker'
 end
 
 group :production do
