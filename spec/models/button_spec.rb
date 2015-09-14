@@ -17,24 +17,26 @@ DatabaseCleaner.clean
 
 describe Button, type: :model do
 
-  before(:each) do
+  before(:all) do
+    Button.destroy_all
+    Phone.destroy_all
+    Story.destroy_all
     @phone = FactoryGirl.create(:phone, status: 'active')
-    @star_button = FactoryGirl.create(:star_button)
-    @hash_button = FactoryGirl.create(:hash_button)
-    @zero_button = FactoryGirl.create(:zero_button)
-    @one_button = FactoryGirl.create(:one_button_with_ishmael_story)
-    @two_button = FactoryGirl.create(:two_button_with_ishmael_story)
-    @three_button = FactoryGirl.create(:three_button_with_ishmael_story)
-    @four_button = FactoryGirl.create(:four_button_with_ishmael_story)
-    @five_button = FactoryGirl.create(:five_button_with_ishmael_story)
-    @six_button = FactoryGirl.create(:six_button_with_ishmael_story)
-    @seven_button = FactoryGirl.create(:seven_button_with_ishmael_story)
-    @eight_button = FactoryGirl.create(:eight_button_with_ishmael_story)
-    @nine_button = FactoryGirl.create(:nine_button_with_ishmael_story)
-
+    @star_button = FactoryGirl.create(:star_button, phone: @phone)
+    @hash_button = FactoryGirl.create(:hash_button, phone: @phone)
+    @zero_button = FactoryGirl.create(:zero_button, phone: @phone)
+    @one_button = FactoryGirl.create(:one_button_with_ishmael_story, phone: @phone)
+    @two_button = FactoryGirl.create(:two_button_with_ishmael_story, phone: @phone)
+    @three_button = FactoryGirl.create(:three_button_with_ishmael_story, phone: @phone)
+    @four_button = FactoryGirl.create(:four_button_with_ishmael_story, phone: @phone)
+    @five_button = FactoryGirl.create(:five_button_with_ishmael_story, phone: @phone)
+    @six_button = FactoryGirl.create(:six_button_with_ishmael_story, phone: @phone)
+    @seven_button = FactoryGirl.create(:seven_button_with_ishmael_story, phone: @phone)
+    @eight_button = FactoryGirl.create(:eight_button_with_ishmael_story, phone: @phone)
+    @nine_button = FactoryGirl.create(:nine_button_with_ishmael_story, phone: @phone)
     @invalid_button = FactoryGirl.build(:invalid_button_ß)
-
     @valid_assignments = ['*','#','0','1','2','3','4','5','6','7','8','9','PR']
+    @phone.reload
   end
 
   it 'is of the button class' do
@@ -58,5 +60,18 @@ describe Button, type: :model do
     expect(@invalid_button.valid?).to eq false
   end
 
+  it 'is invalid if a button with the same assignment already exists' do
+    new_button = FactoryGirl.build(:star_button, phone: @phone)
+    expect(new_button).not_to be_valid
+    expect { new_button.save! }.to raise_error(ActiveRecord::RecordInvalid)
+  end
+
+  it 'allows you to update the story on the assignment' do
+    new_story = FactoryGirl.create(:story, :ishmaels_story, :male_caller, :explicit)
+    @nine_button.update(story: new_story)
+    expect(@nine_button.story).to eq new_story
+  end
+
+  it 'only allows one postroll story'
 
 end

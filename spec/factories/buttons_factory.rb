@@ -91,6 +91,16 @@ FactoryGirl.define do
     factory :invalid_button_ß, traits: [:invalid_assignment_ß]
     factory :invalid_button_M, traits: [:invalid_assignment_M]
 
+    trait :associated_phone do
+      after(:create) do |button, evaluator|
+        if evaluator.phone
+          button.phone = phone
+        else
+          button.phone = create(:phone)
+        end
+      end
+    end
+
   end
 end
 
