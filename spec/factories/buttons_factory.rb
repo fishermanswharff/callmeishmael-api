@@ -67,6 +67,7 @@ FactoryGirl.define do
     factory :star_button, traits: [:button_star, :fixed_story_button]
     factory :hash_button, traits: [:button_hash, :fixed_story_button]
     factory :zero_button, traits: [:button_zero, :fixed_story_button]
+    factory :postroll, traits: [:button_post_roll, :postroll_story_button]
 
     factory :one_button_with_ishmael_story, traits: [:button_one, :ishmaels_story_button]
     factory :two_button_with_ishmael_story, traits: [:button_two, :ishmaels_story_button]

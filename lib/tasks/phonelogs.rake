@@ -15,10 +15,12 @@ namespace :phonelogs do
   end
 end
 
+=begin
 
-# namespace :tweets do
-#   desc 'Send some tweets to a user'
-#   task :send, [:username] => [:environment] do |t, args|
-#     Tweet.send(args[:username])
-#   end
-# end
+usage:
+
+rake phonelogs:get['db']
+gets the phonelogs from aws, parses them and saves them to the db,
+associated with the phone by the key of the object (ie venue_1/phone_1/xxxxxxxxxx.txt)
+
+=end
