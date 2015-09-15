@@ -2,11 +2,14 @@
 
 :telephone_receiver: :closed_book: :orange_book: :notebook_with_decorative_cover: :notebook: :books: :mega: :zap: :speak_no_evil: :speech_balloon: :thought_balloon:
 
+RESTful API to communicate with Call Me Ishmael phones, and provides the consumer-facing [web portal](https://github.com/fishermanswharff/callmeishmael-webapp) with data, which allows admins to manage their phones and Call Me Ishmael to administer accounts.
+
 ## Code Status
 
 [![Build Status][ci-image]][ci-url]
 [![Code Climate][cc-climate-image]][cc-climate-url]
 [![Test Coverage][cc-coverage-image]][cc-coverage-url]
+
 
 ## Installation
 
@@ -25,21 +28,26 @@
 ```ruby
 
 [
-  "http://callmeishmael.com/crimeandpunishment.mp3",
-  "http://callmeishmael.com/gonegirl.mp3",
-  "http://callmeishmael.com/peterpan.mp3",
-  "http://www.oocities.org/gchafe/redwing.wav",
-  "http://ravensview.blogs.com/ravens/RwOkalee.wav",
-  "http://www.thebirdguide.com/gif_dir/tricolored.wav",
-  "http://vivanatura.org/sounds/Melodious%20blackbird%20(Dives%20dives).wav",
-  "http://www.birdgard.net/indexnl/rwblkbrd.wav",
-  "http://callmeishmael.com/tinafey.mp3",
-  "http://callmeishmael.com/dogspurpose.mp3",
-  "http://callmeishmael.com/cityofbones.mp3",
-  "http://callmeishmael.com/radical.mp3"
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/071-Pajama-Time-by-Sandra-Boynton-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/064-Not-Even-Wrong-by-Paul-Collins-final.ogg",
+  "https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.ogg"
 ]
 
 ```
+
+- `rspec` should yield all passing results.
+
+
 
 ## Routes
 
