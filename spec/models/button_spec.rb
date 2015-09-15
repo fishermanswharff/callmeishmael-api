@@ -100,14 +100,14 @@ describe Button, type: :model do
     expect(fixed.length).to eq (@phones.length * 3) + 3 #@phones.length * 3 fixed buttons per phone, + the 3 created above
   end
 
-  it 'updates the story of a postroll assignment' do
+  it 'updates the story of all postroll assignment' do
     postrolls = Button.postroll_assignments
     story = postrolls.last.story
     Button.assign_story_by_assignment(story, 'PR')
     expect(Button.postroll_assignments).to all(have_attributes(story_id: story.id))
   end
 
-  it 'updates the story of a star assignment' do
+  it 'updates the story of all star assignment' do
     stars = Button.star_assignments
     story = FactoryGirl.create(:story, :fixed_story, :male_caller, :explicit, :spoiler_alert, :not_appropriate_for_children)
 
