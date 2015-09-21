@@ -68,21 +68,40 @@ describe 'Buttons API Endpoint (Phone and Story Join Table)' do
   end
 
   describe '#update' do
+
+    context 'assigning buttons 1–9' do
+      before(:all) do
+        patch "/buttons/#{Button.where(phone_id: @phone1.id)[3].id}",
+        { button:
+          { assignment: '5' }
+        }.to_json,
+        { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@another_venue_admin.token}"}
+      end
+
+      it 'responds successfully' do
+        expect(response.status).to eq 200
+      end
+
+      it 'returns the object with successfully updated attributes' do
+        button = json(response.body)
+        expect(button[:assignment]).to eq '5'
+      end
+    end
+  end
+
+  context 'assigning buttons 0,*,#, & PR' do
     before(:all) do
-      patch "/buttons/#{Button.where(phone_id: @phone1.id)[3].id}",
-      { button:
-        { assignment: '5' }
-      }.to_json,
-      { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@another_venue_admin.token}"}
+      # setup
     end
 
-    it 'responds successfully' do
-      expect(response.status).to eq 200
-    end
+    # expectations
+    it 'assigns the button on the phone'
+    # assertions
 
-    it 'returns the object with successfully updated attributes' do
-      button = json(response.body)
-      expect(button[:assignment]).to eq '5'
-    end
+    # expectations
+    it 'assigns all the buttons on every phone'
+
+    # teardown
+
   end
 end

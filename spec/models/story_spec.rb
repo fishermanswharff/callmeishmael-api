@@ -42,6 +42,8 @@ RSpec.describe Story, type: :model do
       FactoryGirl.create(:story, :fixed_story),
       FactoryGirl.create(:story, :venue_story, :associated_venue, :male_caller, :explicit, :spoiler_alert, :not_appropriate_for_children)
     ]
+
+    @venue_stories = FactoryGirl.create_list(:story_associated_with_venue, 46, venues: [FactoryGirl.create(:venue, name: 'Jasons New Venue')])
   end
 
   it 'is a story' do
@@ -80,6 +82,51 @@ RSpec.describe Story, type: :model do
   it 'is invalid if the date is in the future' do
     @stories.first.call_date = Date.tomorrow
     expect(@stories.first.valid?).to eq false
+  end
+
+  it 'has a scope for ishmaels library' do
+    ishmaels = Story.ishmaels_library
+    expect(ishmaels.length).to eq 1
+    expect(ishmaels.sample.ishmaels?).to eq true
+  end
+
+  it 'has a scope for all venue libraries' do
+    venues_lib = Story.all_venue_library
+    expect(venues_lib.length).to eq 48
+    expect(venues_lib.sample.venue?).to eq true
+  end
+
+  it 'has a scope for a single venue library' do
+    venue_lib = Story.venue_library(@venue_stories.first.venues.first.id)
+    expect(venue_lib.length).to eq 46
+    expect(venue_lib.sample.venue?).to eq true
+  end
+
+  it 'has a scope for a postroll library' do
+    postroll_lib = Story.postroll_library
+    expect(postroll_lib.sample.postroll?).to eq true
+    expect(postroll_lib.count).to eq 1
+  end
+
+  it 'finds the listens to only ishmael stories' do
+    ishmaels_listens = Story.listens_to_ishmaels_library
+    expect(ishmaels_listens).not_to be nil
+    expect(ishmaels_listens).not_to eq 0
+    expect(ishmaels_listens).to be > 0
+  end
+
+  it 'finds the listens to only venue stories' do
+    venue_listens = Story.listens_to_venue_library
+    expect(venue_listens).not_to be nil
+    expect(venue_listens).not_to eq 0
+    expect(venue_listens).to be > 0
+  end
+
+  it 'finds the listens to only postroll stories' do
+    postroll_listens = Story.listens_to_postrolls
+    expect(postroll_listens).not_to be nil
+    expect(postroll_listens).not_to eq 0
+    expect(postroll_listens).not_to be_zero
   end
 
 end

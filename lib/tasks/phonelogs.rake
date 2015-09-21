@@ -23,4 +23,6 @@ rake phonelogs:get['db']
 gets the phonelogs from aws, parses them and saves them to the db,
 associated with the phone by the key of the object (ie venue_1/phone_1/xxxxxxxxxx.txt)
 
+rake phonelogs:get['local']
+
 =end

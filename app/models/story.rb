@@ -46,6 +46,26 @@ class Story < ActiveRecord::Base
   validates_associated :phones, if: :assigned_to_button?
   validate :call_date_in_the_past
 
+  scope :ishmaels_library, -> { where(story_type: 2) }
+  scope :all_venue_library, -> { where(story_type: 1) }
+  scope :postroll_library, -> { where(story_type: 3) }
+
+  def self.venue_library(venue_id)
+    Venue.find(venue_id).stories
+  end
+
+  def self.listens_to_ishmaels_library
+    ishmaels_library.inject(0) { |sum, s| sum + s.listens }
+  end
+
+  def self.listens_to_venue_library
+    all_venue_library.inject(0) { |sum, s| sum + s.listens }
+  end
+
+  def self.listens_to_postrolls
+    postroll_library.inject(0) { |sum, s| sum + s.listens }
+  end
+
   def set_unique_id
     self.unique_identifier = "#{self.id}-1000"
     self.save!

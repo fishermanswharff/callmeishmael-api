@@ -1,0 +1,26 @@
+2015-07-08 17:33:48,100 Event: NetSync.syncFiles started
+2015-07-08 17:33:48,959 Event: NetSync.getRemoteFileNames retrieved remote file names from API
+2015-07-08 17:33:48,975 Event: NetSync.syncFiles complete
+2015-07-08 17:33:57,132 Event: HWListener detects button push*
+2015-07-08 17:33:57,132 Event: HWListener detects button push#
+2015-07-08 17:33:57,132 Event: HWListener detects button push0
+2015-07-08 17:33:57,132 Event: HWListener detects button push1
+2015-07-08 17:33:57,132 Event: HWListener detects button push2
+2015-07-08 17:33:57,132 Event: HWListener detects button push3
+2015-07-08 17:33:57,132 Event: HWListener detects button push4
+2015-07-08 17:33:57,132 Event: HWListener detects button push5
+2015-07-08 17:33:57,132 Event: HWListener detects button push6
+2015-07-08 17:33:57,132 Event: HWListener detects button push7
+2015-07-08 17:33:57,132 Event: HWListener detects button push8
+2015-07-08 17:33:57,132 Event: HWListener detects button push9
+2015-07-08 17:33:57,132 Event: HWListener detects button push*
+2015-07-08 17:33:57,132 Event: HWListener detects button push*
+2015-07-08 17:33:57,132 Event: HWListener detects button push*
+2015-07-08 17:33:57,132 Event: HWListener detects button push#
+2015-07-08 17:33:57,132 Event: HWListener detects button push3
+2015-07-08 17:33:57,132 Event: HWListener detects button push4
+2015-07-08 17:33:57,132 Event: HWListener detects button push2
+2015-07-08 17:33:57,132 Event: HWListener detects button push1
+2015-07-08 17:33:57,132 Event: HWListener detects button push0
+2015-07-08 17:33:57,132 Event: HWListener detects button push9
+2015-07-08 17:33:57,132 Event: HWListener detects button push0

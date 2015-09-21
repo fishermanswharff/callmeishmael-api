@@ -6,7 +6,7 @@ FactoryGirl.define do
     author_first { Faker::Name.first_name }
     author_last { Faker::Name.last_name }
     placements { Faker::Number.digit }
-    listens { Faker::Number.digit }
+    listens { Faker::Number.between(1, 10) }
     call_length { '1:09' }
     common_title { Faker::Lorem.sentence }
     call_date { Faker::Date.between(2.days.ago, Date.today) }
