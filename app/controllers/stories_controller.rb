@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
 
   def index
     stories = Story.all
-    render json: {
+    response = {
       stories: stories,
       number_ishmael_stories: Story.ishmaels_library.count,
       ishmael_listens: Story.listens_to_ishmaels_library,
@@ -13,7 +13,8 @@ class StoriesController < ApplicationController
       venue_listens: Story.listens_to_venue_library,
       number_postroll_stories: Story.postroll_library.count,
       postroll_listens: Story.listens_to_postrolls
-    }, status: :ok
+    }.to_json
+    render json: response, status: :ok
   end
 
   def show

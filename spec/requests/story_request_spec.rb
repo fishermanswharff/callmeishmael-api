@@ -3,7 +3,7 @@ require 'database_cleaner'
 DatabaseCleaner.strategy = :truncation
 DatabaseCleaner.clean
 
-RSpec.describe 'Stories API Endpoint' do
+RSpec.describe 'Stories API Endpoint', type: :request do
 
   before(:all) do
     @venue_admin = User.create({firstname: 'foo', lastname: 'bar', phonenumber: 5555555555, username: 'foobar', role: 'venue_admin', email: 'foo@bar.com', password: 'secret'})
@@ -18,7 +18,7 @@ RSpec.describe 'Stories API Endpoint' do
   end
 
   describe '#index' do
-    before(:each) do
+    before(:all) do
       get '/stories'
     end
 
@@ -27,9 +27,16 @@ RSpec.describe 'Stories API Endpoint' do
     end
 
     it 'gives back all of the stories' do
-      stories = json(response.body)
-      expect(stories.length).not_to be nil
-      expect(stories.length).to eq @ishmaels_stories.length + @fixed_stories.length + @postroll_stories.length + @venues.first.stories.length + @venues.second.stories.length
+      expect(response).not_to be nil
+      body = json(response.body)
+      expect(body[:stories].length).to eq @ishmaels_stories.length + @fixed_stories.length + @postroll_stories.length + @venues.first.stories.length + @venues.second.stories.length
+    end
+
+    it 'returns storyData as well' do
+      expect(response).not_to be nil
+      body = json(response.body)
+      expect(body[:number_ishmael_stories]).to eq @ishmaels_stories.count
+      expect(body[:number_venue_stories]).to eq @venues.first.stories.count + @venues.second.stories.count
     end
   end
 
