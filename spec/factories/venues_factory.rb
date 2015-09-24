@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :venue do
     name Faker::Company.name
+    venue_status 'active'
 
     factory :venue_with_phone do
       transient do

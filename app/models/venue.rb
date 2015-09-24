@@ -20,6 +20,16 @@ class Venue < ActiveRecord::Base
   has_many :phones
   has_many :venuestories
   has_many :stories, through: :venuestories
+  enum venue_status: [:active, :paused, :cancelled]
+
+  validates :name, :status, presence: true
+  validates :number_phones, numericality: { only_integer: true }
+  validates :name, length: { minimum: 2 }
+  validates :name, format: { with: /\w+/, message: 'Only Allows Alphanumeric Characters' }
+
+  scope :active, -> { where(venue_status: 0) }
+  scope :paused, -> { where(venue_status: 1) }
+  scope :cancelled, -> { where(venue_status: 2) }
 
   def set_unique_id
     self.unique_identifier = "#{self.id}-#{SecureRandom.uuid.gsub(/\-/, '')}"
