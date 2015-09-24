@@ -57,7 +57,7 @@ RSpec.describe 'Stories API Endpoint', type: :request do
   describe '#create' do
     context 'with unauthorized requests' do
       before(:each) do
-        story = FactoryGirl.build(:story, :ishmaels_story, :male_caller, :explicit, :spoiler_alert)
+        story = FactoryGirl.attributes_for(:story, :ishmaels_story, :male_caller, :explicit, :spoiler_alert)
         post "/stories",
         { story: story }.to_json,
         { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@venue_admin.token}"}
@@ -73,7 +73,7 @@ RSpec.describe 'Stories API Endpoint', type: :request do
 
     context 'with authorized request' do
       before(:each) do
-        story = FactoryGirl.build(:story, :ishmaels_story, :male_caller, :explicit, :spoiler_alert)
+        story = FactoryGirl.attributes_for(:story, :ishmaels_story, :male_caller, :explicit, :spoiler_alert)
         post "/stories",
         { story: story }.to_json,
         { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@admin.token}"}
