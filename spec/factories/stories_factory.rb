@@ -12,6 +12,8 @@ FactoryGirl.define do
     call_date { Faker::Date.between(2.days.ago, Date.today) }
     child_appropriate { true }
     gender { 'Female' }
+    transcript_url { Faker::Internet.url('callmeishmael.com', "/transcript-#{title}.txt") }
+    call_uuid Faker::Number.number(3)
 
     trait :venue_story do
       story_type 'venue'

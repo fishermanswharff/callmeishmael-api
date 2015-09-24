@@ -22,6 +22,8 @@
 #  explicit          :boolean          default(FALSE), not null
 #  gender            :string           default("Female"), not null
 #  rating            :integer          default(1), not null
+#  transcript_url    :string
+#  call_uuid         :integer
 #
 
 class Story < ActiveRecord::Base
@@ -34,17 +36,20 @@ class Story < ActiveRecord::Base
 
   validates :title, :url, :story_type, :author_last, :author_first, :placements,
             :listens, :call_length, :common_title, :call_date, :gender, :rating,
+            :transcript_url, :call_uuid,
             presence: true
 
   validates :author_first, :author_last, length: { minimum: 2 }
   validates :call_length, format: { with: /[\d]{1,2}:[0-5](?:[0-9])/, message: 'Format required is 00:00 or 0:00' }
-  validates :url, format: { with: /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#\/\/\=]*)/, message: 'Must be a valid url.' }
+  validates :url, :transcript_url, format: { with: /[(http(s)?):\/\/(www\.)?a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#\/\/\=]*)/, message: 'Must be a valid url.' }
   validates :child_appropriate, :explicit, :spoiler_alert, inclusion: { in: [true, false] }
-  validates :rating, :placements, :listens, numericality: { only_integer: true }
+  validates :rating, :placements, :listens, :call_uuid, numericality: { only_integer: true }
+  validates :rating, inclusion: { in: [1,2,3,4,5]}
   validates :gender, inclusion: { in: %w(Male Female) }
   validates_associated :venues, if: :associated_with_venue?
   validates_associated :phones, if: :assigned_to_button?
   validate :call_date_in_the_past
+
 
   scope :ishmaels_library, -> { where(story_type: 2) }
   scope :all_venue_library, -> { where(story_type: 1) }

@@ -22,6 +22,8 @@
 #  explicit          :boolean          default(FALSE), not null
 #  gender            :string           default("Female"), not null
 #  rating            :integer          default(1), not null
+#  transcript_url    :string
+#  call_uuid         :integer
 #
 
 require 'rails_helper'
