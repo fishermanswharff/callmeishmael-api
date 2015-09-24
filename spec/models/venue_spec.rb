@@ -12,6 +12,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  total_listens     :integer          default(0), not null
+#  venue_status      :integer          default(0), not null
 #
 
 require 'rails_helper'

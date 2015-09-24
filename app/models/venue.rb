@@ -12,6 +12,7 @@
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  total_listens     :integer          default(0), not null
+#  venue_status      :integer          default(0), not null
 #
 
 class Venue < ActiveRecord::Base
@@ -23,7 +24,6 @@ class Venue < ActiveRecord::Base
   enum venue_status: [:active, :paused, :cancelled]
 
   validates :name, :status, presence: true
-  validates :number_phones, numericality: { only_integer: true }
   validates :name, length: { minimum: 2 }
   validates :name, format: { with: /\w+/, message: 'Only Allows Alphanumeric Characters' }
 
@@ -34,9 +34,12 @@ class Venue < ActiveRecord::Base
   def set_unique_id
     self.unique_identifier = "#{self.id}-#{SecureRandom.uuid.gsub(/\-/, '')}"
     self.save!
+    self
   end
 
   def increment_listens(amount)
     self.total_listens += amount
+    self.save!
+    self
   end
 end
