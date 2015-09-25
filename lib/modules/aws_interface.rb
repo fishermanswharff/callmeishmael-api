@@ -5,7 +5,7 @@ module AwsInterface
   class LogGetter
 
     def init(output = 'db')
-      Aws.config[:credentials] = Aws::Credentials.new('AKIAIPOX2WMWVUFJBMDQ', 'tLocOzzwd/3xE1w92wN/BI/Pc244cE/VCFSMVPWA')
+      Aws.config[:credentials] = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
       Aws.config[:region] = 'us-west-2'
       s3 = Aws::S3::Resource.new
       client = Aws::S3::Client.new
