@@ -28,15 +28,8 @@ RSpec.describe 'Stories API Endpoint', type: :request do
 
     it 'gives back all of the stories' do
       expect(response).not_to be nil
-      body = json(response.body)
-      expect(body[:stories].length).to eq @ishmaels_stories.length + @fixed_stories.length + @postroll_stories.length + @venues.first.stories.length + @venues.second.stories.length
-    end
-
-    it 'returns storyData as well' do
-      expect(response).not_to be nil
-      body = json(response.body)
-      expect(body[:number_ishmael_stories]).to eq @ishmaels_stories.count
-      expect(body[:number_venue_stories]).to eq @venues.first.stories.count + @venues.second.stories.count
+      stories = json(response.body)
+      expect(stories.length).to eq @ishmaels_stories.length + @fixed_stories.length + @postroll_stories.length + @venues.first.stories.length + @venues.second.stories.length
     end
   end
 
@@ -148,6 +141,18 @@ RSpec.describe 'Stories API Endpoint', type: :request do
       r = json(response.body)
       expect(r[:error]).to eq 'Record Not Found'
       expect(response.status).to eq 404
+    end
+  end
+
+  describe '#story_data' do
+    before(:all) do
+      get '/stories/story_data'
+    end
+    it 'returns storyData as well' do
+      expect(response).not_to eq nil
+      data = json(response.body)
+      expect(data[:number_ishmael_stories]).to eq @ishmaels_stories.count
+      expect(data[:number_venue_stories]).to eq @venues.first.stories.count + @venues.second.stories.count
     end
   end
 end

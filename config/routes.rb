@@ -11,11 +11,22 @@ Rails.application.routes.draw do
         match '/log' => 'phones#log', via: :post
       end
     end
-    resources :stories
+    resources :stories do
+      get 'story_data', on: :collection
+    end
   end
 
   resources :phones, only: :index
-  resources :buttons, only: [:create, :update]
+
+  resources :buttons, only: [:create, :update] do
+    post 'update_fixed', on: :collection
+    get 'index_fixed', on: :collection
+    get 'index_star', on: :collection
+    get 'index_hash', on: :collection
+    get 'index_zero', on: :collection
+    get 'index_postroll', on: :collection
+  end
+
   post '/login', to: 'admin/users#login'
   get '/logout', to: 'admin/users#logout'
   get '/resetpassword', to: 'admin/users#resetpassword'

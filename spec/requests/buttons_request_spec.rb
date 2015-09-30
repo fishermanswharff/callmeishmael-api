@@ -89,19 +89,29 @@ describe 'Buttons API Endpoint (Phone and Story Join Table)' do
     end
   end
 
-  context 'assigning buttons 0,*,#, & PR' do
-    before(:all) do
-      # setup
+  describe '#update_fixed' do
+    context 'assigning buttons 0,*,#, & PR' do
+      before(:all) do
+        post "/buttons/update_fixed",
+        { button:
+          { assignment: '*', story_id: @ishmaels_stories.first.id }
+        }.to_json,
+        { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@another_venue_admin.token}"}
+      end
+
+      # expectations
+      it 'returns json of all the buttons with the assignment' do
+        body = json(response.body)
+        expect(body).not_to eq nil
+        expect(body.length).to be > 0
+        expect(body.length).to eq 5
+      end
+      it 'returns json representing the assignment on all of the phones' do
+        body = json(response.body)
+        expect(body.first[:assignment]).to eq '*'
+        expect(body.second[:assignment]).to eq '*'
+      end
+      # teardown
     end
-
-    # expectations
-    it 'assigns the button on the phone'
-    # assertions
-
-    # expectations
-    it 'assigns all the buttons on every phone'
-
-    # teardown
-
   end
 end

@@ -5,16 +5,7 @@ class StoriesController < ApplicationController
 
   def index
     stories = Story.all
-    response = {
-      stories: stories,
-      number_ishmael_stories: Story.ishmaels_library.count,
-      ishmael_listens: Story.listens_to_ishmaels_library,
-      number_venue_stories: Story.all_venue_library.count,
-      venue_listens: Story.listens_to_venue_library,
-      number_postroll_stories: Story.postroll_library.count,
-      postroll_listens: Story.listens_to_postrolls
-    }.to_json
-    render json: response, status: :ok
+    render json: stories, status: :ok
   end
 
   def show
@@ -41,6 +32,17 @@ class StoriesController < ApplicationController
   def destroy
     @story.destroy
     head :no_content
+  end
+
+  def story_data
+    render json: {
+      number_ishmael_stories: Story.ishmaels_library.count,
+      ishmael_listens: Story.listens_to_ishmaels_library,
+      number_venue_stories: Story.all_venue_library.count,
+      venue_listens: Story.listens_to_venue_library,
+      number_postroll_stories: Story.postroll_library.count,
+      postroll_listens: Story.listens_to_postrolls
+    }.to_json, status: :ok
   end
 
   private

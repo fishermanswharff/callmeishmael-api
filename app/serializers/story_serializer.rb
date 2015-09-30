@@ -31,7 +31,7 @@ class StorySerializer < ActiveModel::Serializer
              :author_first, :author_last, :placements, :listens,
              :percentage, :created_at, :updated_at, :call_length,
              :common_title, :call_date, :spoiler_alert, :child_appropriate,
-             :explicit, :gender, :rating
+             :explicit, :gender, :rating, :current_placements
   has_many :phones
   has_many :venues
 
@@ -41,5 +41,9 @@ class StorySerializer < ActiveModel::Serializer
 
   def updated_at
     object.updated_at.strftime('%A, %D')
+  end
+
+  def current_placements
+    object.phones.count
   end
 end
