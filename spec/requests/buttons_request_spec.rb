@@ -98,8 +98,6 @@ describe 'Buttons API Endpoint (Phone and Story Join Table)' do
         }.to_json,
         { 'Accept' => Mime::JSON, 'Content-Type' => Mime::JSON.to_s, 'HTTP_AUTHORIZATION' => "Token token=#{@another_venue_admin.token}"}
       end
-
-      # expectations
       it 'returns json of all the buttons with the assignment' do
         body = json(response.body)
         expect(body).not_to eq nil
@@ -111,7 +109,6 @@ describe 'Buttons API Endpoint (Phone and Story Join Table)' do
         expect(body.first[:assignment]).to eq '*'
         expect(body.second[:assignment]).to eq '*'
       end
-      # teardown
     end
   end
 end
