@@ -24,12 +24,6 @@ class Phone < ActiveRecord::Base
 
   validates_associated :venue
 
-  def set_unique_id
-    venue.reload
-    self.unique_identifier = "#{venue.id}-#{venue.number_phones}"
-    self.save!
-  end
-
   def get_urls
     # ordered by assignment: #,*,0,1,2,…
     stories = Story.connection.select_all("SELECT buttons.assignment, stories.url FROM stories INNER JOIN buttons ON (buttons.story_id = stories.id) WHERE buttons.phone_id = #{self.id} ORDER BY buttons.assignment;").rows.to_h
@@ -61,6 +55,13 @@ class Phone < ActiveRecord::Base
   end
 
   private
+
+  def set_unique_id
+    venue.reload
+    self.unique_identifier = "#{venue.id}-#{venue.number_phones}"
+    self.save!
+  end
+
   def set_token
     return if token.present?
     self.token = generate_token

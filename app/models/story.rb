@@ -50,7 +50,6 @@ class Story < ActiveRecord::Base
   validates_associated :phones, if: :assigned_to_button?
   validate :call_date_in_the_past
 
-
   scope :ishmaels_library, -> { where(story_type: 2) }
   scope :all_venue_library, -> { where(story_type: 1) }
   scope :postroll_library, -> { where(story_type: 3) }

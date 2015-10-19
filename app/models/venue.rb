@@ -31,14 +31,16 @@ class Venue < ActiveRecord::Base
   scope :paused, -> { where(venue_status: 1) }
   scope :cancelled, -> { where(venue_status: 2) }
 
-  def set_unique_id
-    self.unique_identifier = "#{self.id}-#{SecureRandom.uuid.gsub(/\-/, '')}"
+  def increment_listens(amount)
+    self.total_listens += amount
     self.save!
     self
   end
 
-  def increment_listens(amount)
-    self.total_listens += amount
+  private
+
+  def set_unique_id
+    self.unique_identifier = "#{self.id}-#{SecureRandom.uuid.gsub(/\-/, '')}"
     self.save!
     self
   end

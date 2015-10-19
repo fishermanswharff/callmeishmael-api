@@ -110,26 +110,4 @@ RSpec.describe Story, type: :model do
     expect(postroll_lib.count).to eq 1
   end
 
-
-  # it 'finds the listens to only ishmael stories' do
-  #   ishmaels_listens = Story.listens_to_ishmaels_library
-  #   expect(ishmaels_listens).not_to be nil
-  #   expect(ishmaels_listens).not_to eq 0
-  #   expect(ishmaels_listens).to be > 0
-  # end
-
-  # it 'finds the listens to only venue stories' do
-  #   venue_listens = Story.listens_to_venue_library
-  #   expect(venue_listens).not_to be nil
-  #   expect(venue_listens).not_to eq 0
-  #   expect(venue_listens).to be > 0
-  # end
-
-  # it 'finds the listens to only postroll stories' do
-  #   postroll_listens = Story.listens_to_postrolls
-  #   expect(postroll_listens).not_to be nil
-  #   expect(postroll_listens).not_to eq 0
-  #   expect(postroll_listens).not_to be_zero
-  # end
-
 end
