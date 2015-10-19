@@ -13,9 +13,6 @@ script:
 - CODECLIMATE_REPO_TOKEN=fd51d880ee9a35f0efbca53ad39caf7f75aa31280046c52285a59c6b8771fd6a
   bundle exec rake
 - bundle exec rspec spec
-before_install:
-- openssl aes-256-cbc -K $encrypted_e0bf36bc7205_key -iv $encrypted_e0bf36bc7205_iv
-  -in callmeishmael_aws.pem.enc -out callmeishmael_aws.pem -d
 before_script:
 - cp config/database.yml.travis config/database.yml
 - psql -c 'create database travis_ci_test' -U postgres
