@@ -20,7 +20,7 @@ addons:
   postgresql: '9.3'
   code_climate:
     repo_token:
-      secure: eRaD1YZIxTPCRMxlKxwI++bOt6qrcr7bCzGQVfoEwz6p196AchYjL3YOko8QyYm/XvsuptI8iPX1p5xzvWbkRAq3+LEYBBWaRIB311noltQammHz8L8RHbbjoNXJgilEJVjTcisaTlS0eenwDQc8Drm0bg/1N2/eLWcQoYc+OW8=
+      secure: "QDelIVV0FHrSd4p5ij3JDJj7KE/qol8OghDirBnYJX3HXWT4QogVGvrhtu0LEUbLLpJ/Bg0apXmpTOXEa+XZiGPtJqQ5rPmrUopF8OsimzZzUJJUpodTx58JmMo5FMLM8PwGvg1ZuS7tvg17INf8dcNGjRZg1iO3MRNUen7tCh4="
   hosts:
   - travis.dev
 deploy:
