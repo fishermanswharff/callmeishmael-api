@@ -29,3 +29,4 @@ deploy:
   app: callmeishmael-api
   on:
     repo: fishermanswharff/callmeishmael-api
+
