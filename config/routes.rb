@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :phones do
         match '/ping' => 'phones#ping', via: [:get, :post]
         match '/files' => 'phones#files', via: [:get]
+        match '/md5_files' => 'phones#md5_files', via: [:get]
         match '/log' => 'phones#log', via: :post
       end
     end

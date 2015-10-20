@@ -92,13 +92,8 @@ RESTful API to communicate with Call Me Ishmael phones, and provides the consume
 [ci-image]: https://magnum.travis-ci.com/fishermanswharff/callmeishmael-api.svg?token=ywtwaukB2udjyiFG1GbL&branch=master
 [ci-url]: https://magnum.travis-ci.com/fishermanswharff/callmeishmael-api
 
-[cc-climate-image]: https://codeclimate.com/repos/552b1979695680373f000a7d/badges/b6474b9a7d66964c7b98/gpa.svg
-[cc-climate-url]: https://codeclimate.com/repos/552b1979695680373f000a7d/feed
+[cc-climate-image]: https://codeclimate.com/github/fishermanswharff/callmeishmael-api/badges/gpa.svg
+[cc-climate-url]: https://codeclimate.com/github/fishermanswharff/callmeishmael-api
 
-[cc-coverage-image]: https://codeclimate.com/repos/552b1979695680373f000a7d/badges/b6474b9a7d66964c7b98/coverage.svg
-[cc-coverage-url]: https://codeclimate.com/repos/552b1979695680373f000a7d/feed
-
-
-
-
-
+[cc-coverage-image]: https://codeclimate.com/github/fishermanswharff/callmeishmael-api/badges/coverage.svg
+[cc-coverage-url]: https://codeclimate.com/github/fishermanswharff/callmeishmael-api/coverage
