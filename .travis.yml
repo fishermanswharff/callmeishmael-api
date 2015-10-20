@@ -7,10 +7,9 @@ env:
   global:
   - PASSWORD_CONFIRMATION_URL: http://localhost:9000/#/confirm
   - PASSWORD_RESET_URL: http://localhost:9000/#/passwordreset
-  - CODE_CLIMATE_TOKEN:
-      secure: jv1VmRhZtmlDqExNRnRw6A/sA0qmesMTp+fJJYHOi8DZnJsWo201ZeN9yuN1Dr1uF/zTe1vgXcf223hErwDLTvxKlpwmqgmEsJMaPiIcdz3xJuU1oaF5yEcWgjhYcQ7PE7YTUagkeILoZSi8WHf62e/GrWo++x3SMrKf5A0pFqk=
-  - HEROKU_API_KEY:
-      secure: cMRgtDQ1oEjC6Pjs4/3m00yVJOy3EPCj0vJ63RSF+24jThNxOtDc2YnKrDM5Nu9SpAGU8FKexyG3P+PmBnM39so3+ysZ64u9syogmBBNX5JLRjaouOETnVrMjiG+/Dg2CKLguS8FRC3XYZg83HrSyMlm1hwWNiCo29RJ/Q7/Pjo=
+  - secure: j0h1yFbecv6+V8sPKINPYuIArxJCjC5Zn1JX1fkS32+xVso5QPOo+nQ4IJwOHLFGwJvqzPZbA97bs6GXA7ZfB4wRxf7qBtVWazAyCRy8/2Z9HhmFzbBdnkh8acjm/m8omFNQdC31yFQv2OmsoIvjIAyhHdSMTKtMaZRjFwHjhHY=
+  - secure: e2chULnSDPnULwDkU9QvpM4a+1UWnVd6rs0MYXLx+2g8u4RUwdFsNtGJc1yM6zKBxW2AsjZEAtUQzX68wYpXtfg3tElysI2u6erteycWqKiANDaYgw4dGysJEC8+c4DXILHivZ/bNGcsq7VLi74HSLUP2mWRe22lelc2Tix+CG0=
+  - secure: eRaD1YZIxTPCRMxlKxwI++bOt6qrcr7bCzGQVfoEwz6p196AchYjL3YOko8QyYm/XvsuptI8iPX1p5xzvWbkRAq3+LEYBBWaRIB311noltQammHz8L8RHbbjoNXJgilEJVjTcisaTlS0eenwDQc8Drm0bg/1N2/eLWcQoYc+OW8=
 script:
 - bundle exec rspec spec
 before_script:
@@ -20,10 +19,11 @@ before_script:
 addons:
   postgresql: '9.3'
   code_climate:
-    repo_token: CODE_CLIMATE_TOKEN
+    repo_token: 0c23d3061c4a5e33f423c04aa34dedeb58e903ae3287f902950678c435b37017
   hosts:
   - travis.dev
 deploy:
   provider: heroku
-  api_key: HEROKU_API_KEY
+  api_key: 49265bcf-863f-459c-85a8-1e8526bd9d35
   app: callmeishmael-api
+
