@@ -25,7 +25,7 @@ addons:
 deploy:
   provider: heroku
   api_key:
-    secure: B8Agw3BdBOb2socdZmak3QPTBCOwlZo0yjUVkd9/Soe1N26mK8/O1eknDVMu46BSEBG7fx0P7cKHdwfZ332W3nw5f/UIvIhP7mIMAjXDnYSiu1PQD/8HGCwcN5Q7AQlQo3Wk+zc6zEi3j2aaSNl0PjVuGfVePV/7pfV1oHQYl4c=
+    - secure: "iliWUP8ndm1EzyKXVWxq3fT0ec0bz7HE9ZxTIO8WgoVwL8PEV2hXAU+ffaCcXjs/ttNNTEdnFRMiRr7iY6EABNockueh/uw9kM7Lgq2WcHUk0sR9uKlNe+GhEFs1yOY84ybh5KNR/sWLWxFbLBftSozvB+4QRzoU+Dlqyy2hQI0="
   app: callmeishmael-api
   on:
     repo: fishermanswharff/callmeishmael-api
