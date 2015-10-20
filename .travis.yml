@@ -24,9 +24,6 @@ addons:
   - travis.dev
 deploy:
   provider: heroku
-  api_key:
-  - secure: NBhIzyMGEXETwSPzklX+4pVplvTRuwFAxtSgMj+Yg/Xb7glez330/diJWHJs189/3nmO86+xiThuFTU0V3tvYbdphAoCpfimSKiJ9WqCT2QGIY3kCOHkpSoebnFoR8xblgB1UvCMKy7xy+2CHO4sJu1KGtcI1ywpVMws0Lyw8WI=
+  api_key: 49265bcf-863f-459c-85a8-1e8526bd9d35
   app: callmeishmael-api
-  on:
-    repo: fishermanswharff/callmeishmael-api
 
