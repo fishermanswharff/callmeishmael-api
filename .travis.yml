@@ -19,8 +19,7 @@ before_script:
 addons:
   postgresql: '9.3'
   code_climate:
-    repo_token:
-      secure: "QDelIVV0FHrSd4p5ij3JDJj7KE/qol8OghDirBnYJX3HXWT4QogVGvrhtu0LEUbLLpJ/Bg0apXmpTOXEa+XZiGPtJqQ5rPmrUopF8OsimzZzUJJUpodTx58JmMo5FMLM8PwGvg1ZuS7tvg17INf8dcNGjRZg1iO3MRNUen7tCh4="
+    repo_token: 0c23d3061c4a5e33f423c04aa34dedeb58e903ae3287f902950678c435b37017
   hosts:
   - travis.dev
 deploy:
