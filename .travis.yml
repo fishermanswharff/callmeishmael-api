@@ -17,11 +17,11 @@ addons:
   postgresql: '9.3'
   code_climate:
     repo_token:
-      secure: "jv1VmRhZtmlDqExNRnRw6A/sA0qmesMTp+fJJYHOi8DZnJsWo201ZeN9yuN1Dr1uF/zTe1vgXcf223hErwDLTvxKlpwmqgmEsJMaPiIcdz3xJuU1oaF5yEcWgjhYcQ7PE7YTUagkeILoZSi8WHf62e/GrWo++x3SMrKf5A0pFqk="
+      - secure: "jv1VmRhZtmlDqExNRnRw6A/sA0qmesMTp+fJJYHOi8DZnJsWo201ZeN9yuN1Dr1uF/zTe1vgXcf223hErwDLTvxKlpwmqgmEsJMaPiIcdz3xJuU1oaF5yEcWgjhYcQ7PE7YTUagkeILoZSi8WHf62e/GrWo++x3SMrKf5A0pFqk="
   hosts:
   - travis.dev
 deploy:
   provider: heroku
   api_key:
-    secure: "cMRgtDQ1oEjC6Pjs4/3m00yVJOy3EPCj0vJ63RSF+24jThNxOtDc2YnKrDM5Nu9SpAGU8FKexyG3P+PmBnM39so3+ysZ64u9syogmBBNX5JLRjaouOETnVrMjiG+/Dg2CKLguS8FRC3XYZg83HrSyMlm1hwWNiCo29RJ/Q7/Pjo="
+    - secure: "cMRgtDQ1oEjC6Pjs4/3m00yVJOy3EPCj0vJ63RSF+24jThNxOtDc2YnKrDM5Nu9SpAGU8FKexyG3P+PmBnM39so3+ysZ64u9syogmBBNX5JLRjaouOETnVrMjiG+/Dg2CKLguS8FRC3XYZg83HrSyMlm1hwWNiCo29RJ/Q7/Pjo="
   app: callmeishmael-api
