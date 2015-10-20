@@ -19,13 +19,13 @@ before_script:
 addons:
   postgresql: '9.3'
   code_climate:
-    repo_token: 0c23d3061c4a5e33f423c04aa34dedeb58e903ae3287f902950678c435b37017
+    secure: "jv1VmRhZtmlDqExNRnRw6A/sA0qmesMTp+fJJYHOi8DZnJsWo201ZeN9yuN1Dr1uF/zTe1vgXcf223hErwDLTvxKlpwmqgmEsJMaPiIcdz3xJuU1oaF5yEcWgjhYcQ7PE7YTUagkeILoZSi8WHf62e/GrWo++x3SMrKf5A0pFqk="
   hosts:
   - travis.dev
 deploy:
   provider: heroku
   app: callmeishmael-api
   api_key:
-    secure: an0VwMNt9TApMD1EfW8tiV79Q4pqk5XZ8ZykufFre6TJff/c8Rw4Gsc2MnFKly3YQK3/tc+KTdzRzmR398/WEOo37IJVKHES0WOJ1IBk5jVIAZnycvbs8UD4CTKIb4/JtiYyOZ1DApXx27gR7BKMUAfz5bULf13MgU9Ok3mTT7c=
+    secure: "an0VwMNt9TApMD1EfW8tiV79Q4pqk5XZ8ZykufFre6TJff/c8Rw4Gsc2MnFKly3YQK3/tc+KTdzRzmR398/WEOo37IJVKHES0WOJ1IBk5jVIAZnycvbs8UD4CTKIb4/JtiYyOZ1DApXx27gR7BKMUAfz5bULf13MgU9Ok3mTT7c="
   run:
   - rake db:migrate
