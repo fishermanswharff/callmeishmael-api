@@ -26,6 +26,6 @@ deploy:
   provider: heroku
   app: callmeishmael-api
   api_key:
-    secure: hkw1yiEtjqYZqDmXaTye4kd3kWNcpq0Xd/8Gc/gyH0rOKSLTtduyf1L4EYeRgtL23TxvRSVcQPdC1CQFA72lvdi+KhHx9n8eIIGJ3vR5jGLAP1Rquo+n1b7D2SACHTSuCZoFii0S2N8yr0jvDHQQksBXp/W12hdSsecMD/RrZZw=
+    secure: an0VwMNt9TApMD1EfW8tiV79Q4pqk5XZ8ZykufFre6TJff/c8Rw4Gsc2MnFKly3YQK3/tc+KTdzRzmR398/WEOo37IJVKHES0WOJ1IBk5jVIAZnycvbs8UD4CTKIb4/JtiYyOZ1DApXx27gR7BKMUAfz5bULf13MgU9Ok3mTT7c=
   run:
   - rake db:migrate
