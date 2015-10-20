@@ -18,6 +18,9 @@ before_script:
 - bin/rake db:migrate RAILS_ENV=test
 addons:
   postgresql: '9.3'
+  code_climate:
+    repo_token:
+      secure: eRaD1YZIxTPCRMxlKxwI++bOt6qrcr7bCzGQVfoEwz6p196AchYjL3YOko8QyYm/XvsuptI8iPX1p5xzvWbkRAq3+LEYBBWaRIB311noltQammHz8L8RHbbjoNXJgilEJVjTcisaTlS0eenwDQc8Drm0bg/1N2/eLWcQoYc+OW8=
   hosts:
   - travis.dev
 deploy:
