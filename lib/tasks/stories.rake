@@ -7,7 +7,7 @@ namespace :stories do
   desc 'send md5 files to aws'
   task :md5, [:type] => :environment do |t,args|
     Story.find_each do |story|
-      filename = story.url.scan(/([\w\-]+)(?:\.ogg)/).flatten.join
+      filename = story.url.scan(/([\w\d\-\.\s]+)(?:\.ogg)/).flatten.join
       md5 = Digest::MD5.new
       hash = md5.update filename
       aws = AwsInterface::Md5Putter.new(hash, filename)

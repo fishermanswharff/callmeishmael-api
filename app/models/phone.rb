@@ -46,7 +46,6 @@ class Phone < ActiveRecord::Base
 
   def get_md5_urls
     stories = Story.connection.select_all("SELECT buttons.assignment, stories.md5_url FROM stories INNER JOIN buttons ON (buttons.story_id = stories.id) WHERE buttons.phone_id = #{self.id} ORDER BY buttons.assignment;").rows.to_h
-    binding.pry
     array = []
     array[0] = stories['#']
     array[1] = stories['*']

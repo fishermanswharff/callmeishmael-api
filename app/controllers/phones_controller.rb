@@ -51,7 +51,6 @@ class PhonesController < ApplicationController
   end
 
   def md5_files
-    binding.pry
     files = @phone.get_md5_urls
     render json: files, status: :ok
   end

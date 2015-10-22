@@ -99,7 +99,7 @@ class Story < ActiveRecord::Base
   end
 
   def hash_filename
-    filename = url.scan(/([\w\-]+)(?:\.ogg)/).flatten.join
+    filename = url.scan(/([\w\d\-\.\s]+)(?:\.ogg)/).flatten.join
     md5 = Digest::MD5.new
     hash = md5.update filename
     send_md5_file(hash, filename)
