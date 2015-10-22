@@ -68,7 +68,7 @@ RSpec.describe Story, type: :model do
   end
 
   it 'has an md5_url that matches the url' do
-    filename = @stories.first.url.scan(/([\w\-]+.ogg)/).flatten.join()
+    filename = @stories.first.url.scan(/([\w\-]+)(?:\.ogg)/).flatten.join()
     expect(@stories.first.md5_url).to eq("#{filename}.md5")
   end
 
