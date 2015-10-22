@@ -34,8 +34,6 @@ DatabaseCleaner.clean
 RSpec.describe Story, type: :model do
 
   before(:all) do
-    Story.delete_all
-    Venuestory.delete_all
 
     @stories = [
       FactoryGirl.create(:story, :venue_story, :associated_venue),
@@ -67,6 +65,11 @@ RSpec.describe Story, type: :model do
     expect(match.blank?).to eq false
     expect(match.to_a[0]).to eq 's3-us-west-2.amazonaws.com'
     expect(match.pre_match).to eq 'http://'
+  end
+
+  it 'has an md5_url that matches the url' do
+    filename = @stories.first.url.scan(/([\w\-]+.ogg)/).flatten.join()
+    expect(@stories.first.md5_url).to eq("#{filename}.md5")
   end
 
   it 'has a story_type' do

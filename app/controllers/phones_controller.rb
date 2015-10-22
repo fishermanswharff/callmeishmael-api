@@ -1,7 +1,7 @@
 class PhonesController < ApplicationController
 
   before_action :get_phone_by_id, only: [:show, :update, :destroy]
-  before_action :get_phone_by_phoneid, only: [:ping, :files, :log]
+  before_action :get_phone_by_phoneid, only: [:ping, :files, :log, :md5_files]
   before_filter :admin_only, only: [:create, :update]
 
   def index
@@ -47,6 +47,12 @@ class PhonesController < ApplicationController
 
   def files
     files = @phone.get_urls
+    render json: files, status: :ok
+  end
+
+  def md5_files
+    binding.pry
+    files = @phone.get_md5_urls
     render json: files, status: :ok
   end
 

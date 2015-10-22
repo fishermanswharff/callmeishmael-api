@@ -51,6 +51,26 @@ module AwsInterface
       output.close
     end
   end
+
+  class Md5Putter
+
+    def initialize(hash, filename)
+      Aws.config[:credentials] = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+      Aws.config[:region] = 'us-west-2'
+      s3 = Aws::S3::Resource.new
+      bucket = s3.bucket(ENV['S3_FILES_BUCKET_NAME'])
+      @response = bucket.put_object({key: "#{filename}.md5", body: "#{hash}"})
+      @response
+    end
+
+    def response
+      @response
+    end
+
+    def response=(value)
+      @response = value
+    end
+  end
 end
 
 =begin

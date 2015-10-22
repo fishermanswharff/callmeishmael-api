@@ -31,7 +31,7 @@ class StorySerializer < ActiveModel::Serializer
              :author_first, :author_last, :placements, :listens,
              :percentage, :created_at, :updated_at, :call_length,
              :common_title, :call_date, :spoiler_alert, :child_appropriate,
-             :explicit, :gender, :rating, :current_placements
+             :explicit, :gender, :rating, :current_placements, :md5_url
   has_many :phones
   has_many :venues
 

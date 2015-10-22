@@ -44,6 +44,26 @@ class Phone < ActiveRecord::Base
     array.to_json
   end
 
+  def get_md5_urls
+    stories = Story.connection.select_all("SELECT buttons.assignment, stories.md5_url FROM stories INNER JOIN buttons ON (buttons.story_id = stories.id) WHERE buttons.phone_id = #{self.id} ORDER BY buttons.assignment;").rows.to_h
+    binding.pry
+    array = []
+    array[0] = stories['#']
+    array[1] = stories['*']
+    array[2] = stories['0']
+    array[3] = stories['1']
+    array[4] = stories['2']
+    array[5] = stories['3']
+    array[6] = stories['4']
+    array[7] = stories['5']
+    array[8] = stories['6']
+    array[9] = stories['7']
+    array[10] = stories['8']
+    array[11] = stories['9']
+    array[12] = stories['PR']
+    array.to_json
+  end
+
   def send_log_file(log)
     Aws.config[:credentials] = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
     s3 = Aws::S3::Resource.new
