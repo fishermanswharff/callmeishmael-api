@@ -1,6 +1,5 @@
 require "#{Rails.root.join('lib', 'modules', 'aws_interface.rb')}"
 include AwsInterface
-require 'pry'
 
 namespace :stories do
 
