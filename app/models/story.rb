@@ -27,6 +27,9 @@
 #
 
 class Story < ActiveRecord::Base
+
+  include AwsInterface
+
   after_create :set_unique_id, :hash_filename
   has_many :buttons
   has_many :phones, through: :buttons
@@ -99,22 +102,21 @@ class Story < ActiveRecord::Base
   end
 
   def hash_filename
-    filename = url.scan(/([\w\d\-\.\s]+)(?:\.ogg)/).flatten.join
     md5 = Digest::MD5.new
-    hash = md5.update filename
+    filename = url.scan(/([\w\d\-\.\s]+)(?:\.ogg)/).flatten.join
+    aws = AwsInterface::AudioGetter.new(ENV['S3_FILES_BUCKET_NAME'], filename + '.ogg')
+    contents = aws.response.body.read
+    hash = md5.hexdigest contents
     send_md5_file(hash, filename)
   end
 
   def send_md5_file(hash,filename)
-    Aws.config[:credentials] = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
-    s3 = Aws::S3::Resource.new
-    bucket = s3.bucket(ENV['S3_FILES_BUCKET_NAME'])
-    if Rails.env.development? || Rails.env.test?
+    aws = AwsInterface::Md5Putter.new(hash,filename) unless Rails.env.test?
+    if Rails.env.test?
       update!(md5_url: "#{filename}.md5")
     else
-      resp = bucket.put_object({key: "#{filename}.md5", body: "#{hash}"})
-      if resp.exists?
-        update!(md5_url: resp.public_url)
+      if aws.response.exists?
+        update!(md5_url: aws.response.public_url)
       end
     end
   end

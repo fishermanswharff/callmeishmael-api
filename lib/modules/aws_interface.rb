@@ -71,6 +71,24 @@ module AwsInterface
       @response = value
     end
   end
+
+
+  class AudioGetter
+    def initialize(bucket,key)
+      Aws.config[:credentials] = Aws::Credentials.new(ENV['AWS_ACCESS_KEY_ID'], ENV['AWS_SECRET_ACCESS_KEY'])
+      Aws.config[:region] = 'us-west-2'
+      client = Aws::S3::Client.new
+      @response = client.get_object(response_target: StringIO.new, bucket: bucket,key: key)
+    end
+
+    def response
+      @response
+    end
+
+    def response=(value)
+      @response = value
+    end
+  end
 end
 
 =begin
