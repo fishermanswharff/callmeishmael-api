@@ -106,7 +106,7 @@ class Story < ActiveRecord::Base
     filename = url.scan(/([\w\d\-\.\s]+)(?:\.ogg)/).flatten.join
     aws = AwsInterface::AudioGetter.new(ENV['S3_FILES_BUCKET_NAME'], filename + '.ogg') unless Rails.env.test?
     Rails.env.test? ? contents = "#{SecureRandom.uuid}" : contents = aws.response.body.read
-    hash = md5.hexdigest contents
+    hash = md5.digest contents
     send_md5_file(hash, filename)
   end
 
