@@ -46,7 +46,6 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       execute :touch, release_path.join('tmp/restart.txt')
-      :symlink_config
     end
   end
 
@@ -58,6 +57,7 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+      :symlink_config
     end
   end
 
