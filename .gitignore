@@ -11,7 +11,7 @@
 /tmp/
 /docs
 
-config/database.yml.template
+config/database.yml
 
 ## Specific to RubyMotion:
 .dat*
