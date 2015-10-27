@@ -11,8 +11,6 @@
 /tmp/
 /docs
 
-config/database.yml
-
 ## Specific to RubyMotion:
 .dat*
 .repl_history
