@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
-set :application, 'callmeishmael-api'
+set :application, 'callmeishmael_api'
 set :repo_url, 'git@github.com:fishermanswharff/callmeishmael-api.git'
 
 set :deploy_to, '/home/ubuntu/www/callmeishmael-api'
