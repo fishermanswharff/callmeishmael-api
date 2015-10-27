@@ -65,7 +65,7 @@ namespace :deploy do
   after :finishing, :cleanup
 
   task :symlink_config do
-    run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
+    run "ln -sf #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 
   # before 'deploy:assets:precompile' do
