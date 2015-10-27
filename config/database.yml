@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: phone-api_production
-  username: phone-api
+  database: phone_api_production
+  username: postgres
   password: <%= ENV['PHONE-API_DATABASE_PASSWORD'] %>

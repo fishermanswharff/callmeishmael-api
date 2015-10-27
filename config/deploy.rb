@@ -4,6 +4,11 @@ lock '3.1.0'
 set :application, 'callmeishmael-api'
 set :repo_url, 'git@github.com:fishermanswharff/callmeishmael-api.git'
 
+set :deploy_to, '/www/callmeishmael-api'
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
@@ -54,5 +59,7 @@ namespace :deploy do
       # end
     end
   end
+
+  after :finishing, :cleanup
 
 end

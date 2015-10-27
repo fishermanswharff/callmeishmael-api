@@ -1,12 +1,14 @@
+set :stage, :production
+
 # Simple Role Syntax
 # ==================
 # Supports bulk-adding hosts to roles, the primary
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+role :app, %w{ubuntu@54.69.177.30}
+role :web, %w{ubuntu@54.69.177.30}
+role :db,  %w{postgres@54.69.177.30}
 
 # Extended Server Syntax
 # ======================
@@ -14,7 +16,7 @@ role :db,  %w{deploy@example.com}
 # definition into the server list. The second argument
 # something that quacks like a hash can be used to set
 # extended properties on the server.
-server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
+server '54.69.177.30', user: 'ubuntu', roles: %w{web app}
 
 # you can set custom ssh options
 # it's possible to pass any option but you need to keep in mind that net/ssh understand limited list of options
@@ -26,14 +28,14 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #    auth_methods: %w(password)
 #  }
 # and/or per server
-# server 'example.com',
-#   user: 'user_name',
-#   roles: %w{web app},
-#   ssh_options: {
-#     user: 'user_name', # overrides user setting above
-#     keys: %w(/home/user_name/.ssh/id_rsa),
-#     forward_agent: false,
-#     auth_methods: %w(publickey password)
-#     # password: 'please use keys'
-#   }
+server '54.69.177.30',
+  user: 'ubuntu',
+  roles: %w{web app},
+  ssh_options: {
+    user: 'root', # overrides user setting above
+    keys: %w(~/.ssh/callmeishmael_aws.pem),
+    forward_agent: false,
+    auth_methods: %w(publickey password)
+    # password: 'please use keys'
+  }
 # setting per server overrides global ssh_options
