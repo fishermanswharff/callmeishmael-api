@@ -63,6 +63,10 @@ namespace :deploy do
 
   after :finishing, :cleanup
 
+  task :symlink_config, roles: [:app, :web] do
+    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  end
+
   # before 'deploy:assets:precompile' do
   #   run ["ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml",
   #        "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
