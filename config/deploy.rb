@@ -57,15 +57,11 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
-      :symlink_config
     end
   end
 
   after :finishing, :cleanup
 
-  task :symlink_config do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
 
   # before 'deploy:assets:precompile' do
   #   run ["ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml",
