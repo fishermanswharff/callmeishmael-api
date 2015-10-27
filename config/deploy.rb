@@ -61,9 +61,9 @@ namespace :deploy do
     end
   end
 
-  after :finishing, :cleanup
+  after :finishing, :cleanup, :symlink_config
 
-  task :symlink_config, roles: [:app, :web] do
+  task :symlink_config do
     run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   end
 
