@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:fishermanswharff/callmeishmael-api.git'
 
 set :deploy_to, '/home/ubuntu/www/callmeishmael-api'
 set :linked_files, %w{config/database.yml}
-set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system shared}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system shared current}
 
 
 # Default branch is :master
@@ -41,12 +41,6 @@ set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public
 
 namespace :deploy do
 
-  before "deploy:assets:precompile" do
-    run ["ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml",
-         "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
-         "ln -fs #{shared_path}/uploads #{release_path}/uploads"
-    ].join(" && ")
-  end
 
   desc 'Restart application'
   task :restart do
@@ -68,5 +62,12 @@ namespace :deploy do
   end
 
   after :finishing, :cleanup
+
+  # before 'deploy:assets:precompile' do
+  #   run ["ln -nfs #{shared_path}/config/settings.yml #{release_path}/config/settings.yml",
+  #        "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml",
+  #        "ln -fs #{shared_path}/uploads #{release_path}/uploads"
+  #   ].join(" && ")
+  # end
 
 end
