@@ -47,7 +47,7 @@ namespace :deploy do
     on roles(:app), in: :sequence, wait: 5 do
       # Your restart mechanism here, for example:
       execute :touch, release_path.join('tmp/restart.txt')
-      symlink_config
+      :symlink_config
     end
   end
 
@@ -65,7 +65,7 @@ namespace :deploy do
   after :finishing, :cleanup
 
   task :symlink_config do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/config/database.yml #{latest_release}/config/database.yml"
   end
 
   # before 'deploy:assets:precompile' do
