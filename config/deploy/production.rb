@@ -8,7 +8,7 @@ set :stage, :production
 # Don't declare `role :all`, it's a meta role
 role :app, %w{ubuntu@54.69.177.30}
 role :web, %w{ubuntu@54.69.177.30}
-role :db,  %w{postgres@54.69.177.30}
+role :db,  %w{ubuntu@54.69.177.30}
 
 # Extended Server Syntax
 # ======================
@@ -32,7 +32,7 @@ server '54.69.177.30',
   user: 'ubuntu',
   roles: %w{web app},
   ssh_options: {
-    user: 'root', # overrides user setting above
+    user: 'ubuntu', # overrides user setting above
     keys: %w(~/.ssh/callmeishmael_aws.pem),
     forward_agent: false,
     auth_methods: %w(publickey password)

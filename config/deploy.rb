@@ -4,7 +4,7 @@ lock '3.1.0'
 set :application, 'callmeishmael-api'
 set :repo_url, 'git@github.com:fishermanswharff/callmeishmael-api.git'
 
-set :deploy_to, '/www/callmeishmael-api'
+set :deploy_to, '/home/ubuntu/www/callmeishmael-api'
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
