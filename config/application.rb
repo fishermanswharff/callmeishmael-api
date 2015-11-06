@@ -32,6 +32,7 @@ module PhoneApi
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(
       #{Rails.root}/lib/
+      #{Rails.root}/lib/modules
     )
     config.middleware.use Rack::SslEnforcer, only_environments: ['production', /^QA/]
     config.middleware.use Rack::Cors do
