@@ -6,6 +6,7 @@ require 'capistrano/deploy'
 require 'capistrano/bundler'
 require 'capistrano/rails'
 require 'capistrano/postgresql'
+require 'capistrano/rails/console'
 
 # Includes tasks from other gems included in your Gemfile
 #
