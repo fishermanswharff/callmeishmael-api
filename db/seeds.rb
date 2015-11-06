@@ -83,7 +83,7 @@ stories = [
   Story.find_or_create_by!(title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.ogg', story_type: 'ishmaels', author_last: 'Strayed', author_first: 'Cheryl', call_length: '0:00', common_title: '777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
   Story.find_or_create_by!(title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.ogg', story_type: 'ishmaels', author_last: 'Lawson', author_first: 'Jenny', call_length: '0:00', common_title: '800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
   Story.find_or_create_by!(title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg', story_type: 'ishmaels', author_last: 'Lee', author_first: 'Harper', call_length: '0:00', common_title: '888-To-Kill-a-Mockingbird-by-Harper-Lee-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
-  Story.find_or_create_by!(title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.ogg', story_type: 'postroll', author_last: 'White', author_first: 'Noise', call_length: '0:00', common_title: 'White noise for testing purposes', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Call-Me-Ishmael-Auto-play', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/Call-Me-Ishmael-Auto-play.ogg', story_type: 'postroll', author_last: 'Smalley', author_first: 'Logan', call_length: '1:18', common_title: 'Call-Me-Ishmael-Auto-play', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
 ]
 
 puts "Seeded #{stories.length} stories, total stories: #{Story.count}"
@@ -123,7 +123,7 @@ buttons = Button.create!([
   { assignment: '7', story: Story.find_by_title('The Oldest Living Things in the World'), phone: phones[0] },
   { assignment: '8', story: Story.find_by_title('A Short History of Nearly Everything'), phone: phones[0] },
   { assignment: '9', story: Story.find_by_title('Not Even Wrong'), phone: phones[0] },
-  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[0] },
+  { assignment: 'PR', story: Story.find_by_title('Call-Me-Ishmael-Auto-play'), phone: phones[0] },
   { assignment: '*', story: Story.find_by_title('On Looking'), phone: phones[3] },
   { assignment: '#', story: Story.find_by_title('Extremely Loud and Incredibly Close'), phone: phones[3] },
   { assignment: '0', story: Story.find_by_title('Pajama Time'), phone: phones[3] },
@@ -136,7 +136,7 @@ buttons = Button.create!([
   { assignment: '7', story: Story.find_by_title('The Oldest Living Things in the World'), phone: phones[3] },
   { assignment: '8', story: Story.find_by_title('A Short History of Nearly Everything'), phone: phones[3] },
   { assignment: '9', story: Story.find_by_title('Not Even Wrong'), phone: phones[3] },
-  { assignment: 'PR', story: Story.find_by_title('White Noise'), phone: phones[3] }
+  { assignment: 'PR', story: Story.find_by_title('Call-Me-Ishmael-Auto-play'), phone: phones[3] }
 ])
 puts "Seeded #{buttons.length} buttons as a join table:"
 buttons.each { |b| p "#{b.assignment} button is assigned #{b.story.title} on phone #{b.phone.unique_identifier} at venue #{b.phone.venue.name}" }
