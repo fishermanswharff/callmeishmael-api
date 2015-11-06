@@ -17,7 +17,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :phones, only: :index
+  resources :phones, only: :index do
+    get 'call_the_phone', to: 'phones#call_the_phone'
+  end
 
   resources :buttons, only: [:create, :update] do
     post 'update_fixed', on: :collection

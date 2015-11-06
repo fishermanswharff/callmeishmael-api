@@ -73,6 +73,10 @@ class Phone < ActiveRecord::Base
     { response: resp, bucket_url: bucket.url }
   end
 
+  def call_the_phone
+    PhoneWhisperer.new
+  end
+
   private
 
   def set_unique_id

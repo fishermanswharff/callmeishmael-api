@@ -71,6 +71,10 @@ class PhonesController < ApplicationController
     # render json: { path: resp[:bucket_url] + '/' + resp[:response].key }, status: :ok
   end
 
+  def call_the_phone
+    Phone.call_the_phone
+  end
+
   private
 
   def phone_params
