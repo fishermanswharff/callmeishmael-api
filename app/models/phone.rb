@@ -24,6 +24,10 @@ class Phone < ActiveRecord::Base
 
   validates_associated :venue
 
+  def call_yourself
+    PhoneWhisperer.new
+  end
+
   def get_urls
     # ordered by assignment: #,*,0,1,2,…
     stories = Story.connection.select_all("SELECT buttons.assignment, stories.url FROM stories INNER JOIN buttons ON (buttons.story_id = stories.id) WHERE buttons.phone_id = #{self.id} ORDER BY buttons.assignment;").rows.to_h
@@ -73,9 +77,6 @@ class Phone < ActiveRecord::Base
     { response: resp, bucket_url: bucket.url }
   end
 
-  def call_the_phone
-    PhoneWhisperer.new
-  end
 
   private
 

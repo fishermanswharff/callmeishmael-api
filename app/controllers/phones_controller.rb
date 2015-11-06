@@ -1,7 +1,7 @@
 class PhonesController < ApplicationController
 
   before_action :get_phone_by_id, only: [:show, :update, :destroy]
-  before_action :get_phone_by_phoneid, only: [:ping, :files, :log, :md5_files]
+  before_action :get_phone_by_phoneid, only: [:ping, :files, :log, :md5_files, :call_the_phone]
   before_filter :admin_only, only: [:create, :update]
 
   def index
@@ -72,7 +72,8 @@ class PhonesController < ApplicationController
   end
 
   def call_the_phone
-    Phone.call_the_phone
+    @phone.call_yourself
+    # Phone.call_the_phone
   end
 
   private

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
         match '/files' => 'phones#files', via: [:get]
         match '/md5_files' => 'phones#md5_files', via: [:get]
         match '/log' => 'phones#log', via: :post
+        match '/call_the_phone' => 'phones#call_the_phone', via: [:get]
       end
     end
     resources :stories do
@@ -17,9 +18,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :phones, only: :index do
-    get 'call_the_phone', to: 'phones#call_the_phone'
-  end
+  resources :phones, only: :index
 
   resources :buttons, only: [:create, :update] do
     post 'update_fixed', on: :collection

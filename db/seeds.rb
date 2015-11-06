@@ -42,7 +42,6 @@ Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'andy@test.com'
 Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'joe@user.com')
 
 Venue.find_by!(name: 'Reading Rainbow').users << User.find_by!(email: 'fishermanswharff@mac.com')
-Venue.find_by!(name: 'Reading Rainbow').users << User.find_by!(email: 'joe@user.com')
 Venue.find_by!(name: 'Sesame Street').users << User.find_by!(email: 'fishermanswharff@mac.com')
 Venue.find_by!(name: '21 Shepard St.').users << User.find_by!(email: 'fishermanswharff@mac.com')
 Venue.find_by!(name: '21 Shepard St.').users << User.find_by!(email: 'fishermanswharff@me.com')

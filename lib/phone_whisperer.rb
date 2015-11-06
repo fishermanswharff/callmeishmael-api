@@ -1,3 +1,5 @@
+require 'net/ssh'
+
 class PhoneWhisperer
 
   def initialize
