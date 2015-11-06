@@ -8,7 +8,6 @@ set :deploy_to, '/home/ubuntu/www/callmeishmael_api'
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system shared}
 
-
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 

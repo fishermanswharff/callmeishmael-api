@@ -4,158 +4,89 @@ ActiveRecord::Base.connection.tables.each do |table|
   ActiveRecord::Base.connection.execute("TRUNCATE #{table} CASCADE")
 end
 
+puts "\n\n"
+
 #   USERS
 # —————————————————
 puts 'Creating users…'
-users = User.create!([
-  {
-    firstname: 'Jason',
-    lastname: 'Wharff',
-    username: 'jasonwharff',
-    role: 'admin',
-    email: 'fishermanswharff@mac.com',
-    phonenumber: 6173889520,
-    password_digest: "$2a$10$g0nkXPBOkJWCaCquG49Z8O3wutYc/wWY1sEkHy8qDQqwBM5mLzcHC",
-    token: "53193128a1ce4fcc8a57b4c95268c3ba",
-  },
-  {
-    firstname: 'Logan',
-    lastname: 'Smalley',
-    username: 'logansmalley',
-    role: 'admin',
-    email: 'logan@test.com',
-    phonenumber: 5554443333,
-    password_digest: '$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq',
-    token: '155a18a873bf4078b60bed27936f2f55'
-  },
-  {
-    firstname: "Shawn",
-    lastname: "Kotoske",
-    username: "shawnkotoske",
-    role: 'admin',
-    email: "shawn@test.com",
-    phonenumber: 5748509840,
-    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
-    token: "5f780acadc3d4091b88749e8e289de49",
-  },
-  {
-    firstname: "Chris",
-    lastname: "Spence",
-    username: "chrisspence",
-    role: 'admin',
-    email: "chris@test.com",
-    phonenumber: 5085071285,
-    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
-    token: "658ad3dfbbbc4230a2d989053d25830d",
-  },
-  {
-    firstname: "Ayodamola",
-    lastname: "Okunseinde",
-    username: "ayodamolaokunseinde",
-    role: 'admin',
-    email: "ayo@test.com",
-    phonenumber: 5554443333,
-    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
-    token: "0ca0b535bb8245bc82d2726ced45c741",
-  },
-  {
-    firstname: "Andy",
-    lastname: "Cavatorta",
-    username: "andycavatorta",
-    role: 'admin',
-    email: "andy@test.com",
-    phonenumber: 5554443333,
-    password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",
-    token: "b0607162ae7f41baa78f2b7266520b09",
-  },
-  {
-    firstname: "joe",
-    lastname: "user",
-    username: "joeuser",
-    role: 'venue_admin',
-    email: "joe@user.com",
-    phonenumber: 5554443333,
-    password_digest: "$2a$10$n7Buns1Q3ZoRvN.SKUGFy.TsjkmjQ/EqSdm2vmXG1jf51Wa1PgQCi",
-    token: "462e4dce8ceb43d7a801e7210ca9073a",
-  },
-  {
-    firstname: 'Estella',
-    lastname: 'Wharff',
-    username: 'estella',
-    role: 'venue_admin',
-    email: 'fishermanswharff@me.com',
-    phonenumber: 6173889520,
-    password_digest: '$2a$10$ukerRC64qS146G.bhY65A.iKh.tdG194qErA5.i1gAi46dneu2t4m',
-    token: '25f41b2be80747ceb2fe2ab059163903',
-
-  }
-])
-puts "seeded #{users.length} users:"
-users.each { |u| p "#{u.firstname} #{u.lastname}" }
+users = [
+  User.find_or_create_by!(firstname: 'Jason', lastname: 'Wharff', username: 'jasonwharff', role: 'admin', email: 'fishermanswharff@mac.com', phonenumber: 6173889520, password_digest: "$2a$10$g0nkXPBOkJWCaCquG49Z8O3wutYc/wWY1sEkHy8qDQqwBM5mLzcHC", token: "53193128a1ce4fcc8a57b4c95268c3ba"),
+  User.find_or_create_by!(firstname: 'Logan',lastname: 'Smalley',username: 'logansmalley',role: 'admin',email: 'logan@test.com',phonenumber: 5554443333,password_digest: '$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq',token: '155a18a873bf4078b60bed27936f2f55'),
+  User.find_or_create_by!(firstname: "Shawn",lastname: "Kotoske",username: "shawnkotoske",role: 'admin',email: "shawn@test.com",phonenumber: 5748509840,password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",token: "5f780acadc3d4091b88749e8e289de49"),
+  User.find_or_create_by!(firstname: "Chris",lastname: "Spence",username: "chrisspence",role: 'admin',email: "chris@test.com",phonenumber: 5085071285,password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",token: "658ad3dfbbbc4230a2d989053d25830d"),
+  User.find_or_create_by!(firstname: "Ayodamola",lastname: "Okunseinde",username: "ayodamolaokunseinde",role: 'admin',email: "ayo@test.com",phonenumber: 5554443333,password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",token: "0ca0b535bb8245bc82d2726ced45c741"),
+  User.find_or_create_by!(firstname: "Andy",lastname: "Cavatorta",username: "andycavatorta",role: 'admin',email: "andy@test.com",phonenumber: 5554443333,password_digest: "$2a$10$5GPaXAOo5BUa9RhMjnbxQ.P3lq6wSB3uYUFaH2gFa1qFLDDfKBwCq",token: "b0607162ae7f41baa78f2b7266520b09"),
+  User.find_or_create_by!(firstname: "joe",lastname: "user",username: "joeuser",role: 'venue_admin',email: "joe@user.com",phonenumber: 5554443333,password_digest: "$2a$10$n7Buns1Q3ZoRvN.SKUGFy.TsjkmjQ/EqSdm2vmXG1jf51Wa1PgQCi",token: "462e4dce8ceb43d7a801e7210ca9073a"),
+  User.find_or_create_by!(firstname: 'Estella',lastname: 'Wharff',username: 'estella',role: 'venue_admin',email: 'fishermanswharff@me.com',phonenumber: 6173889520,password_digest: '$2a$10$ukerRC64qS146G.bhY65A.iKh.tdG194qErA5.i1gAi46dneu2t4m',token: '25f41b2be80747ceb2fe2ab059163903')
+]
+puts "seeded #{users.length} users, total users: #{User.count}"
+User.all.each { |u| p "#{u.firstname} #{u.lastname}" }
 puts "\n\n"
 
 #   VENUES
 # —————————————————
 puts 'Seeding venues…'
-venues = Venue.create!([
-  { name: 'The Strand' },
-  { name: 'Reading Rainbow' },
-  { name: 'Sesame Street' },
-  { name: '21 Shepard St.' },
-])
-venues.first.users << User.find_by_email('fishermanswharff@mac.com')
-venues.first.users << User.find_by_email('shawn@test.com')
-venues.first.users << User.find_by_email('logan@test.com')
-venues.first.users << User.find_by_email('chris@test.com')
-venues.first.users << User.find_by_email('ayo@test.com')
-venues.first.users << User.find_by_email('andy@test.com')
-venues.first.users << User.find_by_email('joe@user.com')
-venues.second.users << User.find_by_email('fishermanswharff@mac.com')
-venues.second.users << User.find_by_email('joe@user.com')
-venues.third.users << User.find_by_email('fishermanswharff@mac.com')
-venues.fourth.users << User.find_by_email('fishermanswharff@mac.com')
-venues.fourth.users << User.find_by_email('fishermanswharff@me.com')
+venues = [
+  Venue.find_or_create_by!(name: 'The Strand'),
+  Venue.find_or_create_by!(name: 'Reading Rainbow'),
+  Venue.find_or_create_by!(name: 'Sesame Street'),
+  Venue.find_or_create_by!(name: '21 Shepard St.'),
+]
 
-puts "Seeded #{venues.length} venues:"
-venues.each { |v| p v.name + " has #{v.users.length} users" }
+Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'fishermanswharff@mac.com')
+Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'shawn@test.com')
+Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'logan@test.com')
+Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'chris@test.com')
+Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'ayo@test.com')
+Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'andy@test.com')
+Venue.find_by!(name: 'The Strand').users << User.find_by!(email: 'joe@user.com')
+
+Venue.find_by!(name: 'Reading Rainbow').users << User.find_by!(email: 'fishermanswharff@mac.com')
+Venue.find_by!(name: 'Reading Rainbow').users << User.find_by!(email: 'joe@user.com')
+Venue.find_by!(name: 'Sesame Street').users << User.find_by!(email: 'fishermanswharff@mac.com')
+Venue.find_by!(name: '21 Shepard St.').users << User.find_by!(email: 'fishermanswharff@mac.com')
+Venue.find_by!(name: '21 Shepard St.').users << User.find_by!(email: 'fishermanswharff@me.com')
+
+puts "Seeded #{venues.length} venues, total venues: #{Venue.count}"
+Venue.all.each { |v| p v.name + " has #{v.users.length} users" }
 puts "\n\n"
 
 #   PHONES
 # —————————————————
 puts 'Seeding Phones:'
-phones = Phone.create!([
-  { wifiSSID: '78:31:c1:cd:c6:82', wifiPassword: 'secret', venue: Venue.find_by_name('The Strand') },
-  { wifiSSID: '72:33:a2:ad:c2:69', wifiPassword: 'password', venue: Venue.find_by_name('Reading Rainbow') },
-  { wifiSSID: '32:21:d2:bd:a1:85', wifiPassword: 'password', venue: Venue.find_by_name('Sesame Street') },
-  { wifiSSID: '32:21:d2:bd:a1:85', wifiPassword: 'password', venue: Venue.find_by_name('21 Shepard St.') },
-])
-puts "Seeded #{phones.length} phones:"
+phones = [
+  Phone.find_or_create_by!(status: 'active', venue: Venue.find_by(name: 'The Strand')),
+  Phone.find_or_create_by!(status: 'active', venue: Venue.find_by(name: 'Reading Rainbow')),
+  Phone.find_or_create_by!(status: 'active', venue: Venue.find_by(name: 'Sesame Street')),
+  Phone.find_or_create_by!(status: 'active', venue: Venue.find_by(name: '21 Shepard St.')),
+]
+puts "Seeded #{phones.length} phones, total phones: #{Phone.count}"
 phones.each { |p| p "#{p.unique_identifier} at venue #{p.venue.name}" }
 puts "\n\n"
 
 #   STORIES
 # —————————————————
 puts 'Seeding stories…'
-stories = Story.create!([
-  { title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg', story_type: 'ishmaels',author_first: 'Alexandra', author_last: 'Horowitz', call_length: '0:00', common_title: 'On Looking Review', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.ogg', story_type: 'ishmaels', author_last: 'Safran Foer', author_first: 'Jonathan', call_length: '0:00', common_title: '703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/071-Pajama-Time-by-Sandra-Boynton-final.ogg', story_type: 'ishmaels', author_last: 'Boynton', author_first: 'Sandra', call_length: '0:00', common_title: '071-Pajama-Time-by-Sandra-Boynton-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary-final.ogg', story_type: 'ishmaels', author_last: 'Webster', author_first: 'Merriam', call_length: '0:00', common_title: '020-Merriam-Webster-Dictionary-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss-final.ogg', story_type: 'ishmaels', author_last: 'Seuss', author_first: 'Dr.', call_length: '0:00', common_title: '028-The-Sneetches-by-Dr-Seuss-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen-final.ogg', story_type: 'ishmaels', author_last: 'Austen', author_first: 'Jane', call_length: '0:00', common_title: '313-Pride-And-Prejudice-by-Jane-Austen-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Anna Karenina', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy-final.ogg', story_type: 'ishmaels', author_last: 'Tolstoy', author_first: 'Leo', call_length: '0:00', common_title: '323-Anna-Karenina-by-Leo-Tolstoy-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'The Fault In Our Stars', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green-final.ogg', story_type: 'ishmaels', author_last: 'Green', author_first: 'John', call_length: '0:00', common_title: '074-Fault-In-Our-stars-by-John-Green-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Harry Potter', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling-final.ogg', story_type: 'ishmaels', author_last: 'Rowling', author_first: 'JK', call_length: '0:00', common_title: '451-Harry-Potter-by-J.K.-Rowling-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'The Oldest Living Things in the World', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final.ogg', story_type: 'ishmaels', author_last: 'Sussman', author_first: 'Rachel', call_length: '0:00', common_title: '564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'A Short History of Nearly Everything', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.ogg', story_type: 'ishmaels', author_last: 'Bryson', author_first: 'Bill', call_length: '0:00', common_title: '592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/064-Not-Even-Wrong-by-Paul-Collins-final.ogg', story_type: 'ishmaels', author_last: 'Collins', author_first: 'Paul', call_length: '0:00', common_title: '064-Not-Even-Wrong-by-Paul-Collins-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.ogg', story_type: 'ishmaels', author_last: 'Strayed', author_first: 'Cheryl', call_length: '0:00', common_title: '777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.ogg', story_type: 'ishmaels', author_last: 'Lawson', author_first: 'Jenny', call_length: '0:00', common_title: '800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg', story_type: 'ishmaels', author_last: 'Lee', author_first: 'Harper', call_length: '0:00', common_title: '888-To-Kill-a-Mockingbird-by-Harper-Lee-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 },
-  { title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.ogg', story_type: 'postroll', author_last: 'White', author_first: 'Noise', call_length: '0:00', common_title: 'White noise for testing purposes', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0 }
-])
+stories = [
+  Story.find_or_create_by!(title: 'On Looking', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/699-On-Looking-by-Alexandra-Horowitz-final.ogg', story_type: 'ishmaels',author_first: 'Alexandra', author_last: 'Horowitz', call_length: '0:00', common_title: 'On Looking Review', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Extremely Loud and Incredibly Close', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final.ogg', story_type: 'ishmaels', author_last: 'Safran Foer', author_first: 'Jonathan', call_length: '0:00', common_title: '703-Extremely-Loud-and-Incredibly-Close-by-Jonathan-Safran-Foer-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Pajama Time', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/071-Pajama-Time-by-Sandra-Boynton-final.ogg', story_type: 'ishmaels', author_last: 'Boynton', author_first: 'Sandra', call_length: '0:00', common_title: '071-Pajama-Time-by-Sandra-Boynton-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Merriam Webster Dictionary', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/020-Merriam-Webster-Dictionary-final.ogg', story_type: 'ishmaels', author_last: 'Webster', author_first: 'Merriam', call_length: '0:00', common_title: '020-Merriam-Webster-Dictionary-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'The Sneetches', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/028-The-Sneetches-by-Dr-Seuss-final.ogg', story_type: 'ishmaels', author_last: 'Seuss', author_first: 'Dr.', call_length: '0:00', common_title: '028-The-Sneetches-by-Dr-Seuss-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Pride And Prejudice', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/313-Pride-And-Prejudice-by-Jane-Austen-final.ogg', story_type: 'ishmaels', author_last: 'Austen', author_first: 'Jane', call_length: '0:00', common_title: '313-Pride-And-Prejudice-by-Jane-Austen-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Anna Karenina', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/323-Anna-Karenina-by-Leo-Tolstoy-final.ogg', story_type: 'ishmaels', author_last: 'Tolstoy', author_first: 'Leo', call_length: '0:00', common_title: '323-Anna-Karenina-by-Leo-Tolstoy-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'The Fault In Our Stars', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/074-Fault-In-Our-stars-by-John-Green-final.ogg', story_type: 'ishmaels', author_last: 'Green', author_first: 'John', call_length: '0:00', common_title: '074-Fault-In-Our-stars-by-John-Green-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Harry Potter', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/451-Harry-Potter-by-J.K.-Rowling-final.ogg', story_type: 'ishmaels', author_last: 'Rowling', author_first: 'JK', call_length: '0:00', common_title: '451-Harry-Potter-by-J.K.-Rowling-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'The Oldest Living Things in the World', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final.ogg', story_type: 'ishmaels', author_last: 'Sussman', author_first: 'Rachel', call_length: '0:00', common_title: '564-The-Oldest-Living-Things-in-the-World-by-Rachel-Sussman-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'A Short History of Nearly Everything', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final.ogg', story_type: 'ishmaels', author_last: 'Bryson', author_first: 'Bill', call_length: '0:00', common_title: '592-A-Short-History-of-Nearly-Everything-by-Bill-Bryson-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Not Even Wrong', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/064-Not-Even-Wrong-by-Paul-Collins-final.ogg', story_type: 'ishmaels', author_last: 'Collins', author_first: 'Paul', call_length: '0:00', common_title: '064-Not-Even-Wrong-by-Paul-Collins-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Tiny Beautiful Things', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final.ogg', story_type: 'ishmaels', author_last: 'Strayed', author_first: 'Cheryl', call_length: '0:00', common_title: '777-Tiny-Beautiful-Things-by-Cheryl-Strayed-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'Lets Pretend This Never Happened', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final.ogg', story_type: 'ishmaels', author_last: 'Lawson', author_first: 'Jenny', call_length: '0:00', common_title: '800-Lets-Pretend-This-Never-Happened-by-Jenny-Lawson-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'To Kill a Mockingbird', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/888-To-Kill-a-Mockingbird-by-Harper-Lee-final.ogg', story_type: 'ishmaels', author_last: 'Lee', author_first: 'Harper', call_length: '0:00', common_title: '888-To-Kill-a-Mockingbird-by-Harper-Lee-final', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+  Story.find_or_create_by!(title: 'White Noise', url: 'https://s3-us-west-2.amazonaws.com/callmeishmael-files/whitenoise.ogg', story_type: 'postroll', author_last: 'White', author_first: 'Noise', call_length: '0:00', common_title: 'White noise for testing purposes', call_date: Date.today, transcript_url: 'http://www.google.com', call_uuid: 0),
+]
 
-puts "Seeded #{stories.length} stories: "
+puts "Seeded #{stories.length} stories, total stories: #{Story.count}"
 stories.each { |s| p "#{s.title} by #{s.author_last}, story_type: #{s.story_type}" }
 puts "\n\n"
 
@@ -213,13 +144,14 @@ puts "\n\n"
 
 puts 'Done seeding the database. Farewell.'
 
-# curl -d "user[firstname]=Jason&user[lastname]=Wharff&user[password]=Rolla@1878&user[password_confirmation]=Rolla@1878&user[username]=jasonwharff&user[email]=fishermanswharff@mac.com&user[role]=admin&user[phonenumber]=6173889520" -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=Shawn&user[lastname]=Kotoske&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=shawnkotoske&user[email]=jasonwharff@gmail.com&user[role]=admin&user[phonenumber]=5748509840" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=Chris&user[lastname]=Spence&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=chrisspence&user[email]=jason@thinqmail.com&user[role]=admin&user[phonenumber]=5085071285" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=Logan&user[lastname]=Smalley&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=logansmalley&user[email]=smalley@ted.com&user[role]=admin&user[phonenumber]=5555555555" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=Andy&user[lastname]=Cavatorta&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=andycavatorta&user[email]=fishermanswharff@icloud.com&user[role]=admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=Ayodamola&user[lastname]=Okunseinde&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=ayodamolaokunseinde&user[email]=fishermanswharff@me.com&user[role]=admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=joe&user[lastname]=user&user[password]=password&user[password_confirmation]=password&user[username]=joeuser&user[email]=joe@user.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
-# curl -d "user[firstname]=Estella&user[lastname]=Wharff&user[password]=password&user[password_confirmation]=password&user[username]=estella&user[email]=fishermanswharff@me.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=Jason&user[lastname]=Wharff&user[password]=Rolla@1878&user[password_confirmation]=Rolla@1878&user[username]=jasonwharff&user[email]=fishermanswharff@mac.com&user[role]=admin&user[phonenumber]=6173889520" -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=Shawn&user[lastname]=Kotoske&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=shawnkotoske&user[email]=jasonwharff@gmail.com&user[role]=admin&user[phonenumber]=5748509840" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=Chris&user[lastname]=Spence&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=chrisspence&user[email]=jason@thinqmail.com&user[role]=admin&user[phonenumber]=5085071285" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=Logan&user[lastname]=Smalley&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=logansmalley&user[email]=smalley@ted.com&user[role]=admin&user[phonenumber]=5555555555" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=Andy&user[lastname]=Cavatorta&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=andycavatorta&user[email]=fishermanswharff@icloud.com&user[role]=admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=Ayodamola&user[lastname]=Okunseinde&user[password]=tqi$2015&user[password_confirmation]=tqi$2015&user[username]=ayodamolaokunseinde&user[email]=fishermanswharff@me.com&user[role]=admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=joe&user[lastname]=user&user[password]=password&user[password_confirmation]=password&user[username]=joeuser&user[email]=joe@user.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+# # curl -d "user[firstname]=Estella&user[lastname]=Wharff&user[password]=password&user[password_confirmation]=password&user[username]=estella&user[email]=fishermanswharff@me.com&user[role]=venue_admin&user[phonenumber]=6173889520" -H 'AUTHORIZATION: Token token=53193128a1ce4fcc8a57b4c95268c3ba' -X POST localhost:3000/admin/users
+
 
 
