@@ -13,6 +13,8 @@ end
 =begin
 set the host, user and password in environment variables
 where are the commands going to live?
+we'll need to parse the commands when the come into the
+phones_controller.
 
 require 'rubygems'
 require 'net/ssh'
