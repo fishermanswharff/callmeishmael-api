@@ -27,9 +27,6 @@ namespace :stories do
       new_url = story.url.gsub(/callmeishmael\-files/, 'callmeishmael-files-v2')
       new_md5_url = story.md5_url.gsub(/callmeishmael\-files/, 'callmeishmael-files-v2')
       story.update_attributes(url: new_url, md5_url: new_md5_url)
-      # story.url.gsub(/callmeishmael\-files/, 'callmeishmael-files-v2')
-      # story.md5_url.gsub(/callmeishmael\-files/, 'callmeishmael-files-v2')
-      # story.save!
     end
   end
 end
