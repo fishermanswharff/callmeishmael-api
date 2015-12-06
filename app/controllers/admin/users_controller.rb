@@ -39,7 +39,7 @@ class Admin::UsersController < ApplicationController
       UserMailer.greeter_email(@user).deliver_now unless Rails.env.test?
       render json: @user, status: :created, location: admin_user_url(@user)
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
