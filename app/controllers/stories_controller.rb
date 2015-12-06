@@ -17,7 +17,7 @@ class StoriesController < ApplicationController
     if story.save
       render json: story, status: :created, location: story_url(story)
     else
-      render json: story.errors, status: :unprocessable_entity
+      render json: {errors: story.errors.full_messages}, status: :unprocessable_entity
     end
   end
 

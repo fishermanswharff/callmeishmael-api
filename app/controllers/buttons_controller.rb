@@ -5,7 +5,7 @@ class ButtonsController < ApplicationController
     if button.save
       render json: button, status: :created
     else
-      render json: button.errors, status: :unprocessable_entity
+      render json: { errors: button.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

@@ -24,7 +24,7 @@ class PhonesController < ApplicationController
     if phone.save
       render json: phone, status: :created, location: venue_phone_url(venue, phone)
     else
-      render json: phone.errors, status: :unprocessable_entity
+      render json: { errors: phone.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
