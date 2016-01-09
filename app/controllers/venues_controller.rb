@@ -23,12 +23,16 @@ class VenuesController < ApplicationController
   end
 
   def update
-    @venue.users << User.find(params["venue"]["user_id"]) if params["venue"]["user_id"]
-    @venue.stories << Story.find(params["venue"]["story_id"]) if params["venue"]["story_id"]
+    if venue_params[:user_ids].present?
+      venue_params[:user_ids].each { |user_id| @venue.users << User.find(user_id) }
+    elsif venue_params[:story_ids].present?
+      venue_params[:story_ids].each { |story_id| @venue.stories << Story.find(story_id) }
+    end
+
     if @venue.update(venue_params)
       render json: @venue, status: :ok
     else
-      render json: @venue.errors, status: :unprocessable_entity
+      render json: {errors: @venue.errors.full_messages }, status: :unprocessable_entity
     end
   end
 

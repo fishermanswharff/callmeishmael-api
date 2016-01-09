@@ -15,4 +15,6 @@ class Venuestory < ActiveRecord::Base
 
   validates_associated :venue
   validates_associated :story
+
+  validates_uniqueness_of :venue_id, scope: :story_id
 end

@@ -84,7 +84,6 @@ RSpec.describe 'Stories API Endpoint', type: :request do
         expect(response.headers['Location']).to eq "http://www.example.com/stories/#{story[:id]}"
       end
     end
-  end
 
   describe '#update' do
     context 'by a venue_admin' do

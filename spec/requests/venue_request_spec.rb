@@ -133,8 +133,8 @@ describe 'Venue API Endpoint' do
         {
           name: 'Strand Bookstore on 5th Avenue',
           number_phones: 3,
-          user_id: "#{@another_venue_admin.id}",
-          story_id: "#{@story.id}"
+          user_ids: ["#{@another_venue_admin.id}"],
+          story_ids: ["#{@story.id}"]
         }
       }.to_json,
       {
@@ -154,7 +154,7 @@ describe 'Venue API Endpoint' do
     end
     it 'has stories attached to the venue' do
       venue = json(response.body)
-      expect(venue[:stories].count).to eq 44
+      expect(venue[:stories].count).to eq 1
     end
   end
 
